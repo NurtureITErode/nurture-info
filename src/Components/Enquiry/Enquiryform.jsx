@@ -5,20 +5,27 @@ function Enquiryform() {
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [mail, setMail] = useState("");
-  const [label_msg,setlabel]=useState("");
-  // const Regex =
-  //   /([a-zA-z0-9. -_]{3,20})+@+([a-zA-Z]{1,10})+\.+([a-zA-Z]{1,10})/;
+  const [label_name, setlabelName] = useState("");
+  const [label_mobile, setlabelMobile] = useState("");
+  const [label_mail, setlabelMail] = useState("");
 
-  const submitForm = () => {
-    // if (Regex.test(mail)) {
-    //   console.log("Email Validation");
-    // }
-    if (name.length == 0) {
-      setlabel("Incorrect");
-    } else if (mobile.length == 0) {
-      setlabel("Incorrect");
-    } else if (mail.length == 0) {
-      setlabel("Incorrect");
+  const Regex =
+    /([a-zA-z0-9. -_]{1,20})+@+([a-zA-Z]{1,10})+\.+([a-zA-Z]{1,10})/;
+  const submitForm = (e) => {
+    if (!Regex.test(mail)) {
+      alert("Your Mail Id" + " " + mail + " " + "is incorrect");
+    }
+    e.preventDefault();
+    if (name.length === 0) {
+      setlabelName("Incorrect");
+    } else if (mobile.length === 0) {
+      setlabelMobile("Incorrect");
+    } else if (mail.length === 0) {
+      setlabelMail("Incorrect");
+    } else {
+      setlabelMail("");
+      setlabelMobile("");
+      setlabelName("");
     }
   };
 
@@ -26,7 +33,19 @@ function Enquiryform() {
     <div className="main_form">
       <div className="Enquiry">
         <div className="Enquiry_head">
-          <h1 id="form_head" data-aos="flip-right">
+          {/* <div class="snowflakes" aria-hidden="true">
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+          </div> */}
+          <h1 id="form_head" data-aos="flip-right" data-aos-duration="2000">
             Who Can Join Us ?
           </h1>
         </div>
@@ -87,7 +106,7 @@ function Enquiryform() {
           </div>
         </div>
         <div className="form-main" data-aos="zoom-in" data-aos-duration="2000">
-          <form autoComplete="off" className="form-sub-content" name="form">
+          <form autoComplete="on" className="form-sub-content">
             <div>
               <input
                 type="text"
@@ -100,9 +119,8 @@ function Enquiryform() {
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
-                // onKeyDown={(event) => {return /[a-zA-Z]/i.test(event.key);}}
               />{" "}
-              <label id="name_label">{label_msg}</label>
+              <label id="name_label">{label_name}</label>
               <br />
               <input
                 type="number"
@@ -113,7 +131,7 @@ function Enquiryform() {
                 onChange={(e) => setMobile(e.target.value)}
                 required
               />
-              <label id="mobile_label">{label_msg}</label>
+              <label id="mobile_label">{label_mobile}</label>
               <br />
               <input
                 type="email"
@@ -124,7 +142,7 @@ function Enquiryform() {
                 onChange={(e) => setMail(e.target.value)}
                 required
               />{" "}
-              <label id="mail_label">{label_msg}</label>
+              <label id="mail_label">{label_mail}</label>
               <br />
             </div>
             <br />

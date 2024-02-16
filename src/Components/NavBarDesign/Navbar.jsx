@@ -1,10 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
+import $ from 'jquery'
 
 function Navbar() {
+  $("document").ready(function(){
+    if($(window).width() < 1200) {
+        $("#responsive-menu>#responsive-items").on('click',function(){
+        $("#responsive-menu").toggle("slow");
+      })
+        $(".hamburger-lines").on("click",function(){
+        $("#responsive-menu").toggle("fast");
+      })
+    }
+})
   return (
-    <div>
+    <div> 
       <div className="bgbanner"></div>
       <header>
         <div className="callicon">
@@ -170,29 +181,29 @@ function Navbar() {
             <span className="line line2"></span>
             <span className="line line3"></span>
           </div>
-          <div className="menu-items">
-            <Link className="nav-link" to="/">
+          <div className="menu-items" id="responsive-menu">
+            <Link className="nav-link" id="responsive-items" to="/">
               Home
             </Link>
-            <Link className="nav-link" to="/about">
+            <Link className="nav-link" id="responsive-items" to="/about">
               About
             </Link>
-            <Link className="nav-link" to="/course">
+            <Link className="nav-link" id="responsive-items" to="/course">
               Courses
             </Link>
-            <Link className="nav-link" to="/intern">
+            <Link className="nav-link" id="responsive-items" to="/intern">
               Internship
             </Link>
-            <Link className="nav-link" to="/hire">
+            <Link className="nav-link" id="responsive-items" to="/hire">
               Hiring
             </Link>
-            <Link className="nav-link" to="/category">
+            <Link className="nav-link" id="responsive-items" to="/category">
               Gallery
             </Link>
-            <Link className="nav-link" to="/enquire">
+            <Link className="nav-link" id="responsive-items" to="/enquire">
               Enquiry
             </Link>
-            <Link className="nav-link" to="/contact">
+            <Link className="nav-link" id="responsive-items" to="/contact">
               Contact Us
             </Link>
             {/*  <Link className='nav-link' to='/category'>Category</Link>
