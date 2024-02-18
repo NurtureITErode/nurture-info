@@ -87,8 +87,8 @@ function Enquiryform() {
             <div className="form-con-content">
               <h3>Placed Students</h3>
               <p>
-                Computer/ Non-Computer branch students placed in MNCs like infy,
-                UST etc., looking to pass their probationary exams
+                Computer/Non-Computer students placed in MNCs like infy,
+                UST looking to pass their probationary exams
               </p>
             </div>
           </div>
@@ -167,6 +167,42 @@ function Enquiryform() {
                 <option>Tally</option>
               </select>
             </div>
+            <table className="form">
+              <tr id="form-radioT">
+                <div>
+                  <th>Mode of Training:</th>
+                </div>
+                  <td id="formData">
+                    <span>
+                      <input type="radio" name="mode" id="radiobtn" />
+                      Online
+                    </span>
+                  </td>
+                  <td id="formData1">
+                    <span>
+                      <input type="radio" name="mode" id="radiobtn" />
+                      Offline
+                    </span>
+                  </td>
+              </tr>
+              <tr id="form-radioT">
+                <div>
+                  <th>Batches: </th>
+                </div>
+                  <td id="formData">
+                    <span>
+                      <input type="radio" name="batch" id="radiobtn" />
+                      Weekdays
+                    </span>
+                  </td>
+                  <td id="formData1">
+                    <span>
+                      <input type="radio" name="batch" id="radiobtn" />
+                      Weekend
+                    </span>
+                  </td>
+              </tr>
+            </table>
             <div id="form-radio">
               {" "}
               <span>Mode of Training : </span>
@@ -179,7 +215,7 @@ function Enquiryform() {
                 </span>
               </div>
             </div>
-            <div id="form-radio2">
+             <div id="form-radio2">
               {" "}
               <span>Batches : </span>
               <div id="form-radio-btn2">
@@ -191,11 +227,11 @@ function Enquiryform() {
                 </span>
               </div>
             </div>
-            <center>
+            <div className="form-btn1">
               <button className="form-btn" onClick={submitForm}>
                 Enquire
               </button>
-            </center>
+            </div>
           </form>
         </div>
       </div>
