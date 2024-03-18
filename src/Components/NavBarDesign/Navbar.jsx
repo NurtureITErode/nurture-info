@@ -1,21 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
 import $ from 'jquery'
 
 function Navbar() {
-  $("document").ready(function(){
-    if($(window).width() < 1200) {
-        $("#responsive-menu>#responsive-items").on('click',function(){
-        $("#responsive-menu").toggle("slow");
-      })
-        $(".hamburger-lines").on("click",function(){
-        $("#responsive-menu").toggle("fast");
-      })
-    }
-})
+//   $("document").ready(function(){
+//     if($(window).width() < 1200) {
+//         $("#responsive-menu>#responsive-items").on('click',function(){
+//         $("#responsive-menu").toggle("slow");
+//       })
+//         $(".hamburger-lines").on("click",function(){
+//         $("#responsive-menu").toggle("fast");
+//       })
+//     }
+// })
+const [navbar,setNavbar]=useState(false)
+useEffect(()=>{
+if(!navbar){
+  document.querySelector('#check').click()
+}
+},[navbar])
   return (
-    <div> 
+    <div > 
       <div className="bgbanner"></div>
       <header>
         <div className="callicon">
@@ -175,35 +181,36 @@ function Navbar() {
       </header>
       <nav className="navbar">
         <div className="navbar-container container">
-          <input type="checkbox" name="" id=""></input>
+          <input type="checkbox" name="" id="check" onClick={() => setNavbar(true)}></input>
           <div className="hamburger-lines">
+            
             <span className="line line1"></span>
             <span className="line line2"></span>
             <span className="line line3"></span>
           </div>
           <div className="menu-items" id="responsive-menu">
-            <Link className="nav-link" id="responsive-items" to="/">
+            <Link className="nav-link" id="responsive-items" to="/" onClick={()=> setNavbar(false)}>
               Home
             </Link>
-            <Link className="nav-link" id="responsive-items" to="/about">
+            <Link className="nav-link" id="responsive-items" to="/about" onClick={()=> setNavbar(false)}>
               About
             </Link>
-            <Link className="nav-link" id="responsive-items" to="/course">
+            <Link className="nav-link" id="responsive-items" to="/course" onClick={()=> setNavbar(false)}>
               Courses
             </Link>
-            <Link className="nav-link" id="responsive-items" to="/intern">
+            <Link className="nav-link" id="responsive-items" to="/intern" onClick={()=> setNavbar(false)}>
               Internship
             </Link>
-            <Link className="nav-link" id="responsive-items" to="/hire">
+            <Link className="nav-link" id="responsive-items" to="/hire" onClick={()=> setNavbar(false)}>
               Hiring
             </Link>
-            <Link className="nav-link" id="responsive-items" to="/category">
+            <Link className="nav-link" id="responsive-items" to="/category" onClick={()=> setNavbar(false)}>
               Gallery
             </Link>
-            <Link className="nav-link" id="responsive-items" to="/enquire">
+            <Link className="nav-link" id="responsive-items" to="/enquire" onClick={()=> setNavbar(false)}>
               Enquiry
             </Link>
-            <Link className="nav-link" id="responsive-items" to="/contact">
+            <Link className="nav-link" id="responsive-items" to="/contact" onClick={()=> setNavbar(false)}>
               Contact Us
             </Link>
             {/*  <Link className='nav-link' to='/category'>Category</Link>

@@ -166,7 +166,6 @@ header {
     }
 
     .navbar-container .hamburger-lines {
-        border: 1px solid red;
         display: block;
         height: 28px;
         width: 35px;
