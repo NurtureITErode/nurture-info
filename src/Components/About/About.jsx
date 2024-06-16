@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import "./About.css";
 
-
 const About = () => {
   const missionRef = useRef(null);
 
@@ -13,24 +12,23 @@ const About = () => {
 
   return (
     <div className="About_Main">
-      {/* <div>
+      <div>
         <div className="About">
           <div className="About_head">
             <h1>About Us</h1>
             <br />
             <h2>Home/About</h2>
           </div>
-         
         </div>
         <div className="About_Content">
           <div className="About_Info">
-            <div
+            {/* <div
               className="About_Animation"
               data-aos="fade-right"
               data-aos-duration="2000"
             >
               <Animation className="About_inner" />
-            </div>
+            </div> */}
             <div
               className="About_us"
               data-aos="fade-left"
@@ -70,14 +68,14 @@ const About = () => {
       <div ref={missionRef}>
         <div className="Mission">
           <h2 className="Mission_head">Our Mission?</h2>
-
+          {/* 
           <div
             class="cube-container"
             data-aos="fade-right"
             data-aos-duration="2000"
           >
             <Mission />
-          </div>
+          </div> */}
           <div
             className="Mission_content"
             data-aos="fade-left"
@@ -113,24 +111,24 @@ const About = () => {
               turned into reality.
             </p>
           </div>
-          <div
+          {/* <div
             class="cube-container"
             data-aos="fade-left"
             data-aos-duration="2000"
           >
             <Vision />
-          </div>
+          </div> */}
         </div>
         <div className="Mission">
           <h2 className="Mission_head">Our Philosophy?</h2>
 
-          <div
+          {/* <div
             class="cube-container"
             data-aos="fade-right"
             data-aos-duration="2000"
           >
             <Philosophy />
-          </div>
+          </div> */}
           <div
             className="Mission_content"
             data-aos="fade-left"
@@ -208,7 +206,7 @@ const About = () => {
             of various innovative technologies for creating them.{" "}
           </p>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
