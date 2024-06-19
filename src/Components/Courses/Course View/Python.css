@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+.courseNameMain
+{
+    min-height: 100vh;    
+}
+.courseNameBanner
+{
+    height: 300px;
+    display: flex;
+    background-image: url('../../../../public/assets/Images/Course Images/Course Items/python-bg.png');
+}
+.course_Details_img
+{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 90%;
+    margin: auto;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.course_Details_img h2
+{
+    font-size: 1.4rem;
+}    
+.courseName
+{
+    color: #fff;
+    width: 70%;
+    margin: auto;
+}
+.courseName h2
+{
+    padding: 0px;
+    margin: 20px 0px;
+    font-size: 2.2rem;
+}
+.courseDetails
+{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: absolute;
+    background-color: #fff;
+    height: auto;
+    padding: 23px 5px ;
+    width: 340px;
+    right: 15%;
+    top: 200px;
+    border-radius: 15px;
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.Courseduration
+{
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.courseHR
+{
+    width: 80%;
+    margin: auto;
+}
+.hr
+{
+    border: 1px solid rgb(240, 231, 231); /* Change the color and style as needed */
+    width: 100%;
+}
+.CourseJoin
+{
+    display: flex;
+    justify-content: center;
+}
+.CourseJoin > button
+{
+    height: 40px;
+    width: 75%;
+    border: none;
+    border-radius: 60px;
+    background:linear-gradient(to right,rgb(11, 11, 132),rgb(1, 1, 32))
+
+}
+.CourseJoin > button > span
+{
+  color: #fff;
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: 2px;
+}
+.CourseJoinWhatsapp
+{
+    display: flex;
+    justify-content: center;
+}
+.CourseJoinWhatsapp > button
+{
+    height: 40px;
+    width: 75%;
+    border: none;
+    border-radius: 60px;
+    margin: 10px;
+    background:linear-gradient(to right,#25d366,#128c7e)
+    
+
+}
+.CourseJoinWhatsapp > button > span
+{
+  color: #fff;
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: 2px;
+ 
+}
+.CourseJoinWhatsapp > button:hover,.CourseJoin > button:hover
+{
+    cursor: pointer;
+}
+.CourseJoinWhatsapp > button:hover span {
+    transform: translateX(100px);  
+}
