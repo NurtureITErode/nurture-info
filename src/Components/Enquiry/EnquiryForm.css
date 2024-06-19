@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Rubik&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 * {
   margin: 0px;
@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+* .main_form h1,
+.main_form h3,
+.main_form p {
+  font-weight: 400;
+}
 
 .main_form {
   /* background-image: linear-gradient(55deg, #3e7da7,#3893c0, #216a9a,#15425f, #05193c); */
@@ -20,13 +25,8 @@
 #19c7ff); */
 }
 
-.Enquiry {
-  position: relative;
-  height: 150px;
 
-}
-
-.Enquiry_head {
+.Enquiry_head h1 {
 
   height: 100%;
   background-image: url("./assets/Images/EnquireForm/EnquireFormBG.jpg");
@@ -36,8 +36,66 @@
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  background-blend-mode: difference;
+  /* color: transparent; */
+  background-clip: text;
 }
+
+.Enquiry {
+  height: 100%;
+  width: 100%;
+}
+
+.Enquiry_head {
+  height: 100%;
+  /* display: flex;
+  justify-content: center;  
+  align-items: center; */
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 2fr 100px;
+  animation: bgimg 2s 1 linear;
+}
+
+.enquiry_bg_img {
+  height: 100%;
+  /* width: 30%; */
+  /* display: flex; */
+}
+
+#enquiry_bg_img {
+  height: 400px;
+  /* width: clamp(300px,400px,100%); */
+  width: 400px;
+}
+
+@keyframes bgimg {
+  from {
+    filter: blur(5px);
+  }
+
+  to {
+    filter: blur(0px);
+  }
+}
+
+.enquiry_bg_text {
+  height: 100%;
+  /* width: 45%; */
+  /* display: flex; */
+}
+
+#enquiry_bg_text {
+  align-content: center;
+  font-size: 3.5rem;
+  text-align: left;
+}
+
+#bg_text {
+  color: #23a6d5;
+}
+
+
 
 @keyframes slidein {
   from {
@@ -53,7 +111,6 @@
 
 #form_head {
   font-family: "Josefin Sans", sans-serif;
-  text-align: center;
   padding-top: 20px;
   font-size: 45px;
   color: white;
@@ -68,6 +125,7 @@
   font-family: "Josefin Sans", sans-serif;
   padding: 2% 0;
   background-color: #0f1473;
+
 }
 
 .form-content {
@@ -93,12 +151,13 @@
   display: flex;
   flex-direction: column;
   width: 85%;
+  padding: 1.5% 0;
 }
 
 .form-con-content p {
-  font-weight: lighter;
-  padding: 1% 0;
+  padding: 2% 0;
   line-height: 25px;
+  transform: translatey(15px);
 }
 
 #form-one {
@@ -110,8 +169,7 @@
   border: none;
   color: black;
   place-content: center;
-  transform: translateY(-15px);
-
+  /* transform: translateY(-12px); */
 }
 
 .form-con-btn {
@@ -125,8 +183,8 @@
   content: "";
   position: absolute;
   /* left: 0%; */
-  top: 40%;
-  bottom: -3%;
+  top: 45%;
+  bottom: -8%;
   border-left: 2px dashed rgb(252, 252, 253);
 }
 
@@ -143,8 +201,8 @@
   z-index: -999;
   border-radius: 50%;
   filter: blur(10px);
-  left: -15%;
-  top: -15%;
+  left: -10%;
+  top: -10%;
 }
 
 .form-main-box2 {
@@ -169,7 +227,7 @@
   z-index: -999;
   border-radius: 50%;
   left: 50%;
-  bottom: -35%;
+  bottom: -25%;
   transform: translate(-50%, -50%);
   filter: blur(50px);
 }
@@ -198,25 +256,87 @@
 .subparent {
   height: 100%;
   position: relative;
-}
-
-#formHead {
-  writing-mode: vertical-lr;
-  position: absolute;
-  z-index: 10;
-  left: -15%;
-  bottom: 0px;
-  color: snow;
-  height: 100%;
-}
-
-#formHead1 {
-  text-align: center;
-  font-size: 40px;
+  padding: 4% 0;
 }
 
 .enquiry_bg {
+  /* position: relative; */
+}
+
+
+
+.enquiry_logo {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+}
+
+.logoanimate {
   position: relative;
+}
+
+.enquiry_logo>div {
+  height: 107px;
+  width: 107px;
+  /* border: 3px solid #02f9ff; */
+  /* box-shadow:  3px 3px 2px aqua, -5px -5px 2px rgb(141, 221, 245); */
+  border-left: 3px solid aqua;
+  border-bottom: 3px solid aqua;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+  position: relative;
+}
+
+/* .enquiry_logo>div::before
+{
+  content: '';
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  background:linear-gradient(360deg,transparent 10%,aqua 20%,transparent);
+  top: -25%;
+  left: -25%;
+  animation: logo 1s infinite  forwards;
+  transform: translate(-50%,-50%);
+  border: none;
+} */
+/* .enquiry_logo>div::after
+{
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: #0a0a0a;
+  top: 3%;
+  left: 3%;
+  transform: translate(-50%,-50%);
+} */
+@keyframes logo {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#formlogo1 {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 100;
+}
+
+#formHead1 {
+  color: white;
+  margin: 3% 0;
+}
+
+.enquire_logo {
+  /* height: 140px; */
 }
 
 .form-main {
@@ -224,50 +344,41 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 10% 0;
-  margin: 30px 0;
+  padding: 10% 0 7% 0;
+  margin: 5% 0;
   /* background: rgba(255, 255, 255, 0.1); */
-  background: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   /* border: 2px solid #333788; */
-  /* border-radius: 25px; */
+  border-radius: 50px;
   position: relative;
 }
 
 /* .form-main::before {
-  content: 'enquire';
+  content: '';
   position: absolute;
-  left: -2px;
-  bottom: 30px;
-  width: 1px;
+  left: 0px;
+  top: 210px;
+  width: 0px;
   height: 250px;
   background-color: rgb(233, 235, 247);
-  box-shadow: 0px 0px 51px 10px rgba(46, 231, 255, 0.47);
-  border: none;
-  writing-mode: vertical-lr;
-  letter-spacing: 1rem;
-  font-size: 2rem;
-  text-align: center;
-  color: white;
-  text-transform: capitalize;
-}
+  border: 1px solid #02f9ff;
+  box-shadow: 0px 0px 0px rgba(0,255,255,1), 
+  0px 2px 16px rgba(0,255,255,0.6), 
+  0px 4px 16px rgba(0,255,255,0.6), 
+  0px 8px 16px rgba(0,255,255,0.6);
+} */
 
-.form-main::after {
-  content: 'form';
+/* .form-main::after {
+  content: '';
   position: absolute;
-  right: -1px;
-  top: 30px;
-  width: 1px;
-  height: 250px;
+  left: -40px;
+  bottom: 0px;
+  width: 500px;
+  height: 3px;
   background-color: #02f9ff;
-  box-shadow: 0px 0px 61px 15px rgba(46, 231, 255, 0.47);
+  background: linear-gradient(90deg, transparent 45%, #02f9ff, transparent);
   border: none;
-  writing-mode: vertical-rl;
-  letter-spacing: 1rem;
-  text-transform: capitalize;
-  font-size: 2rem;
-  color: white;
-  text-align: center;
   animation: write 1s infinite linear alternate;
 } */
 
@@ -278,7 +389,6 @@
   transition-delay: 1s;
 }
 
-
 #form-main-border .spanborder {
   position: absolute;
   display: block;
@@ -287,99 +397,50 @@
 #form-main-border #s1 {
   top: 0;
   left: 0%;
-  width: 100%;
+  width: 90%;
   height: 2px;
-  background: linear-gradient(90deg, transparent 45%, #2196f3);
-}
-
-#form-main-border:hover #s1 {
-  left: 0%;
-  transition: 1s;
+  background: linear-gradient(90deg, transparent 45%, #02f9ff, transparent);
+  border-radius: 50px;
 }
 
 #form-main-border #s3 {
   bottom: 0;
-  right: 0%;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(270deg, transparent 45%, #2196f3);
-}
+  right: 5%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #02f9ff, transparent 85%);
 
-#form-main-border:hover #s3 {
-  right: 0%;
-  transition: 1s;
-  transition-delay: 0.5s;
 }
 
 #form-main-border #s2 {
-  top: 0%;
+  top: 20%;
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent 40%, #2196f3);
+  border-radius: 50%;
+  background: linear-gradient(180deg, transparent, #02f9ff, transparent, transparent);
 }
 
-#form-main-border:hover #s2 {
-  top: 0%;
-  transition: 1s;
-  transition-delay: 0.25s;
-}
 
 #form-main-border #s4 {
   bottom: 0%;
   left: 0;
   width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent 40%, #2196f3);
+  border-radius: 50px;
+  height: 90%;
+  background: linear-gradient(360deg, transparent 40%, #02f9ff, transparent);
 }
-
-#form-main-border:hover #s4 {
-  bottom: 0%;
-  transition: 1s;
-  transition-delay: 0.75s;
-}
-
-@keyframes write {
-  from {}
-
-  to {}
-
-}
-
-:root {
-  --angle: 0deg;
-  --c1: rgba(168, 239, 255, 1);
-  --c2: rgb(2, 1, 16);
-}
-
 
 .form-sub-content {
   width: 70%;
+  margin: 2%;
+  padding: 3% 0;
 }
 
 #form-num::-webkit-inner-spin-button {
   appearance: none;
 }
 
-/* #form-name {
-  border-radius: 53px;
-  background: #19c7ff;
-  box-shadow:  27px 27px 61px #15a7d6,
-               -27px -27px 61px #1de7ff;
-} */
-
-/* #form-mail {
-  border-radius: 50px;
-background: #fff;
-box-shadow:  16px 16px 52px #97c4c9,
-box-shadow: 5px 5px 7px #03e6ff,5px 5px 12px #03e6ff,5px 5px 15px #03e6ff,5px 5px 18px #03e6ff,5px 5px 20px #03e6ff;
-} */
-/* #form-num {
-  border-radius: 50px;
-background: #0399fe;
-box-shadow:  26px 26px 52px #025c98,
-             -26px -26px 52px #04d6ff;
-} */
 #form-name,
 #form-mail,
 #form-num {
@@ -462,16 +523,6 @@ box-shadow:  26px 26px 52px #025c98,
   }
 }
 
-input[type='radio'] {
-  /* appearance: none; */
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  border-color: transparent;
-  /* outline: 2px solid black; */
-  /* outline-offset: 10px; */
-}
-
 input[type='radio']:checked {
   background-color: white;
 }
@@ -521,7 +572,7 @@ input[type='radio']:checked {
   font-family: "Josefin Sans", sans-serif;
   box-shadow: 0 0 0 0 transparent;
   transition: all 0.2s ease-in;
-  margin: 2% 0 0 0;
+  margin: 5% 0 0 0;
 }
 
 .form-btn1 {
@@ -609,7 +660,6 @@ input[type='radio']:checked {
 
 .neoForm {
   border-radius: 34px;
-  /* background: linear-gradient(145deg, #f4fbfc, #f3fdfd); */
   box-shadow: 13px 13px 20px #cbced1,
     -13px -13px 20px #ffffff;
   background-color: #DDE2E8;
@@ -643,9 +693,8 @@ input[type='radio']:checked {
 }
 
 #formlogo {
-  width: 70px;
-  height: 70px;
-  /* outline-offset: 20px; */
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
 }
 
@@ -706,6 +755,7 @@ input[type='radio']:checked {
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
   outline: none;
+  /* color: #7C7C7C; */
 }
 
 #neobtn {
@@ -720,10 +770,8 @@ input[type='radio']:checked {
   color: white;
   margin-top: 20px;
   box-shadow: inset 20px 20px 18px #000035,
-            inset -20px -20px 18px #0002d5;
+    inset -20px -20px 18px #0002d5;
   border-radius: 10px;
-
-  
   cursor: pointer;
 }
 
@@ -740,6 +788,7 @@ input[type='radio']:checked {
 
 :is(#neoname, #neonum, #neomail)::placeholder {
   text-align: center;
+  color: black;
 }
 
 .id-card-holder {
@@ -915,6 +964,10 @@ input[type='radio']:checked {
   .neumorph {
     grid-template-columns: 1fr;
   }
+
+  .Enquiry_head {
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
 /* Laptop  */
@@ -937,6 +990,11 @@ input[type='radio']:checked {
   .form-con-content {
     width: 80%;
   }
+
+  .Enquiry_head {
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 /* Tab device */
@@ -944,6 +1002,15 @@ input[type='radio']:checked {
   .mainparent {
     width: 70%;
     margin: 15% 0;
+  }
+
+  .Enquiry_head {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+
+  #enquiry_bg_img {
+    /* width: 100%; */
   }
 
   .form-content {
@@ -989,6 +1056,14 @@ input[type='radio']:checked {
 
 /* Mobile device */
 @media all and (max-width: 540px) {
+  #enquiry_bg_img {
+    width: clamp(50px, 400px, 100%);
+  }
+
+  #enquiry_bg_text {
+    font-size: 3rem;
+  }
+
   #form_head {
     font-size: 33px;
   }
@@ -999,31 +1074,16 @@ input[type='radio']:checked {
     margin: 20% 0;
   }
 
-  #formHead {
-    left: 50%;
-    bottom: -13%;
-    /* top: 28%; */
-    transform: translate(-50%, -50%);
-    writing-mode: horizontal-tb;
-    height: auto;
-    width: 100%;
-  }
-
-  #formHead1 {
-    text-align: center;
-  }
-
   .form-con {
     padding: 5% 0;
   }
 
   .form-con h3 {
-    font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
   }
 
   .form-con p {
-    font-size: 1rem;
+    font-size: 1.15rem;
     line-height: 25px;
   }
 
@@ -1074,7 +1134,7 @@ input[type='radio']:checked {
   #form-name,
   #form-mail,
   #form-num {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .form-con-btn::before {
@@ -1082,7 +1142,7 @@ input[type='radio']:checked {
     position: absolute;
     /* left: 0%; */
     top: 40%;
-    bottom: -8%;
+    bottom: -15%;
   }
 
   #form-radio2>span,
@@ -1096,7 +1156,7 @@ input[type='radio']:checked {
     /* width: 300px; */
   }
 
-  
+
   .neoForm {
     width: 100%;
   }

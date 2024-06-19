@@ -31,16 +31,23 @@ function Enquiryform() {
   return (
     <div className="main_form">
       <div className="Enquiry">
-        <div className="Enquiry_head"></div>
+        <div className="Enquiry_head">
+          <div className="enquiry_bg_img">
+            <img src="./assets/Images/EnquireForm/team.png" id="enquiry_bg_img"></img>
+          </div>
+          <div className="enquiry_bg_text">
+            <h1 id="enquiry_bg_text">The <span id="bg_text">beautiful</span> thing about learning is that nobody <span id="bg_text">can take it away</span> from you</h1>
+          </div>
+        </div>
       </div>
-      <div className="form-container" data-aos="zoom-in-up">
+      <div className="form-container" >
         <div className="form-content"
-          data-aos="zoom-out"
+          data-aos="fade-in"
           data-aos-duration="2000">
-          <div className="form-content-sub">
             <h1 id="form_head" data-aos="flip-right" data-aos-duration="2000">
               Who Can Join Us ?
             </h1>
+          <div className="form-content-sub"> 
             <div className="form-con">
               <div className="form-con-btn">
                 <button id="form-one">1</button>
@@ -97,15 +104,27 @@ function Enquiryform() {
         <div className="form-main-box4"></div> */}
         <div className="mainparent" data-aos="zoom-in" data-aos-duration="2000">
           <div className="subparent">
-            <div id="formHead">
-              {/* <h1 id="formHead1">Enquiry Form</h1> */}
-            </div>
+            {/* <div className="enquiry_logo"></div> */}
             <div className="enquiry_bg">
-              <div className="form-main" id="form-main-border" data-aos="zoom-in" data-aos-duration="2000">
-                <span className="spanborder" id="s1"></span>
-                <span className="spanborder" id="s2"></span>
-                <span className="spanborder" id="s3"></span>
-                <span className="spanborder" id="s4"></span>
+              {/* <div id="formHead">
+                <h1 id="formHead1">Enquiry Form</h1>
+              </div> */}
+              {/* <div className="enquire_logo"></div> */}
+              <div className="form-main form-border" id="form-main-border" data-aos="zoom-in" data-aos-duration="2000">
+                <div className="logoanimate">
+                  <div className="enquiry_logo">
+                    <div>
+                      <img src="./assets/Images/EnquireForm/logo.jpg" id="formlogo1" />
+                    </div>
+                    <h1 id="formHead1">Let's Connect with us!</h1>
+                  </div>
+                </div>
+                <div className="glowborder">
+                  <span className="spanborder" id="s1"></span>
+                  <span className="spanborder" id="s2"></span>
+                  <span className="spanborder" id="s3"></span>
+                  <span className="spanborder" id="s4"></span>
+                </div>
                 <form autoComplete="on" className="form-sub-content">
                   <div>
                     <input
@@ -202,8 +221,7 @@ function Enquiryform() {
             <div className="neoMain">
               <div className="neoimg_bg">
                 <div className="neoIcon">
-                  {/* <img src={require("./assets/Images/EnquireForm/bg1.jpg")}></img> */}
-                  {/* <img src="./assets/Images/EnquireForm/logo.jpg" id="formlogo" /> */}
+                  <img src="./assets/Images/EnquireForm/logo.jpg" id="formlogo" />
                 </div>
               </div>
               <div className="neoHead">
@@ -328,7 +346,6 @@ function Enquiryform() {
           <p id="id_para">Ph:00000-000000</p>
         </div>
       </div> */}
-
     </div>
   );
 }
