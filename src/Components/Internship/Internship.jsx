@@ -1,34 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './Internship.css'
 
 const Internship = () => {
   return (
     <div>
-      <div className='n'>
-        <div className='internship-content'>
+      <div className='home-content'>
+        
           <div className='content'>
             <div className='content-heading'><h1>Internship Program</h1></div>
             <div className='content-sub'><h1>Accelerate your career with Nurture InfoTech internships</h1></div>
           </div>
-        </div>
        
-        <div className='internship-bgc'></div>
-
-
-
-
-
-
-
-
-
-
-        
         <div className='internship-img'>
           <img className='img' src="./assets/Images/Internship images/Internship_image.png" alt="" />
         </div>
       </div>
-      <div className='bannerIntern'></div>
+
+
+      <div className='bannerIntern'>
+        <h1 className='ids'>Internship Details</h1>
+        <div className='form'>
+      <input type='text' placeholder='Name'></input>
+      <input type='text' placeholder='Phone No.'></input>
+      <input type='text' placeholder='email'></input>
+      <input type='text' placeholder='message'></input>
+      </div>
+      <button className='butn'>submit</button>
+
+      </div>
 
       <div className='cards'>
         <div className='c-content'>
@@ -42,7 +41,7 @@ const Internship = () => {
         </div>
         <div className='c-content'>
           <div className='card-image'>
-            <img className='c-img1' src="./assets/Images/Internship images/c-img-2.jpg" alt="" />
+            <img className='c-img2' src="./assets/Images/Internship images/c-img-2.jpg" alt="" />
           </div>
           <div className='card-content'>
            
@@ -53,6 +52,10 @@ const Internship = () => {
 
 
       </div>
+
+
+
+
     </div>
   )
 }
