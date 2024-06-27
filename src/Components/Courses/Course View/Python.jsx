@@ -1,19 +1,48 @@
 import React from 'react';
 import './Python.css';
+import Accordion from './Accordion';
 
+const accordionItems = [
+  {
+    title: 'Introduction to Python',
+    content: <ul className='courseListitem'>
+      <li>Introduction to Python</li>
+      <li>History Of Python</li>
+      <li>Python Features</li>
+      <li>Areas Of Application Of Python</li>
+    </ul>
+  },
+  {
+    title: 'Installation and Execution',
+    content: <ul className='courseListitem'>
+    <li>Local Environment Setup</li>
+    <li>Installing Python on different Platforms(Windows and Linux)</li>
+    <li>Python Interpreter and Python Interactive Shell</li>
+    <li>User Interface or IDE</li>
+  </ul>
+  },
+  {
+    title: 'Section 3',
+    content: 'Content of Section 3'
+  }
+];
 function Python() {
   return (
-    <div className='courseNameMain'>
+    <div className="courseNameMain">
       <section className="courseNameBanner">
         <div className="courseName">
-          <h5 >Home {'>'} Courses {'>'} Python Course</h5>
+          <h5>
+            Home {'>'} Courses {'>'} Python Course
+          </h5>
           <h2>Best Python Training in Erode</h2>
         </div>
 
         <div className="courseDetails">
-          <div className='course_Details_img'>
-          <img
-            src="../assets/Images/Course Images/Course Items/Course Icons/python.svg" width="50%"></img>
+          <div className="course_Details_img">
+            <img
+              src="../assets/Images/Course Images/Course Items/Course Icons/python.svg"
+              width="50%"
+            ></img>
             <h2>Python</h2>
           </div>
           <div className="courseModule">
@@ -204,18 +233,94 @@ c-49 -291 -75 -463 -75 -494 0 -51 41 -135 77 -161 50 -35 113 -48 173 -34 30
                 </span>
               </div>
               <div style={{ position: 'relative', top: '-5px', left: '5px' }}>
-                Offline/Online
+                Offline | Online
               </div>
             </div>
           </div>
-          <div className='CourseJoin'>
-            <button><span>Join Now</span> </button>
+          <div className="courseHR">
+            {' '}
+            <hr className="hr"></hr>
           </div>
-          <div className='CourseJoinWhatsapp'>
-            <button><span>Whatsapp Now</span> </button>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                {' '}
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: 'relative', top: '-5px', left: '5px' }}
+                >
+                  Batch
+                </span>
+              </div>
+              <div style={{ position: 'relative', top: '-5px', left: '5px' }}>
+                Weekdays | Weekend
+              </div>
+            </div>
+          </div>
+
+          <div className="CourseJoin">
+            <button>
+              <span>Join Now</span>{' '}
+            </button>
+          </div>
+          <div className="CourseJoinWhatsapp">
+            <button>
+              <span>Whatsapp Now</span>{' '}
+            </button>
           </div>
         </div>
       </section>
+      <section className="CourseSyllabus">
+        <h2>Python Course Overview</h2>
+        <div>
+          <p>
+            This Python Course will assist you with dominating significant
+            Python programming ideas like information and record tasks in
+            Python, object-situated ideas in Python and different Python
+            libraries like Math, Numpy, mysqlconnector.The course is organized
+            by industry specialists which incorporates constant contextual
+            investigations Python Certification Training. Python is a
+            programming language that can be utilized to create websites,
+            software, data analysis, etc.Nurture would help you to get proper
+            knowledge regarding python programming concepts
+          </p>
+        </div>
+        <br></br>
+        <h2>Who Can Join</h2>
+        <div>
+          <ul className='courseul'>
+          <li>BE / BTech / M Tech / BCA / MCA passed aspirants to make their career as Python Developer</li>
+          <li>A candidate who would like to restart their career after a gap.</li>
+          <li>Complete beginners interested in Python programming.</li>
+          <li>Aspiring web developers seeking Python and Django expertise.</li>
+          <li>Those seeking to advance their knowledge about modern web technology.</li>
+          </ul>
+        </div>
+        <br></br>
+       
+      </section>
+      <section className='CourseAccordionContainer'>
+        <h2>What You Will Learn</h2><br></br>
+          <div className='courseAccordion'>
+         
+            <Accordion items={accordionItems}>
+
+            </Accordion>
+          </div>
+        </section>
     </div>
   );
 }

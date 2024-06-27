@@ -13,6 +13,10 @@
   .accordion-item:last-child {
     border-bottom: none;
   }
+  .accordion-item ul li
+  {
+    padding: 5px;
+  }
   
   .accordion-title {
     background: #f1f1f1;
@@ -30,7 +34,7 @@
   }
   
   .accordion-content.open {
-    padding: 20px;
+    /* padding: 20px; */
     background: #fff;
   }
   
