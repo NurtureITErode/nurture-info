@@ -164,6 +164,45 @@
 .courseListitem {
   margin: 20px 50px;
 }
+.CourseAccordionContainer {
+  max-width: 100%;
+  padding: 30px 20px 10px 0px;
+  margin: 50px 5%;
+}
+.courseAccordion {
+  margin: 20px 20px;
+  display: grid;
+  grid-template-columns: 70% 15%;
+  
+}
+.relatedCoursediv
+{
+  margin: 0px;
+  padding: 20px;
+  height: 300px;
+  width: 340px;
+  position: relative;
+  top: -150px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.relatedCoursediv h1
+{
+  margin: 20px 0px;
+}
+.relatedcourseList{
+  display: flex;
+  flex-direction: column;
+}
+.relatedcourseList > span
+{
+  padding: 10px;
+  font-size: 1.1rem;
+}
+.realtedCourseBanner
+{
+  
+}
 @media all and (max-width: 1400px) {
   .courseDetails {
     transform: scale(0.95);
@@ -174,14 +213,7 @@
     margin: 50px 50px;
   }
 }
-.CourseAccordionContainer {
-  max-width: 60%;
-  margin: 50px 5%;
-}
-.courseAccordion
-{
-  margin: 20px 20px;
-}
+
 
 @media all and (max-width: 1200px) {
 }
@@ -219,6 +251,10 @@
   }
   .CourseDetailsAlign {
     width: 100%;
+  }
+  .CourseAccordionContainer {
+    max-width: 90%;
+    margin: 30px 5%;
   }
 }
 

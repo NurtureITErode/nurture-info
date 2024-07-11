@@ -22,11 +22,137 @@ const accordionItems = [
   </ul>
   },
   {
-    title: 'Section 3',
-    content: 'Content of Section 3'
-  }
+    title: 'Python Basics',
+    content: <ul className='courseListitem'>
+    <li>Data types and variables</li>
+    <li>Operators and operator precedence</li>
+    <li>Data type conversions</li>
+    <li>Command line argument</li>
+    <li>Data input & Output</li>  
+  </ul>
+  },
+  {
+    title: 'Python Flow Control',
+    content: <ul className='courseListitem'>
+    <li>If statement</li>
+    <li>If…elif...else statement</li>
+    <li>Nested if</li>
+    <li>While loop</li>
+    <li>For loop</li>  
+    <li>Break & continue</li>
+  </ul>
+  },
+  {
+    title: 'Python Sequences',
+    content: <ul className='courseListitem'>
+    <li>String</li>
+    <li>List</li>
+    <li>Tuple</li>
+    <li>Dictionary</li>
+    <li>For loop</li>  
+    <li>Set</li>
+  </ul>
+  },
+  {
+    title: 'Functions and modules',
+    content: <ul className='courseListitem'>
+    <li>What is a function?</li>
+    <li>Define a function</li>
+    <li>Pass arguments</li>
+    <li>Arguments with default values</li>
+    <li>Local and global variables</li>  
+    <li>Return a value from function</li>
+    <li>Return multiple values</li>
+  </ul>
+  },
+  {
+    title: 'Python Modules & Packages',
+    content: <ul className='courseListitem'>
+    <li>Python Packages</li>
+    <li>What is a module?</li>
+    <li>Import module using import statement</li>
+    <li>Use .. import statement</li>
+    <li>Python Math Module</li>  
+    <li>Random Module</li>
+    <li>Date Module</li>
+  </ul>
+  },
+  {
+    title: 'Exception Handling',
+    content: <ul className='courseListitem'>
+    <li>What is exception?</li>
+    <li>Python built-in exceptions</li>
+    <li>Try - Except</li>
+    <li>Finally</li>
+  </ul>
+  },
+  {
+    title: 'Object Oriented Programming (OOPS)',
+    content: <ul className='courseListitem'>
+    <li>Introduction</li>
+    <li>OOPS Concept & Principles</li>
+    <li>Access modifiers</li>
+    <li>Constroctor</li>
+  </ul>
+  },
+  {
+    title: 'Inheritance',
+    content: <ul className='courseListitem'>
+    <li>Introduction Inheritance</li>
+    <li>Types of inheritance</li>
+    <li>Single inheritance</li>
+    <li>Multiple inheritance</li>
+    <li>Multilevel inheritance</li>
+  </ul>
+  },
+  {
+    title: 'Polymorphism & Abstraction',
+    content: <ul className='courseListitem'>
+    <li>Introduction Polymorphism</li>
+    <li>Derived Types </li>
+    <li>Method overloading</li>
+    <li>Method overriding</li>
+    <li>Abstraction</li>
+  </ul>
+  },
+  
+  {
+    title: 'HTML',
+    content: <ul className='courseListitem'>
+    <li>Introduction of HTML</li>
+    <li>Basic Tag</li>
+    <li>Simple Article Page Design</li>
+  </ul>
+  },
+  {
+    title: 'Form Design',
+    content: <ul className='courseListitem'>
+    <li>Form Controls</li>
+    <li>Input types</li>
+    <li>Form Submition</li>
+  </ul>
+  },
+  {
+    title: 'Database programming',
+    content: <ul className='courseListitem'>
+    <li>MySQL Connector module installation</li>
+    <li>MySQL Query Execution</li>
+    <li>Table Creation</li>
+    <li>Storing Datas</li>
+  </ul>
+  },
+  {
+    title: 'Git & GitHub',
+    content: <ul className='courseListitem'>
+    <li>Git installation</li>
+    <li>Git-Hub Features</li>
+    <li>Git commands</li>
+    <li>Project Deployment</li>
+  </ul>
+  },
 ];
 function Python() {
+ 
   return (
     <div className="courseNameMain">
       <section className="courseNameBanner">
@@ -97,7 +223,7 @@ function Python() {
                 </span>
               </div>
               <div style={{ position: 'relative', top: '-5px', left: '5px' }}>
-                25+5
+                15+5
               </div>
             </div>
           </div>
@@ -319,8 +445,25 @@ c-49 -291 -75 -463 -75 -494 0 -51 41 -135 77 -161 50 -35 113 -48 173 -34 30
             <Accordion items={accordionItems}>
 
             </Accordion>
+
+            <div className='realtedCourseBanner'>
+                <div className='relatedCoursediv'>
+                  <h1>Related Course</h1>
+                  <div className="relatedcourseList">
+                    <span>Data Analytics</span>
+                    <span>Django</span>
+                    <span>Machine Learning</span>
+                    <span>Data Science</span>
+                    <span>SQL</span>
+                   
+                  </div>
+                </div>
+            </div>
+            
           </div>
+          
         </section>
+        
     </div>
   );
 }

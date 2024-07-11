@@ -1,20 +1,35 @@
-import React, { useState, useRef } from 'react';
+
+import React, { useState, useRef, useEffect } from 'react';
 import './Accordion.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => {
   const contentRef = useRef(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    if (isOpen) {
+      setHeight(contentRef.current.scrollHeight);
+    } else {
+      setHeight(0);
+    }
+  }, [isOpen]);
 
   return (
     <div className="accordion-item">
       <div className="accordion-title" onClick={onClick}>
-        <h3>{title}</h3>
+        {title}
+        <FontAwesomeIcon icon={isOpen ? faChevronUp : faChevronDown} className="accordion-icon" />
       </div>
       <div
         ref={contentRef}
-        className={`accordion-content ${isOpen ? 'open' : ''}`}
-        style={{ maxHeight: isOpen ? `${contentRef.current.scrollHeight}px` : '0px' }}
+        className="accordion-content"
+        style={{ maxHeight: `${height}px` }}
       >
-        <p>{content}</p>
+        <div className="accordion-content-inner">
+          {content}
+        </div>
       </div>
     </div>
   );
@@ -23,8 +38,8 @@ const AccordionItem = ({ title, content, isOpen, onClick }) => {
 const Accordion = ({ items }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const handleClick = index => {
-    setOpenIndex(index === openIndex ? null : index);
+  const handleClick = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
@@ -34,7 +49,7 @@ const Accordion = ({ items }) => {
           key={index}
           title={item.title}
           content={item.content}
-          isOpen={index === openIndex}
+          isOpen={openIndex === index}
           onClick={() => handleClick(index)}
         />
       ))}
