@@ -454,7 +454,7 @@ c-49 -291 -75 -463 -75 -494 0 -51 41 -135 77 -161 50 -35 113 -48 173 -34 30
                     <span>Django</span>
                     <span>Machine Learning</span>
                     <span>Data Science</span>
-                    <span>SQL</span>
+                    <span>MySQL</span>
                    
                   </div>
                 </div>
