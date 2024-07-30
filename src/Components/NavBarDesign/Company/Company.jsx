@@ -15,8 +15,7 @@ function Company() {
     const handleResize = () => {
       if (window.innerWidth >= 968) {
         setSlidesToShow(5);
-      }
-      else if (window.innerWidth >= 768) {
+      } else if (window.innerWidth >= 768) {
         setSlidesToShow(4);
       } else if (window.innerWidth >= 480) {
         setSlidesToShow(3);
@@ -33,46 +32,67 @@ function Company() {
     };
   }, []);
 
-  const settings = {
+  const settings1 = {
     dots: false,
     infinite: true,
-    slidesToShow: slidesToShow,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
-    pauseOnHover: true
+    autoplaySpeed: 0,
+    speed: 1500,
+    cssEase: 'linear',
+    variableWidth: true,
+    pauseOnHover: false
   };
+
   const settings2 = {
     dots: false,
     infinite: true,
-    slidesToShow: slidesToShow,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1500,
-    pauseOnHover: true
+    autoplaySpeed: 0,
+    speed: 1700,
+    cssEase: 'linear',
+    variableWidth: true,
+    pauseOnHover: false
   };
+
+  const settings3 = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 1500,
+    cssEase: 'linear',
+    variableWidth: true,
+    pauseOnHover: false
+  };
+
   return (
     <div>
-      <h1>Coresal</h1>
+      
       <div className="slider-container">
-        <Slider {...settings} className='Sliderow'>
+        <Slider {...settings1} className='Sliderow'>
           {logos.map((e, index) => (
             <div key={index} className='slideDesign'>
-              <img src={e.src} height={120} alt={`Logo ${index}`} />
+              <img src={e.src} className='cmplogo' height={140} alt={`Logo ${index}`} />
             </div>
           ))}
         </Slider>
         <Slider {...settings2} className='Sliderow'>
           {logos2.map((e, index) => (
             <div key={index} className='slideDesign'>
-              <img src={e.src} height={120} alt={`Logo ${index}`} />
+              <img src={e.src} className='cmplogo' height={140} alt={`Logo ${index}`} />
             </div>
           ))}
         </Slider>
-        <Slider {...settings} className='Sliderow'>
+        <Slider {...settings3} className='Sliderow'>
           {logos3.map((e, index) => (
             <div key={index} className='slideDesign'>
-              <img src={e.src} height={120} alt={`Logo ${index}`} />
+              <img src={e.src} className='cmplogo' height={140} alt={`Logo ${index}`} />
             </div>
           ))}
         </Slider>

@@ -7,90 +7,84 @@ import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 const accordionItems = [
   {
-    title: "Introduction to Python",
+    title: "Introduction to Java",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Python</li>
-        <li>History Of Python</li>
-        <li>Python Features</li>
-        <li>Areas Of Application Of Python</li>
+        <li>Introduction to Java</li>
+        <li>History Of Java</li>
+        <li>Java Features</li>
+        <li>Areas Of Application Of Java</li>
       </ul>
     ),
   },
   {
-    title: "Installation and Execution",
+    title: "Java Programming Environment",
     content: (
       <ul className="courseListitem">
-        <li>Local Environment Setup</li>
-        <li>Installing Python on different Platforms(Windows and Linux)</li>
-        <li>Python Interpreter and Python Interactive Shell</li>
-        <li>User Interface or IDE</li>
+        <li>How to install & Set Path</li>
+        <li>Installing Java on different Platforms(Windows and Linux)</li>
+        <li>Compiling & executing Java Program</li>
+        <li>RunTime Exception </li>
+        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
       </ul>
     ),
   },
   {
-    title: "Python Basics",
+    title: "Java Basics",
     content: (
       <ul className="courseListitem">
         <li>Data types and variables</li>
-        <li>Operators and operator precedence</li>
-        <li>Data type conversions</li>
+        <li>Comments , Statements</li>
+        <li>Operators</li>
         <li>Command line argument</li>
-        <li>Data input & Output</li>
+        <li>Primtive Data Types</li>
       </ul>
     ),
   },
   {
-    title: "Python Flow Control",
+    title: "Java Conditional Statements",
     content: (
       <ul className="courseListitem">
         <li>If statement</li>
         <li>If…elif...else statement</li>
         <li>Nested if</li>
-        <li>While loop</li>
-        <li>For loop</li>
-        <li>Break & continue</li>
+        <li>Switch Case</li>
       </ul>
     ),
   },
   {
-    title: "Python Sequences",
+    title: "java flow controll",
     content: (
       <ul className="courseListitem">
-        <li>String</li>
-        <li>List</li>
-        <li>Tuple</li>
+        <li>For</li>
+        <li>While </li>
+        <li>Do while</li>
         <li>Dictionary</li>
-        <li>For loop</li>
-        <li>Set</li>
+        <li>For each</li>
+        <li>Continue & Break</li>
       </ul>
     ),
   },
   {
-    title: "Functions and modules",
+    title: "Functions",
     content: (
       <ul className="courseListitem">
         <li>What is a function?</li>
         <li>Define a function</li>
         <li>Pass arguments</li>
         <li>Arguments with default values</li>
-        <li>Local and global variables</li>
         <li>Return a value from function</li>
-        <li>Return multiple values</li>
       </ul>
     ),
   },
   {
-    title: "Python Modules & Packages",
+    title: "Input fundamentals & Non Primitive Data Types",
     content: (
       <ul className="courseListitem">
-        <li>Python Packages</li>
-        <li>What is a module?</li>
-        <li>Import module using import statement</li>
-        <li>Use .. import statement</li>
-        <li>Python Math Module</li>
-        <li>Random Module</li>
-        <li>Date Module</li>
+        <li>Java Program inputs form the user</li>
+        <li>Scanner , String Buffer ,String builder </li>
+        <li>Problem solving</li>
+        <li>String vs Char array</li>
       </ul>
     ),
   },
@@ -99,8 +93,8 @@ const accordionItems = [
     content: (
       <ul className="courseListitem">
         <li>What is exception?</li>
-        <li>Python built-in exceptions</li>
-        <li>Try - Except</li>
+        <li>java built-in exceptions</li>
+        <li>Try - Catch</li>
         <li>Finally</li>
       </ul>
     ),
@@ -123,8 +117,8 @@ const accordionItems = [
         <li>Introduction Inheritance</li>
         <li>Types of inheritance</li>
         <li>Single inheritance</li>
-        <li>Multiple inheritance</li>
         <li>Multilevel inheritance</li>
+        <li>hierarchical inheritance</li>
       </ul>
     ),
   },
@@ -142,12 +136,12 @@ const accordionItems = [
   },
 
   {
-    title: "HTML",
+    title: "Array",
     content: (
       <ul className="courseListitem">
-        <li>Introduction of HTML</li>
-        <li>Basic Tag</li>
-        <li>Simple Article Page Design</li>
+        <li>Java Array</li>
+        <li>Array </li>
+        <li></li>
       </ul>
     ),
   },
@@ -184,7 +178,7 @@ const accordionItems = [
     ),
   },
 ];
-function Python() {
+function Java() {
   return (
     <div className="courseNameMain">
       <section
@@ -195,16 +189,17 @@ function Python() {
           <h5>
             Home {">"} Courses {">"} Python Course
           </h5>
-          <h2>Best Python Training in Erode</h2>
+          <h2>Best Java Training in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
             <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/python.svg"
-              width="50%"
+              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
+              width="45%"
+              style={{ margin: "10px" }}
               alt="Python Icon"
             />
-            <h2>Python</h2>
+            <h2 style={{ margin: "10px" }}>Java</h2>
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -405,18 +400,19 @@ function Python() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Python Course Overview</h2>
+        <h2>Java Course Overview</h2>
         <div>
           <p>
-            This Python Course will assist you with dominating significant
-            Python programming ideas like information and record tasks in
-            Python, object-situated ideas in Python and different Python
-            libraries like Math, Numpy, mysqlconnector.The course is organized
-            by industry specialists which incorporates constant contextual
-            investigations Python Certification Training. Python is a
-            programming language that can be utilized to create websites,
-            software, data analysis, etc.Nurture would help you to get proper
-            knowledge regarding python programming concepts
+            This Java Course equips you with essential Java programming skills,
+            starting with syntax, data types, and control structures. You'll
+            master file operations, exception handling, and object-oriented
+            programming, including classes, inheritance, polymorphism, and
+            encapsulation. The course covers key Java libraries like java.util,
+            java.io . Real-world case studies by industry experts provide
+            practical insights into web development, mobile apps, and data
+            analysis. The course prepares you for Java Certification, enhancing
+            career prospects. By the end, you'll be a proficient Java developer,
+            ready to tackle diverse programming challenges.
           </p>
         </div>
         <br></br>
@@ -424,19 +420,18 @@ function Python() {
         <div>
           <ul className="courseul">
             <li>
-              BE / BTech / M Tech / BCA / MCA passed aspirants to make their
-              career as Python Developer
+              BE / BTech / MTech / BCA / MCA graduates aspiring to build a
+              career as a Java Developer.
+            </li>
+            <li>Candidates looking to restart their career after a gap.</li>
+            <li>Complete beginners interested in Java programming.</li>
+            <li>
+              Aspiring web developers seeking expertise in Java and frameworks
+              like Spring , Hibernate and Selenium.
             </li>
             <li>
-              A candidate who would like to restart their career after a gap.
-            </li>
-            <li>Complete beginners interested in Python programming.</li>
-            <li>
-              Aspiring web developers seeking Python and Django expertise.
-            </li>
-            <li>
-              Those seeking to advance their knowledge about modern web
-              technology.
+              Professionals seeking to advance their knowledge of modern web
+              technologies and enterprise-level applications.
             </li>
           </ul>
         </div>
@@ -741,4 +736,4 @@ function Python() {
   );
 }
 
-export default Python;
+export default Java;

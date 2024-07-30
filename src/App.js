@@ -13,8 +13,7 @@ import Hireus from "./Components/HireUs/Hireus";
 import Gallery from "./Components/Gallery/Gallery";
 import Courses from "./Components/Courses/Courses";
 import Python from "./Components/Courses/Course View/Python";
-
-
+import Java from "./Components/Courses/Course View/Java";
 
 function App() {
   return (
@@ -28,17 +27,16 @@ function App() {
           <Route path="/intern" element={<Internship></Internship>}></Route>
           <Route path="/enquire" element={<Enquiryform></Enquiryform>}></Route>
           <Route path="/courses" element={<Courses></Courses>}></Route>
-          <Route path="/contact" element={<Contact></Contact>} ></Route>
+          <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/hireus" element={<Hireus></Hireus>}></Route>
           <Route path="/gallery" element={<Gallery></Gallery>}></Route>
+
           <Route path="/courses/python" element={<Python></Python>}></Route>
-          
+          <Route path="/courses/java" element={<Java></Java>}></Route>
         </Routes>
 
         <Footer></Footer>
       </Router>
-
-      
     </div>
   );
 }
