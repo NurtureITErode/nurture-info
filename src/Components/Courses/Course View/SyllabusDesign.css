@@ -285,6 +285,15 @@
 .studentWorked > h2 {
   text-transform: uppercase;
 }
+.relatedcourseList a {
+  text-decoration: none;
+  color: #000;
+}
+.CourseJoinWhatsapp a {
+  text-decoration: none;
+  color: #fff;
+}
+
 @media all and (max-width: 1400px) {
   .courseDetails {
     transform: scale(0.95);
@@ -339,7 +348,7 @@
   }
   .CourseSyllabus {
     max-width: 90%;
-    margin: 550px auto auto auto;
+    margin: 650px auto auto auto;
   }
   .CourseSyllabus h2 {
     font-size: 1.7rem;

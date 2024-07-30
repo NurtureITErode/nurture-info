@@ -5,6 +5,7 @@ import Company from "../../NavBarDesign/Company/Company";
 import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
+import { Link, useNavigate } from "react-router-dom";
 const accordionItems = [
   {
     title: "Introduction to Python",
@@ -185,6 +186,7 @@ const accordionItems = [
   },
 ];
 function Python() {
+  const navigate = useNavigate();
   return (
     <div className="courseNameMain">
       <section
@@ -340,6 +342,38 @@ function Python() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                  <path d="M3 9h18"></path>
+                  <path d="M9 21V9"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Live Project
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
@@ -392,13 +426,17 @@ function Python() {
             </div>
           </div>
           <div className="CourseJoin">
-            <button>
+            <button onClick={() => navigate("/enquire")}>
               <span>Join Now</span>
             </button>
           </div>
           <div className="CourseJoinWhatsapp">
             <button>
-              <span>Whatsapp Now</span>
+              <span>
+                <Link to="https://api.whatsapp.com/send?phone=918610598460">
+                  Whatsapp Now
+                </Link>
+              </span>
             </button>
           </div>
         </div>
@@ -452,11 +490,21 @@ function Python() {
             <div className="relatedCoursediv">
               <h1>Related Course</h1>
               <div className="relatedcourseList">
-                <span>Data Analytics</span>
-                <span>Django</span>
-                <span>Machine Learning</span>
-                <span>Data Science</span>
-                <span>MySQL</span>
+                <span>
+                  <Link to="/courses/dataanalytics">Data Analytics</Link>
+                </span>
+                <span>
+                  <Link to="/courses/django">Django</Link>
+                </span>
+                <span>
+                  <Link to="/courses/machinelearning">Machine Learning</Link>
+                </span>
+                <span>
+                  <Link to="/courses/datascience">Data Science</Link>
+                </span>
+                <span>
+                  <Link to="/courses/mysql">MySQL</Link>
+                </span>
               </div>
             </div>
           </div>

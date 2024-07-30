@@ -5,6 +5,8 @@ import Company from "../../NavBarDesign/Company/Company";
 import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
+import { Link, useNavigate } from "react-router-dom";
+
 const accordionItems = [
   {
     title: "Introduction to Java",
@@ -38,6 +40,27 @@ const accordionItems = [
         <li>Operators</li>
         <li>Command line argument</li>
         <li>Primtive Data Types</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Command-Line Arguments",
+    content: (
+      <ul className="courseListitem">
+        <li>What is Command-Line Arguments? </li>
+        <li>Java Application Command-Line Arguments</li>
+        <li>Using Methods</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Integrated Development Environment",
+    content: (
+      <ul className="courseListitem">
+        <li>using various Editors </li>
+        <li>Using Eclipse IDE</li>
+        <li>Project Set-Up</li>
+        <li>Application Compilation and run</li>
       </ul>
     ),
   },
@@ -82,9 +105,35 @@ const accordionItems = [
     content: (
       <ul className="courseListitem">
         <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer ,String builder </li>
+        <li>Scanner , String Buffer </li>
         <li>Problem solving</li>
         <li>String vs Char array</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Using the StringBuilder & StringBuffer Classes",
+    content: (
+      <ul className="courseListitem">
+        <li>A Brief Introduction</li>
+        <li>Creating a StringBuilder object</li>
+        <li>Using StringBuilder Methods</li>
+        <li>A StringBuilder Example</li>
+        <li>Tokenizing Strings</li>
+        <li>Regular Expressions, Class Pattern and Class Matcher</li>
+      </ul>
+    ),
+  },
+  {
+    title: "String Operations and Functions",
+    content: (
+      <ul className="courseListitem">
+        <li>String length()</li>
+        <li>String replace()</li>
+        <li>String replaceAll()</li>
+        <li>String split()</li>
+        <li>String substring()</li>
+        <li>String toCharArray()</li>
       </ul>
     ),
   },
@@ -134,51 +183,68 @@ const accordionItems = [
       </ul>
     ),
   },
+  {
+    title: "Interfaces and Packages in Java",
+    content: (
+      <ul className="courseListitem">
+        <li>Working with Interfaces</li>
+        <li>What is an Interface?</li>
+        <li>Defining an Interface</li>
+        <li>Implementing Interfaces</li>
+        <li>Extending Interfaces</li>
+        <li>Nesting Interfaces</li>
+        <li>Inline Member Declarations</li>
+        <li>Importing a Single Package Member</li>
+        <li>Importing an Entire Package</li>
+      </ul>
+    ),
+  },
 
   {
     title: "Array",
     content: (
       <ul className="courseListitem">
         <li>Java Array</li>
-        <li>Array </li>
-        <li></li>
+        <li>Dimensional of Array </li>
+        <li>Multi-Dimensional Array </li>
+        <li>Array Problem Solving</li>
       </ul>
     ),
   },
   {
-    title: "Form Design",
+    title: "Multithreading",
     content: (
       <ul className="courseListitem">
-        <li>Form Controls</li>
-        <li>Input types</li>
-        <li>Form Submition</li>
+        <li>Introduction</li>
+        <li>Advantages</li>
+        <li>Run() and Start() Method</li>
+        <li>Runnable interface implementation</li>
       </ul>
     ),
   },
   {
-    title: "Database programming",
+    title: "Collection Framework",
     content: (
       <ul className="courseListitem">
-        <li>MySQL Connector module installation</li>
-        <li>MySQL Query Execution</li>
-        <li>Table Creation</li>
-        <li>Storing Datas</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Git & GitHub",
-    content: (
-      <ul className="courseListitem">
-        <li>Git installation</li>
-        <li>Git-Hub Features</li>
-        <li>Git commands</li>
-        <li>Project Deployment</li>
+        <li>Generics(Templates)</li>
+        <li>What is generic</li>
+        <li>Creating User defined Generic classes</li>
+        <li>The java.util package</li>
+        <li>Collection</li>
+        <li>What is Collection Framework</li>
+        <li>List, Set & Map interfaces</li>
+        <li>Linked List, etc</li>
+        <li>Using Collections class for sorting</li>
+        <li>SortedMap, LinkedHashMap etc.</li>
+        <li>Iterator, Enumerator.</li>
+        <li>Using Queue, Deque, SortedQue, etc.</li>
+        <li>Interview related Question and Answer</li>
       </ul>
     ),
   },
 ];
 function Java() {
+  const navigate = useNavigate();
   return (
     <div className="courseNameMain">
       <section
@@ -250,7 +316,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                15+5
+                19+5
               </div>
             </div>
           </div>
@@ -366,6 +432,38 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                  <path d="M3 9h18"></path>
+                  <path d="M9 21V9"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Live Project
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
@@ -387,13 +485,17 @@ function Java() {
             </div>
           </div>
           <div className="CourseJoin">
-            <button>
+            <button onClick={() => navigate("/enquire")}>
               <span>Join Now</span>
             </button>
           </div>
           <div className="CourseJoinWhatsapp">
             <button>
-              <span>Whatsapp Now</span>
+              <span>
+                <Link to="https://api.whatsapp.com/send?phone=918610598460">
+                  Whatsapp Now
+                </Link>
+              </span>
             </button>
           </div>
         </div>
@@ -447,11 +549,21 @@ function Java() {
             <div className="relatedCoursediv">
               <h1>Related Course</h1>
               <div className="relatedcourseList">
-                <span>Data Analytics</span>
-                <span>Django</span>
-                <span>Machine Learning</span>
-                <span>Data Science</span>
-                <span>MySQL</span>
+                <span>
+                  <Link to="/courses/seleninum">Selenium</Link>
+                </span>
+                <span>
+                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                </span>
+                <span>
+                  <Link to="/courses/hibernate">Hibernate</Link>
+                </span>
+                <span>
+                  <Link to="/courses/flutter">Flutter</Link>
+                </span>
+                <span>
+                  <Link to="/courses/mysql"></Link>
+                </span>
               </div>
             </div>
           </div>
@@ -708,13 +820,13 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Python Developer</li>
+            <li>Java Developer</li>
             <li>Web Developer</li>
             <li>Software Engineer</li>
           </ul>
           <ul>
-            <li>Data analyst</li>
-            <li>Django Developer</li>
+            <li>Software Tester</li>
+            <li>Full Stack Developer</li>
             <li>Software Developer</li>
           </ul>
         </div>
