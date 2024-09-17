@@ -10,7 +10,10 @@
 .courseNameBanner {
   height: 300px;
   display: flex;
-  background-image: url("../../../../public/assets/Images/Course Images/Course Items/python-bg.png");
+  /* background-image: url("../../../../public/assets/Images/Course Images/Course Items/python-bg.png"); */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 1000% 1000%;
+  animation: gradientAnimation 4s linear alternate infinite;
 }
 .course_Details_img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -275,6 +278,7 @@
 }
 .CareerPath > ul > li {
   font-size: 1.2rem;
+  padding: 5px 10px;
 }
 .comp2 {
   display: none;
@@ -411,4 +415,13 @@
 }
 
 @media all and (max-width: 540px) {
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }

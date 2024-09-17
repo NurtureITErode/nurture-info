@@ -6,85 +6,64 @@ import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 import { Link, useNavigate } from "react-router-dom";
-
 const accordionItems = [
   {
-    title: "Introduction to Java",
+    title: "Introduction to TypeScript",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Java</li>
-        <li>History Of Java</li>
-        <li>Java Features</li>
-        <li>Areas Of Application Of Java</li>
+        <li>What is TypeScript?</li>
+        <li>Benefits of TypeScript over JavaScript</li>
+        <li>Setting up a TypeScript environment</li>
+        <li>TypeScript compiler (tsc) basics</li>
+        <li>First TypeScript program</li>
       </ul>
     ),
   },
   {
-    title: "Java Programming Environment",
+    title: "Basic Types",
     content: (
       <ul className="courseListitem">
-        <li>How to install & Set Path</li>
-        <li>Installing Java on different Platforms(Windows and Linux)</li>
-        <li>Compiling & executing Java Program</li>
-        <li>RunTime Exception </li>
-        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
+        <li>Type annotations</li>
+        <li>Basic types (string, number, boolean)</li>
+        <li>Arrays and tuples</li>
+        <li>Enums</li>
+        <li>Type inference</li>
       </ul>
     ),
   },
   {
-    title: "Java Basics",
+    title: "Interfaces",
     content: (
       <ul className="courseListitem">
-        <li>Data types and variables</li>
-        <li>Comments , Statements</li>
-        <li>Operators</li>
-        <li>Command line argument</li>
-        <li>Primtive Data Types</li>
+        <li>Defining interfaces</li>
+        <li>Optional properties</li>
+        <li>Readonly properties</li>
+        <li>Function types</li>
+        <li>Extending interfaces</li>
       </ul>
     ),
   },
   {
-    title: "Command-Line Arguments",
+    title: "Classes",
     content: (
       <ul className="courseListitem">
-        <li>What is Command-Line Arguments? </li>
-        <li>Java Application Command-Line Arguments</li>
-        <li>Using Methods</li>
+        <li>Defining classes and constructors</li>
+        <li>Public, private, and protected modifiers</li>
+        <li>Readonly properties</li>
+        <li>Getters and setters</li>
+        <li>Static properties and methods</li>
       </ul>
     ),
   },
   {
-    title: "Integrated Development Environment",
+    title: "Advanced Types",
     content: (
       <ul className="courseListitem">
-        <li>using various Editors </li>
-        <li>Using Eclipse IDE</li>
-        <li>Project Set-Up</li>
-        <li>Application Compilation and run</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Java Conditional Statements",
-    content: (
-      <ul className="courseListitem">
-        <li>If statement</li>
-        <li>If…elif...else statement</li>
-        <li>Nested if</li>
-        <li>Switch Case</li>
-      </ul>
-    ),
-  },
-  {
-    title: "java flow controll",
-    content: (
-      <ul className="courseListitem">
-        <li>For</li>
-        <li>While </li>
-        <li>Do while</li>
-        <li>Dictionary</li>
-        <li>For each</li>
-        <li>Continue & Break</li>
+        <li>Union and intersection types</li>
+        <li>Type aliases</li>
+        <li>Literal types</li>
+        <li>Nullable types</li>
+        <li>Type guards</li>
       </ul>
     ),
   },
@@ -92,158 +71,122 @@ const accordionItems = [
     title: "Functions",
     content: (
       <ul className="courseListitem">
-        <li>What is a function?</li>
-        <li>Define a function</li>
-        <li>Pass arguments</li>
-        <li>Arguments with default values</li>
-        <li>Return a value from function</li>
+        <li>Function types</li>
+        <li>Optional and default parameters</li>
+        <li>Rest parameters</li>
+        <li>Overloaded functions</li>
+        <li>Arrow functions</li>
       </ul>
     ),
   },
   {
-    title: "Input fundamentals & Non Primitive Data Types",
+    title: "Generics",
     content: (
       <ul className="courseListitem">
-        <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer </li>
-        <li>Problem solving</li>
-        <li>String vs Char array</li>
+        <li>Introduction to generics</li>
+        <li>Generic functions</li>
+        <li>Generic classes</li>
+        <li>Generic constraints</li>
+        <li>Using multiple type parameters</li>
       </ul>
     ),
   },
   {
-    title: "Using the StringBuilder & StringBuffer Classes",
+    title: "Modules",
     content: (
       <ul className="courseListitem">
-        <li>A Brief Introduction</li>
-        <li>Creating a StringBuilder object</li>
-        <li>Using StringBuilder Methods</li>
-        <li>A StringBuilder Example</li>
-        <li>Tokenizing Strings</li>
-        <li>Regular Expressions, Class Pattern and Class Matcher</li>
+        <li>Introduction to modules</li>
+        <li>Exporting and importing modules</li>
+        <li>Default exports</li>
+        <li>Re-exporting</li>
+        <li>Dynamic imports</li>
       </ul>
     ),
   },
   {
-    title: "String Operations and Functions",
+    title: "Namespaces",
     content: (
       <ul className="courseListitem">
-        <li>String length()</li>
-        <li>String replace()</li>
-        <li>String replaceAll()</li>
-        <li>String split()</li>
-        <li>String substring()</li>
-        <li>String toCharArray()</li>
+        <li>What are namespaces?</li>
+        <li>Defining and using namespaces</li>
+        <li>Nested namespaces</li>
+        <li>Merging namespaces</li>
       </ul>
     ),
   },
   {
-    title: "Exception Handling",
+    title: "Decorators",
     content: (
       <ul className="courseListitem">
-        <li>What is exception?</li>
-        <li>java built-in exceptions</li>
-        <li>Try - Catch</li>
-        <li>Finally</li>
+        <li>Introduction to decorators</li>
+        <li>Class decorators</li>
+        <li>Method decorators</li>
+        <li>Property decorators</li>
+        <li>Parameter decorators</li>
       </ul>
     ),
   },
   {
-    title: "Object Oriented Programming (OOPS)",
+    title: "TypeScript with DOM",
     content: (
       <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>OOPS Concept & Principles</li>
-        <li>Access modifiers</li>
-        <li>Constroctor</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Inheritance",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Inheritance</li>
-        <li>Types of inheritance</li>
-        <li>Single inheritance</li>
-        <li>Multilevel inheritance</li>
-        <li>hierarchical inheritance</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Polymorphism & Abstraction",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Polymorphism</li>
-        <li>Derived Types </li>
-        <li>Method overloading</li>
-        <li>Method overriding</li>
-        <li>Abstraction</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Interfaces and Packages in Java",
-    content: (
-      <ul className="courseListitem">
-        <li>Working with Interfaces</li>
-        <li>What is an Interface?</li>
-        <li>Defining an Interface</li>
-        <li>Implementing Interfaces</li>
-        <li>Extending Interfaces</li>
-        <li>Nesting Interfaces</li>
-        <li>Inline Member Declarations</li>
-        <li>Importing a Single Package Member</li>
-        <li>Importing an Entire Package</li>
+        <li>Type definitions for DOM elements</li>
+        <li>Querying and manipulating DOM elements</li>
+        <li>Event handling with TypeScript</li>
+        <li>Creating and appending elements dynamically</li>
+        <li>Working with forms and inputs</li>
       </ul>
     ),
   },
 
   {
-    title: "Array",
+    title: "TypeScript Configuration",
     content: (
       <ul className="courseListitem">
-        <li>Java Array</li>
-        <li>Dimensional of Array </li>
-        <li>Multi-Dimensional Array </li>
-        <li>Array Problem Solving</li>
+        <li>Understanding tsconfig.json</li>
+        <li>Compiler options</li>
+        <li>Strict mode</li>
+        <li>Source maps</li>
+        <li>Incremental compilation</li>
       </ul>
     ),
   },
   {
-    title: "Multithreading",
+    title: "Error Handling and Debugging",
     content: (
       <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>Advantages</li>
-        <li>Run() and Start() Method</li>
-        <li>Runnable interface implementation</li>
+        <li>Using try-catch for error handling</li>
+        <li>Custom error types</li>
+        <li>Debugging TypeScript code</li>
+        <li>Using console methods for debugging</li>
+        <li>Common errors and troubleshooting</li>
       </ul>
     ),
   },
   {
-    title: "Collection Framework",
+    title: "TypeScript with Build Tools",
     content: (
       <ul className="courseListitem">
-        <li>Generics(Templates)</li>
-        <li>What is generic</li>
-        <li>Creating User defined Generic classes</li>
-        <li>The java.util package</li>
-        <li>Collection</li>
-        <li>What is Collection Framework</li>
-        <li>List, Set & Map interfaces</li>
-        <li>Linked List, etc</li>
-        <li>Using Collections class for sorting</li>
-        <li>SortedMap, LinkedHashMap etc.</li>
-        <li>Iterator, Enumerator.</li>
-        <li>Using Queue, Deque, SortedQue, etc.</li>
-        <li>Interview related Question and Answer</li>
+        <li>Integrating TypeScript with Webpack</li>
+        <li>Using Babel with TypeScript</li>
+        <li>TypeScript with Gulp</li>
+        <li>Setting up a TypeScript project with npm scripts</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Git & GitHub",
+    content: (
+      <ul className="courseListitem">
+        <li>Git installation</li>
+        <li>Git-Hub Features</li>
+        <li>Git commands</li>
+        <li>Project Deployment</li>
       </ul>
     ),
   },
 ];
-function Java() {
+function Typescript() {
   const navigate = useNavigate();
   return (
     <div className="courseNameMain">
@@ -253,19 +196,26 @@ function Java() {
       >
         <div className="courseName">
           <h5>
-            Home {">"} Courses {">"} Python Course
+            Home {">"} Courses {">"} TypeScript Course
           </h5>
-          <h2>Best Java Training in Erode</h2>
+          <h2>Best TypeScript Training in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
-            <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
-              width="40%"
-              style={{ margin: "10px" }}
-              alt="Python Icon"
-            />
-            <h2 style={{ margin: "10px" }}>Java</h2>
+            <svg
+              style={{ position: "relative", top: "20px" }}
+              height="100"
+              viewBox="0 0 640 640"
+              width="100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="m0 0h640v640h-640z" fill="#017acb" />
+              <path
+                d="m307.3 237h30.7v53h-83v235.8l-2.2.6c-3 .8-42.5.8-51-.1l-6.8-.6v-235.7h-83v-53l26.3-.3c14.4-.2 51.4-.2 82.2 0s69.8.3 86.8.3zm234.3 263.8c-12.2 12.9-25.3 20.1-47.1 26-9.5 2.6-11.1 2.7-32.5 2.6s-23.1-.1-33.5-2.8c-26.9-6.9-48.6-20.4-63.4-39.5-4.2-5.4-11.1-16.6-11.1-18 0-.4 1-1.3 2.3-1.9s4-2.3 6.2-3.6 6.2-3.7 8.9-5.1 10.5-6 17.3-10.1 13-7.4 13.7-7.4 2 1.4 3 3.1c6 10.1 20 23 29.9 27.4 6.1 2.6 19.6 5.5 26.1 5.5 6 0 17-2.6 22.9-5.3 6.3-2.9 9.5-5.8 13.3-11.6 2.6-4.1 2.9-5.2 2.8-13 0-7.2-.4-9.2-2.4-12.5-5.6-9.2-13.2-14-44-27.6-31.8-14.1-46.1-22.5-57.7-33.8-8.6-8.4-10.3-10.7-15.7-21.2-7-13.5-7.9-17.9-8-38-.1-14.1.2-18.7 1.7-23.5 2.1-7.2 8.9-21.1 12-24.6 6.4-7.5 8.7-9.8 13.2-13.5 13.6-11.2 34.8-18.6 55.1-19.3 2.3 0 9.9.4 17 .9 20.4 1.7 34.3 6.7 47.7 17.4 10.1 8 25.4 26.8 23.9 29.3-1 1.5-40.9 28.1-43.5 28.9-1.6.5-2.7-.1-4.9-2.7-13.6-16.3-19.1-19.8-32.3-20.6-9.4-.6-14.4.5-20.7 4.7-6.6 4.4-9.8 11.1-9.8 20.4.1 13.6 5.3 20 24.5 29.5 12.4 6.1 23 11.1 23.8 11.1 1.2 0 26.9 12.8 33.6 16.8 31.2 18.3 43.9 37.1 47.2 69.5 2.4 24.4-4.5 46.7-19.5 62.5z"
+                fill="#fff"
+              />
+            </svg>
+            <h2>TypeScript</h2>
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -286,7 +236,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                80 Hours
+                40 Hours
               </div>
             </div>
           </div>
@@ -316,7 +266,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                19+5
+                12+5
               </div>
             </div>
           </div>
@@ -401,37 +351,6 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
-                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
-                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
-                </svg>
-                <span
-                  style={{ position: "relative", top: "-5px", left: "5px" }}
-                >
-                  Mode
-                </span>
-              </div>
-              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                Offline | Online
-              </div>
-            </div>
-          </div>
-          <div className="courseHR">
-            <hr className="hr"></hr>
-          </div>
-          <div className="courseModule">
-            <div className="Courseduration">
-              <div>
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -450,6 +369,37 @@ function Java() {
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
                 Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Mode
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Offline | Online
               </div>
             </div>
           </div>
@@ -502,19 +452,20 @@ function Java() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Java Course Overview</h2>
+        <h2>TypeScript Course Overview</h2>
         <div>
           <p>
-            This Java Course equips you with essential Java programming skills,
-            starting with syntax, data types, and control structures. You'll
-            master file operations, exception handling, and object-oriented
-            programming, including classes, inheritance, polymorphism, and
-            encapsulation. The course covers key Java libraries like java.util,
-            java.io . Real-world case studies by industry experts provide
-            practical insights into web development, mobile apps, and data
-            analysis. The course prepares you for Java Certification, enhancing
-            career prospects. By the end, you'll be a proficient Java developer,
-            ready to tackle diverse programming challenges.
+            This TypeScript Course offers comprehensive training in TypeScript,
+            a powerful superset of JavaScript that adds static typing and
+            advanced features. You'll learn the fundamentals of TypeScript,
+            including types, interfaces, classes, and modules, enabling you to
+            write robust and maintainable code. The course covers TypeScript's
+            integration with modern frameworks like Angular and React, enhancing
+            your development workflow. Through practical exercises and
+            real-world projects, you'll gain hands-on experience in developing
+            scalable web applications. This course is ideal for JavaScript
+            developers looking to enhance their skills and build more efficient
+            and error-free applications.
           </p>
         </div>
         <br></br>
@@ -522,18 +473,19 @@ function Java() {
         <div>
           <ul className="courseul">
             <li>
-              BE / BTech / MTech / BCA / MCA graduates aspiring to build a
-              career as a Java Developer.
-            </li>
-            <li>Candidates looking to restart their career after a gap.</li>
-            <li>Complete beginners interested in Java programming.</li>
-            <li>
-              Aspiring web developers seeking expertise in Java and frameworks
-              like Spring , Hibernate and Selenium.
+              BE / BTech / M Tech / BCA / MCA passed aspirants to make their
+              career as Web Developer
             </li>
             <li>
-              Professionals seeking to advance their knowledge of modern web
-              technologies and enterprise-level applications.
+              A candidate who would like to restart their career after a gap.
+            </li>
+            <li>Complete beginners interested in Fullstack Developer.</li>
+            <li>
+              Aspiring web developers seeking React and Angular expertise.
+            </li>
+            <li>
+              Those seeking to advance their knowledge about modern web
+              technology.
             </li>
           </ul>
         </div>
@@ -550,19 +502,19 @@ function Java() {
               <h1>Related Course</h1>
               <div className="relatedcourseList">
                 <span>
-                  <Link to="/courses/seleninum">Selenium</Link>
+                  <Link to="/courses/dataanalytics">Data Analytics</Link>
                 </span>
                 <span>
-                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                  <Link to="/courses/django">Django</Link>
                 </span>
                 <span>
-                  <Link to="/courses/hibernate">Hibernate</Link>
+                  <Link to="/courses/machinelearning">Machine Learning</Link>
                 </span>
                 <span>
-                  <Link to="/courses/flutter">Flutter</Link>
+                  <Link to="/courses/datascience">Data Science</Link>
                 </span>
                 <span>
-                  <Link to="/courses/mysql"></Link>
+                  <Link to="/courses/mysql">MySQL</Link>
                 </span>
               </div>
             </div>
@@ -820,14 +772,14 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Java Developer</li>
             <li>Web Developer</li>
-            <li>Software Engineer</li>
+            <li>UI/UX Developer</li>
+            <li>Frontend Developer</li>
           </ul>
           <ul>
-            <li>Software Tester</li>
             <li>Full Stack Developer</li>
-            <li>Software Developer</li>
+            <li>MERN Stack Developer</li>
+            <li>Software Engineer</li>
           </ul>
         </div>
       </section>
@@ -848,4 +800,4 @@ function Java() {
   );
 }
 
-export default Java;
+export default Typescript;

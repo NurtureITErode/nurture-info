@@ -6,244 +6,275 @@ import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 import { Link, useNavigate } from "react-router-dom";
-
 const accordionItems = [
   {
-    title: "Introduction to Java",
+    title: "Introduction to React",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Java</li>
-        <li>History Of Java</li>
-        <li>Java Features</li>
-        <li>Areas Of Application Of Java</li>
+        <li>What is React?</li>
+        <li>Benefits of using React</li>
+        <li>React vs. other frameworks</li>
+        <li>Setting up a React environment</li>
+        <li>Overview of the React component model</li>
       </ul>
     ),
   },
   {
-    title: "Java Programming Environment",
+    title: "JSX Syntax",
     content: (
       <ul className="courseListitem">
-        <li>How to install & Set Path</li>
-        <li>Installing Java on different Platforms(Windows and Linux)</li>
-        <li>Compiling & executing Java Program</li>
-        <li>RunTime Exception </li>
-        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
+        <li>Introduction to JSX</li>
+        <li>Embedding expressions in JSX</li>
+        <li>JSX attributes</li>
+        <li>Rendering JSX elements</li>
+        <li>Differences between JSX and HTML</li>
       </ul>
     ),
   },
   {
-    title: "Java Basics",
+    title: "Components",
     content: (
       <ul className="courseListitem">
-        <li>Data types and variables</li>
-        <li>Comments , Statements</li>
-        <li>Operators</li>
-        <li>Command line argument</li>
-        <li>Primtive Data Types</li>
+        <li>Functional components</li>
+        <li>Class components</li>
+        <li>Component props</li>
+        <li>Component state</li>
+        <li>Lifecycle methods</li>
       </ul>
     ),
   },
   {
-    title: "Command-Line Arguments",
+    title: "Props",
     content: (
       <ul className="courseListitem">
-        <li>What is Command-Line Arguments? </li>
-        <li>Java Application Command-Line Arguments</li>
-        <li>Using Methods</li>
+        <li>Passing props to components</li>
+        <li>Default props</li>
+        <li>Prop types and validation</li>
+        <li>Destructuring props</li>
+        <li>Functional vs. class components with props</li>
       </ul>
     ),
   },
   {
-    title: "Integrated Development Environment",
+    title: "State Management",
     content: (
       <ul className="courseListitem">
-        <li>using various Editors </li>
-        <li>Using Eclipse IDE</li>
-        <li>Project Set-Up</li>
-        <li>Application Compilation and run</li>
+        <li>Understanding state</li>
+        <li>Setting initial state</li>
+        <li>Updating state</li>
+        <li>State vs. props</li>
+        <li>Managing state in class components</li>
       </ul>
     ),
   },
   {
-    title: "Java Conditional Statements",
+    title: "Event Handling",
     content: (
       <ul className="courseListitem">
-        <li>If statement</li>
-        <li>If…elif...else statement</li>
-        <li>Nested if</li>
-        <li>Switch Case</li>
+        <li>Handling events in React</li>
+        <li>Synthetic events</li>
+        <li>Passing arguments to event handlers</li>
+        <li>Preventing default behavior</li>
+        <li>Event binding in class components</li>
       </ul>
     ),
   },
   {
-    title: "java flow controll",
+    title: "Lifecycle Methods",
     content: (
       <ul className="courseListitem">
-        <li>For</li>
-        <li>While </li>
-        <li>Do while</li>
-        <li>Dictionary</li>
-        <li>For each</li>
-        <li>Continue & Break</li>
+        <li>Mounting phase methods (constructor, componentDidMount)</li>
+        <li>
+          Updating phase methods (shouldComponentUpdate, componentDidUpdate)
+        </li>
+        <li>Unmounting phase method (componentWillUnmount)</li>
+        <li>
+          Error handling methods (componentDidCatch, getDerivedStateFromError)
+        </li>
+        <li>Using lifecycle methods effectively</li>
       </ul>
     ),
   },
   {
-    title: "Functions",
+    title: "Hooks",
     content: (
       <ul className="courseListitem">
-        <li>What is a function?</li>
-        <li>Define a function</li>
-        <li>Pass arguments</li>
-        <li>Arguments with default values</li>
-        <li>Return a value from function</li>
+        <li>Introduction to hooks</li>
+        <li>useState hook</li>
+        <li>useEffect hook</li>
+        <li>useContext hook</li>
+        <li>Custom hooks</li>
       </ul>
     ),
   },
   {
-    title: "Input fundamentals & Non Primitive Data Types",
+    title: "Context API",
     content: (
       <ul className="courseListitem">
-        <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer </li>
-        <li>Problem solving</li>
-        <li>String vs Char array</li>
+        <li>What is the Context API?</li>
+        <li>Creating a context</li>
+        <li>Providing and consuming context</li>
+        <li>Context with functional components</li>
+        <li>Updating context</li>
       </ul>
     ),
   },
   {
-    title: "Using the StringBuilder & StringBuffer Classes",
+    title: "Forms and Input Handling",
     content: (
       <ul className="courseListitem">
-        <li>A Brief Introduction</li>
-        <li>Creating a StringBuilder object</li>
-        <li>Using StringBuilder Methods</li>
-        <li>A StringBuilder Example</li>
-        <li>Tokenizing Strings</li>
-        <li>Regular Expressions, Class Pattern and Class Matcher</li>
+        <li>Controlled components</li>
+        <li>Uncontrolled components</li>
+        <li>Handling form submissions</li>
+        <li>Validating form input</li>
+        <li>Using refs with forms</li>
       </ul>
     ),
   },
   {
-    title: "String Operations and Functions",
+    title: "Refs and the DOM",
     content: (
       <ul className="courseListitem">
-        <li>String length()</li>
-        <li>String replace()</li>
-        <li>String replaceAll()</li>
-        <li>String split()</li>
-        <li>String substring()</li>
-        <li>String toCharArray()</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Exception Handling",
-    content: (
-      <ul className="courseListitem">
-        <li>What is exception?</li>
-        <li>java built-in exceptions</li>
-        <li>Try - Catch</li>
-        <li>Finally</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Object Oriented Programming (OOPS)",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>OOPS Concept & Principles</li>
-        <li>Access modifiers</li>
-        <li>Constroctor</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Inheritance",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Inheritance</li>
-        <li>Types of inheritance</li>
-        <li>Single inheritance</li>
-        <li>Multilevel inheritance</li>
-        <li>hierarchical inheritance</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Polymorphism & Abstraction",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Polymorphism</li>
-        <li>Derived Types </li>
-        <li>Method overloading</li>
-        <li>Method overriding</li>
-        <li>Abstraction</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Interfaces and Packages in Java",
-    content: (
-      <ul className="courseListitem">
-        <li>Working with Interfaces</li>
-        <li>What is an Interface?</li>
-        <li>Defining an Interface</li>
-        <li>Implementing Interfaces</li>
-        <li>Extending Interfaces</li>
-        <li>Nesting Interfaces</li>
-        <li>Inline Member Declarations</li>
-        <li>Importing a Single Package Member</li>
-        <li>Importing an Entire Package</li>
+        <li>Creating refs</li>
+        <li>Accessing DOM elements</li>
+        <li>Using refs with class components</li>
+        <li>Callback refs</li>
       </ul>
     ),
   },
 
   {
-    title: "Array",
+    title: "Routing with React Router",
     content: (
       <ul className="courseListitem">
-        <li>Java Array</li>
-        <li>Dimensional of Array </li>
-        <li>Multi-Dimensional Array </li>
-        <li>Array Problem Solving</li>
+        <li>Setting up React Router</li>
+        <li>Route components</li>
+        <li>Link and NavLink components</li>
+        <li>Route parameters</li>
+        <li>Nested routes</li>
       </ul>
     ),
   },
   {
-    title: "Multithreading",
+    title: "Conditional Rendering",
     content: (
       <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>Advantages</li>
-        <li>Run() and Start() Method</li>
-        <li>Runnable interface implementation</li>
+        <li>if-else statements in JSX</li>
+        <li>Ternary operators in JSX</li>
+        <li>Short-circuit evaluation</li>
+        <li>Inline if-else with logical operators</li>
+        <li>Conditional rendering with components</li>
       </ul>
     ),
   },
   {
-    title: "Collection Framework",
+    title: "Lists and Keys",
     content: (
       <ul className="courseListitem">
-        <li>Generics(Templates)</li>
-        <li>What is generic</li>
-        <li>Creating User defined Generic classes</li>
-        <li>The java.util package</li>
-        <li>Collection</li>
-        <li>What is Collection Framework</li>
-        <li>List, Set & Map interfaces</li>
-        <li>Linked List, etc</li>
-        <li>Using Collections class for sorting</li>
-        <li>SortedMap, LinkedHashMap etc.</li>
-        <li>Iterator, Enumerator.</li>
-        <li>Using Queue, Deque, SortedQue, etc.</li>
-        <li>Interview related Question and Answer</li>
+        <li>Rendering lists in React</li>
+        <li>Using the map function</li>
+        <li>Importance of keys</li>
+        <li>Handling keys correctly</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Styling in React",
+    content: (
+      <ul className="courseListitem">
+        <li>Inline styles</li>
+        <li>CSS stylesheets</li>
+        <li>CSS Modules</li>
+        <li>Styled-components</li>
+        <li>Using Sass with React</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Higher-Order Components (HOCs)",
+    content: (
+      <ul className="courseListitem">
+        <li>What are HOCs?</li>
+        <li>Creating a higher-order component</li>
+        <li>Using HOCs to enhance components</li>
+        <li>Passing props through HOCs</li>
+        <li>Composing multiple HOCs</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Render Props",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to render props</li>
+        <li>Implementing render props</li>
+        <li>Using render props for state management</li>
+        <li>Comparison with HOCs</li>
+        <li>Common use cases</li>
+      </ul>
+    ),
+  },
+  {
+    title: "React Fragments",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to React Fragments</li>
+        <li>Using React.Fragment</li>
+        <li>Short syntax for fragments</li>
+        <li>Keyed fragments</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Testing in React",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to testing</li>
+        <li>Writing tests with Jest</li>
+        <li>Testing components with React Testing Library</li>
+        <li>Snapshot testing</li>
+        <li>Mocking API calls</li>
+      </ul>
+    ),
+  },
+  {
+    title: "State Management with Redux",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to Redux</li>
+        <li>Setting up Redux with React</li>
+        <li>Actions and reducers</li>
+        <li>Connecting Redux to components</li>
+        <li>Middleware </li>
+      </ul>
+    ),
+  },
+  {
+    title: "Material-UI",
+    content: (
+      <ul className="courseListitem">
+        <li>What is Material-UI?</li>
+        <li>Benefits of using Material-UI</li>
+        <li>Overview of Material-UI components</li>
+        <li>Theming and customization basics</li>
+        <li>Typography,Buttons,Icons</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Git & GitHub",
+    content: (
+      <ul className="courseListitem">
+        <li>Git installation</li>
+        <li>Git-Hub Features</li>
+        <li>Git commands</li>
+        <li>Project Deployment</li>
       </ul>
     ),
   },
 ];
-function Java() {
+function ReactBook() {
   const navigate = useNavigate();
   return (
     <div className="courseNameMain">
@@ -253,19 +284,25 @@ function Java() {
       >
         <div className="courseName">
           <h5>
-            Home {">"} Courses {">"} Python Course
+            Home {">"} Courses {">"} React Course
           </h5>
-          <h2>Best Java Training in Erode</h2>
+          <h2>Best React Training in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
-            <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
-              width="40%"
-              style={{ margin: "10px" }}
-              alt="Python Icon"
-            />
-            <h2 style={{ margin: "10px" }}>Java</h2>
+            <svg
+              style={{ marginTop: "20px" }}
+              height="110"
+              viewBox="175.7 78 490.6 436.9"
+              width="100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="#193180">
+                <path d="m666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9v-22.3c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6v-22.3c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zm-101.4 106.7c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24s9.5 15.8 14.4 23.4zm73.9-208.1c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6s22.9-35.6 58.3-50.6c8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zm53.8 142.9c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6z" />
+                <circle cx="420.9" cy="296.5" r="45.7" />
+              </g>
+            </svg>
+            <h2>React</h2>
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -286,7 +323,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                80 Hours
+                60 Hours
               </div>
             </div>
           </div>
@@ -316,7 +353,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                19+5
+                22+5
               </div>
             </div>
           </div>
@@ -401,37 +438,6 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
-                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
-                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
-                </svg>
-                <span
-                  style={{ position: "relative", top: "-5px", left: "5px" }}
-                >
-                  Mode
-                </span>
-              </div>
-              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                Offline | Online
-              </div>
-            </div>
-          </div>
-          <div className="courseHR">
-            <hr className="hr"></hr>
-          </div>
-          <div className="courseModule">
-            <div className="Courseduration">
-              <div>
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -450,6 +456,37 @@ function Java() {
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
                 Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Mode
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Offline | Online
               </div>
             </div>
           </div>
@@ -502,19 +539,20 @@ function Java() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Java Course Overview</h2>
+        <h2>React Course Overview</h2>
         <div>
           <p>
-            This Java Course equips you with essential Java programming skills,
-            starting with syntax, data types, and control structures. You'll
-            master file operations, exception handling, and object-oriented
-            programming, including classes, inheritance, polymorphism, and
-            encapsulation. The course covers key Java libraries like java.util,
-            java.io . Real-world case studies by industry experts provide
-            practical insights into web development, mobile apps, and data
-            analysis. The course prepares you for Java Certification, enhancing
-            career prospects. By the end, you'll be a proficient Java developer,
-            ready to tackle diverse programming challenges.
+            This React with TypeScript Course provides comprehensive training on
+            building robust and scalable web applications using React and
+            TypeScript. You'll learn TypeScript fundamentals, including static
+            typing and interfaces, and how to integrate them seamlessly with
+            React components and hooks. The course covers state management,
+            props, context API, and advanced patterns, enhancing your ability to
+            write maintainable and error-free code. Through practical projects
+            and real-world examples, you'll gain hands-on experience in
+            developing efficient React applications. Ideal for JavaScript
+            developers looking to leverage TypeScript's power in React
+            development, this course elevates your front-end development skills.
           </p>
         </div>
         <br></br>
@@ -523,17 +561,20 @@ function Java() {
           <ul className="courseul">
             <li>
               BE / BTech / MTech / BCA / MCA graduates aspiring to build a
-              career as a Java Developer.
+              career as a Web Developer.
             </li>
-            <li>Candidates looking to restart their career after a gap.</li>
-            <li>Complete beginners interested in Java programming.</li>
             <li>
-              Aspiring web developers seeking expertise in Java and frameworks
-              like Spring , Hibernate and Selenium.
+              A candidate who would like to restart their career after a gap.
+            </li>
+            <li>
+              Complete beginners interested in becoming a Fullstack Developer.
+            </li>
+            <li>
+              Aspiring web developers seeking expertise in React and TypeScript.
             </li>
             <li>
               Professionals seeking to advance their knowledge of modern web
-              technologies and enterprise-level applications.
+              technologies.
             </li>
           </ul>
         </div>
@@ -550,19 +591,19 @@ function Java() {
               <h1>Related Course</h1>
               <div className="relatedcourseList">
                 <span>
-                  <Link to="/courses/seleninum">Selenium</Link>
+                  <Link to="/courses/react">React</Link>
                 </span>
                 <span>
-                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                  <Link to="/courses/angular">Angular</Link>
                 </span>
                 <span>
-                  <Link to="/courses/hibernate">Hibernate</Link>
+                  <Link to="/courses/mern">MERN Stack</Link>
                 </span>
                 <span>
-                  <Link to="/courses/flutter">Flutter</Link>
+                  <Link to="/courses/datascience">Django</Link>
                 </span>
                 <span>
-                  <Link to="/courses/mysql"></Link>
+                  <Link to="/courses/mysql">Node js</Link>
                 </span>
               </div>
             </div>
@@ -820,14 +861,14 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Java Developer</li>
-            <li>Web Developer</li>
-            <li>Software Engineer</li>
+            <li>React Developer</li>
+            <li>UI/UX Developer</li>
+            <li>MERN Stack Developer</li>
           </ul>
           <ul>
-            <li>Software Tester</li>
             <li>Full Stack Developer</li>
-            <li>Software Developer</li>
+            <li>Frontend Developer</li>
+            <li>Software Engineer</li>
           </ul>
         </div>
       </section>
@@ -848,4 +889,4 @@ function Java() {
   );
 }
 
-export default Java;
+export default ReactBook;

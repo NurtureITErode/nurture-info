@@ -6,244 +6,219 @@ import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 import { Link, useNavigate } from "react-router-dom";
-
 const accordionItems = [
   {
-    title: "Introduction to Java",
+    title: "Introduction to Node.js",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Java</li>
-        <li>History Of Java</li>
-        <li>Java Features</li>
-        <li>Areas Of Application Of Java</li>
+        <li>What is Node.js?</li>
+        <li>Features of Node.js</li>
+        <li>Installing Node.js</li>
+        <li>Setting up a Node.js environment</li>
       </ul>
     ),
   },
   {
-    title: "Java Programming Environment",
+    title: "Node.js Modules",
     content: (
       <ul className="courseListitem">
-        <li>How to install & Set Path</li>
-        <li>Installing Java on different Platforms(Windows and Linux)</li>
-        <li>Compiling & executing Java Program</li>
-        <li>RunTime Exception </li>
-        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
+        <li>Built-in modules</li>
+        <li>Creating custom modules</li>
+        <li>Importing and exporting modules</li>
+        <li>Using npm for managing modules</li>
       </ul>
     ),
   },
   {
-    title: "Java Basics",
+    title: "Node.js File System",
     content: (
       <ul className="courseListitem">
-        <li>Data types and variables</li>
-        <li>Comments , Statements</li>
-        <li>Operators</li>
-        <li>Command line argument</li>
-        <li>Primtive Data Types</li>
+        <li>Reading and writing files</li>
+        <li>Working with file paths</li>
+        <li>File streaming</li>
+        <li>Asynchronous file operations</li>
       </ul>
     ),
   },
   {
-    title: "Command-Line Arguments",
+    title: "Node.js Event Loop",
     content: (
       <ul className="courseListitem">
-        <li>What is Command-Line Arguments? </li>
-        <li>Java Application Command-Line Arguments</li>
-        <li>Using Methods</li>
+        <li>Understanding the event-driven architecture</li>
+        <li>Event emitters</li>
+        <li>Handling events</li>
+        <li>Asynchronous programming with callbacks</li>
       </ul>
     ),
   },
   {
-    title: "Integrated Development Environment",
+    title: "Node.js HTTP Module",
     content: (
       <ul className="courseListitem">
-        <li>using various Editors </li>
-        <li>Using Eclipse IDE</li>
-        <li>Project Set-Up</li>
-        <li>Application Compilation and run</li>
+        <li>Creating an HTTP server</li>
+        <li>Handling HTTP requests and responses</li>
+        <li>Working with different HTTP methods (GET, POST, PUT, DELETE)</li>
+        <li>Parsing request bodies</li>
       </ul>
     ),
   },
   {
-    title: "Java Conditional Statements",
+    title: "Node.js Streams and Buffers",
     content: (
       <ul className="courseListitem">
-        <li>If statement</li>
-        <li>If…elif...else statement</li>
-        <li>Nested if</li>
-        <li>Switch Case</li>
+        <li>Working with streams</li>
+        <li>Reading from and writing to streams</li>
+        <li>Piping streams</li>
+        <li>Understanding buffers</li>
       </ul>
     ),
   },
   {
-    title: "java flow controll",
+    title: "Node.js Error Handling",
     content: (
       <ul className="courseListitem">
-        <li>For</li>
-        <li>While </li>
-        <li>Do while</li>
-        <li>Dictionary</li>
-        <li>For each</li>
-        <li>Continue & Break</li>
+        <li>Error types in Node.js</li>
+        <li>Using try-catch blocks</li>
+        <li>Unmounting phase method (componentWillUnmount)</li>
+        <li>Handling asynchronous errors</li>
+        <li>Best practices for error handling</li>
       </ul>
     ),
   },
   {
-    title: "Functions",
+    title: "Introduction to Express.js",
     content: (
       <ul className="courseListitem">
-        <li>What is a function?</li>
-        <li>Define a function</li>
-        <li>Pass arguments</li>
-        <li>Arguments with default values</li>
-        <li>Return a value from function</li>
+        <li>What is Express.js?</li>
+        <li>Installing Express.js</li>
+        <li>Setting up a basic Express server</li>
+        <li>Middleware in Express.js</li>
       </ul>
     ),
   },
   {
-    title: "Input fundamentals & Non Primitive Data Types",
+    title: "Routing in Express.js",
     content: (
       <ul className="courseListitem">
-        <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer </li>
-        <li>Problem solving</li>
-        <li>String vs Char array</li>
+        <li>Defining routes</li>
+        <li>Route parameters and query strings</li>
+        <li>Handling different HTTP methods</li>
+        <li>Using Router for modular routes</li>
       </ul>
     ),
   },
   {
-    title: "Using the StringBuilder & StringBuffer Classes",
+    title: "Middleware in Express.js",
     content: (
       <ul className="courseListitem">
-        <li>A Brief Introduction</li>
-        <li>Creating a StringBuilder object</li>
-        <li>Using StringBuilder Methods</li>
-        <li>A StringBuilder Example</li>
-        <li>Tokenizing Strings</li>
-        <li>Regular Expressions, Class Pattern and Class Matcher</li>
+        <li>Understanding middleware functions</li>
+        <li>Built-in middleware</li>
+        <li>Third-party middleware (e.g., body-parser)</li>
+        <li>Creating custom middleware</li>
       </ul>
     ),
   },
   {
-    title: "String Operations and Functions",
+    title: "Templating in Express.js",
     content: (
       <ul className="courseListitem">
-        <li>String length()</li>
-        <li>String replace()</li>
-        <li>String replaceAll()</li>
-        <li>String split()</li>
-        <li>String substring()</li>
-        <li>String toCharArray()</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Exception Handling",
-    content: (
-      <ul className="courseListitem">
-        <li>What is exception?</li>
-        <li>java built-in exceptions</li>
-        <li>Try - Catch</li>
-        <li>Finally</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Object Oriented Programming (OOPS)",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>OOPS Concept & Principles</li>
-        <li>Access modifiers</li>
-        <li>Constroctor</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Inheritance",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Inheritance</li>
-        <li>Types of inheritance</li>
-        <li>Single inheritance</li>
-        <li>Multilevel inheritance</li>
-        <li>hierarchical inheritance</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Polymorphism & Abstraction",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Polymorphism</li>
-        <li>Derived Types </li>
-        <li>Method overloading</li>
-        <li>Method overriding</li>
-        <li>Abstraction</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Interfaces and Packages in Java",
-    content: (
-      <ul className="courseListitem">
-        <li>Working with Interfaces</li>
-        <li>What is an Interface?</li>
-        <li>Defining an Interface</li>
-        <li>Implementing Interfaces</li>
-        <li>Extending Interfaces</li>
-        <li>Nesting Interfaces</li>
-        <li>Inline Member Declarations</li>
-        <li>Importing a Single Package Member</li>
-        <li>Importing an Entire Package</li>
+        <li>Using template engines (e.g., EJS, Pug)</li>
+        <li>Rendering dynamic HTML</li>
+        <li>Passing data to views</li>
       </ul>
     ),
   },
 
   {
-    title: "Array",
+    title: "Handling Forms and File Uploads",
     content: (
       <ul className="courseListitem">
-        <li>Java Array</li>
-        <li>Dimensional of Array </li>
-        <li>Multi-Dimensional Array </li>
-        <li>Array Problem Solving</li>
+        <li>Parsing form data</li>
+        <li>Handling file uploads with multer</li>
+        <li>Validating form inputs</li>
+        <li>Managing file storage</li>
       </ul>
     ),
   },
   {
-    title: "Multithreading",
+    title: "Authentication and Authorization",
     content: (
       <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>Advantages</li>
-        <li>Run() and Start() Method</li>
-        <li>Runnable interface implementation</li>
+        <li>Understanding sessions and cookies</li>
+        <li>Implementing authentication with Passport.js</li>
+        <li>Role-based access control</li>
+        <li>OAuth and third-party authentication</li>
       </ul>
     ),
   },
   {
-    title: "Collection Framework",
+    title: "Error Handling in Express.js",
     content: (
       <ul className="courseListitem">
-        <li>Generics(Templates)</li>
-        <li>What is generic</li>
-        <li>Creating User defined Generic classes</li>
-        <li>The java.util package</li>
-        <li>Collection</li>
-        <li>What is Collection Framework</li>
-        <li>List, Set & Map interfaces</li>
-        <li>Linked List, etc</li>
-        <li>Using Collections class for sorting</li>
-        <li>SortedMap, LinkedHashMap etc.</li>
-        <li>Iterator, Enumerator.</li>
-        <li>Using Queue, Deque, SortedQue, etc.</li>
-        <li>Interview related Question and Answer</li>
+        <li>Creating error-handling middleware</li>
+        <li>Handling 404 errors</li>
+        <li>Catching and logging errors</li>
+        <li>Best practices for error responses</li>
+      </ul>
+    ),
+  },
+  {
+    title: "RESTful API Development",
+    content: (
+      <ul className="courseListitem">
+        <li>Principles of RESTful APIs</li>
+        <li>Creating RESTful endpoints</li>
+        <li>Versioning APIs</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Express.js Best Practices",
+    content: (
+      <ul className="courseListitem">
+        <li>Structuring Express applications</li>
+        <li>Writing clean and maintainable code</li>
+        <li>Logging and monitoring</li>
+        <li>Refactoring and code reviews</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Introduction to Postman",
+    content: (
+      <ul className="courseListitem">
+        <li>What is Postman?</li>
+        <li>Installing Postman</li>
+        <li>Understanding the Postman interface</li>
+        <li>Creating a Postman account and workspace</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Making API Requests with Postman",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating and sending GET requests</li>
+        <li>Creating and sending POST requests</li>
+        <li>Sending PUT and DELETE requests</li>
+        <li>Understanding request methods and headers</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Working with Request Parameters",
+    content: (
+      <ul className="courseListitem">
+        <li>Using query parameters</li>
+        <li>Sending form-data and x-www-form-urlencoded data</li>
+        <li>Setting request body formats (JSON, XML, text)</li>
+        <li>Handling URL-encoded data</li>
       </ul>
     ),
   },
 ];
-function Java() {
+function NodeExpress() {
   const navigate = useNavigate();
   return (
     <div className="courseNameMain">
@@ -253,19 +228,175 @@ function Java() {
       >
         <div className="courseName">
           <h5>
-            Home {">"} Courses {">"} Python Course
+            Home {">"} Courses {">"} Node & Express Course
           </h5>
-          <h2>Best Java Training in Erode</h2>
+          <h2>Best Node JS Training in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
-            <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
-              width="40%"
-              style={{ margin: "10px" }}
-              alt="Python Icon"
-            />
-            <h2 style={{ margin: "10px" }}>Java</h2>
+            <svg
+              href="http://www.w3.org/2000/svg"
+              width="130"
+              height="100"
+              preserveAspectRatio="xMidYMid"
+              viewBox="0 0 512 314"
+              id="nodejs"
+              style={{ marginTop: "40px" }}
+            >
+              <defs>
+                <linearGradient
+                  id="b"
+                  x1="68.188%"
+                  x2="27.823%"
+                  y1="17.487%"
+                  y2="89.755%"
+                >
+                  <stop offset="0%" stop-color="#41873F"></stop>
+                  <stop offset="32.88%" stop-color="#418B3D"></stop>
+                  <stop offset="63.52%" stop-color="#419637"></stop>
+                  <stop offset="93.19%" stop-color="#3FA92D"></stop>
+                  <stop offset="100%" stop-color="#3FAE2A"></stop>
+                </linearGradient>
+                <linearGradient
+                  id="d"
+                  x1="43.277%"
+                  x2="159.245%"
+                  y1="55.169%"
+                  y2="-18.306%"
+                >
+                  <stop offset="13.76%" stop-color="#41873F"></stop>
+                  <stop offset="40.32%" stop-color="#54A044"></stop>
+                  <stop offset="71.36%" stop-color="#66B848"></stop>
+                  <stop offset="90.81%" stop-color="#6CC04A"></stop>
+                </linearGradient>
+                <linearGradient
+                  id="e"
+                  x1="-4413.77%"
+                  x2="5327.93%"
+                  y1="13.43%"
+                  y2="13.43%"
+                >
+                  <stop offset="9.192%" stop-color="#6CC04A"></stop>
+                  <stop offset="28.64%" stop-color="#66B848"></stop>
+                  <stop offset="59.68%" stop-color="#54A044"></stop>
+                  <stop offset="86.24%" stop-color="#41873F"></stop>
+                </linearGradient>
+                <linearGradient
+                  id="f"
+                  x1="-4.389%"
+                  x2="101.499%"
+                  y1="49.997%"
+                  y2="49.997%"
+                >
+                  <stop offset="9.192%" stop-color="#6CC04A"></stop>
+                  <stop offset="28.64%" stop-color="#66B848"></stop>
+                  <stop offset="59.68%" stop-color="#54A044"></stop>
+                  <stop offset="86.24%" stop-color="#41873F"></stop>
+                </linearGradient>
+                <linearGradient
+                  id="g"
+                  x1="-9713.77%"
+                  x2="27.93%"
+                  y1="36.21%"
+                  y2="36.21%"
+                >
+                  <stop offset="9.192%" stop-color="#6CC04A"></stop>
+                  <stop offset="28.64%" stop-color="#66B848"></stop>
+                  <stop offset="59.68%" stop-color="#54A044"></stop>
+                  <stop offset="86.24%" stop-color="#41873F"></stop>
+                </linearGradient>
+                <linearGradient
+                  id="h"
+                  x1="-103.861%"
+                  x2="100.797%"
+                  y1="50.275%"
+                  y2="50.275%"
+                >
+                  <stop offset="9.192%" stop-color="#6CC04A"></stop>
+                  <stop offset="28.64%" stop-color="#66B848"></stop>
+                  <stop offset="59.68%" stop-color="#54A044"></stop>
+                  <stop offset="86.24%" stop-color="#41873F"></stop>
+                </linearGradient>
+                <linearGradient
+                  id="i"
+                  x1="130.613%"
+                  x2="4.393%"
+                  y1="-211.069%"
+                  y2="201.605%"
+                >
+                  <stop offset="0%" stop-color="#41873F"></stop>
+                  <stop offset="32.88%" stop-color="#418B3D"></stop>
+                  <stop offset="63.52%" stop-color="#419637"></stop>
+                  <stop offset="93.19%" stop-color="#3FA92D"></stop>
+                  <stop offset="100%" stop-color="#3FAE2A"></stop>
+                </linearGradient>
+                <path
+                  id="a"
+                  d="M57.903 1.85a5.957 5.957 0 0 0-5.894 0L3.352 29.933c-1.85 1.04-2.89 3.005-2.89 5.085v56.286c0 2.08 1.156 4.045 2.89 5.085l48.657 28.085a5.957 5.957 0 0 0 5.894 0l48.658-28.085c1.849-1.04 2.89-3.005 2.89-5.085V35.019c0-2.08-1.157-4.045-2.89-5.085L57.903 1.85z"
+                ></path>
+              </defs>
+              <g fill="none">
+                <path
+                  fill="#539E43"
+                  d="M253.11 313.094c-1.733 0-3.351-.462-4.854-1.271l-15.371-9.13c-2.312-1.272-1.156-1.734-.462-1.965 3.12-1.04 3.698-1.272 6.934-3.12.347-.232.81-.116 1.156.115l11.789 7.05c.462.231 1.04.231 1.386 0l46.115-26.698c.462-.231.694-.694.694-1.271v-53.28c0-.579-.232-1.04-.694-1.272l-46.115-26.582c-.462-.232-1.04-.232-1.386 0l-46.115 26.582c-.462.231-.694.809-.694 1.271v53.28c0 .463.232 1.04.694 1.272l12.598 7.281c6.819 3.467 11.095-.578 11.095-4.623v-52.587c0-.693.578-1.387 1.387-1.387h5.894c.694 0 1.387.578 1.387 1.387v52.587c0 9.13-4.97 14.447-13.638 14.447-2.658 0-4.738 0-10.633-2.89l-12.135-6.934c-3.005-1.733-4.854-4.97-4.854-8.437v-53.28c0-3.467 1.849-6.704 4.854-8.437l46.114-26.698c2.89-1.618 6.82-1.618 9.709 0l46.114 26.698c3.005 1.733 4.855 4.97 4.855 8.437v53.28c0 3.467-1.85 6.704-4.855 8.437l-46.114 26.698c-1.503.694-3.236 1.04-4.854 1.04zm14.216-36.637c-20.225 0-24.386-9.246-24.386-17.105 0-.694.578-1.387 1.387-1.387h6.01c.693 0 1.271.462 1.271 1.156.925 6.125 3.583 9.13 15.834 9.13 9.708 0 13.87-2.196 13.87-7.397 0-3.005-1.157-5.2-16.297-6.703-12.598-1.272-20.457-4.045-20.457-14.1 0-9.362 7.86-14.91 21.035-14.91 14.793 0 22.075 5.086 23 16.18 0 .348-.116.694-.347 1.041-.232.231-.578.462-.925.462h-6.01c-.578 0-1.156-.462-1.271-1.04-1.387-6.356-4.97-8.437-14.447-8.437-10.633 0-11.905 3.699-11.905 6.472 0 3.352 1.503 4.392 15.834 6.241 14.216 1.85 20.92 4.508 20.92 14.447-.116 10.171-8.437 15.95-23.116 15.95z"
+                ></path>
+                <path
+                  fill="#333"
+                  d="M110.028 104.712c0-2.08-1.156-4.046-3.005-5.086l-49.004-28.2c-.81-.463-1.734-.694-2.658-.81h-.463c-.924 0-1.849.347-2.658.81l-49.004 28.2c-1.85 1.04-3.005 3.005-3.005 5.086l.116 75.817c0 1.04.578 2.08 1.502 2.543.925.578 2.08.578 2.89 0l29.125-16.643c1.849-1.04 3.005-3.005 3.005-5.085v-35.482c0-2.08 1.155-4.045 3.005-5.085l12.366-7.166c.925-.578 1.965-.81 3.005-.81 1.04 0 2.08.232 2.89.81l12.366 7.166c1.85 1.04 3.005 3.004 3.005 5.085v35.482c0 2.08 1.156 4.045 3.005 5.085l29.125 16.643c.925.578 2.08.578 3.005 0 .925-.463 1.503-1.503 1.503-2.543l-.116-75.817zM345.571.347c-.924-.463-2.08-.463-2.89 0-.924.578-1.502 1.502-1.502 2.542v75.125c0 .693-.346 1.386-1.04 1.849-.693.346-1.387.346-2.08 0l-12.251-7.05a5.957 5.957 0 0 0-5.895 0l-49.004 28.316c-1.849 1.04-3.005 3.005-3.005 5.085v56.516c0 2.08 1.156 4.046 3.005 5.086l49.004 28.316a5.957 5.957 0 0 0 5.895 0l49.004-28.316c1.849-1.04 3.005-3.005 3.005-5.086V21.844c0-2.196-1.156-4.16-3.005-5.201L345.572.347zm-4.507 143.776c0 .578-.231 1.04-.694 1.271l-16.758 9.708a1.714 1.714 0 0 1-1.503 0l-16.758-9.708c-.463-.231-.694-.809-.694-1.271v-19.417c0-.578.231-1.04.694-1.271l16.758-9.709a1.714 1.714 0 0 1 1.503 0l16.758 9.709c.463.23.694.809.694 1.271v19.417zM508.648 124.244c1.85-1.04 2.89-3.005 2.89-5.086v-13.753c0-2.08-1.156-4.045-2.89-5.085l-48.657-28.2a5.957 5.957 0 0 0-5.894 0l-49.004 28.315c-1.85 1.04-3.005 3.005-3.005 5.086v56.516c0 2.08 1.155 4.045 3.005 5.085l48.657 27.738c1.85 1.04 4.045 1.04 5.779 0L489 178.45c.925-.463 1.503-1.503 1.503-2.543 0-1.04-.578-2.08-1.503-2.543l-49.235-28.316c-.924-.577-1.502-1.502-1.502-2.542v-17.683c0-1.04.578-2.08 1.502-2.543l15.372-8.784a2.821 2.821 0 0 1 3.005 0l15.371 8.784c.925.578 1.503 1.502 1.503 2.543v13.869c0 1.04.578 2.08 1.502 2.542.925.578 2.08.578 3.005 0l29.125-16.99z"
+                ></path>
+                <path
+                  fill="#539E43"
+                  d="M456.293 121.586a1.05 1.05 0 0 1 1.155 0l9.362 5.432c.347.23.578.577.578 1.04v10.864c0 .462-.231.809-.578 1.04l-9.362 5.432a1.05 1.05 0 0 1-1.155 0l-9.362-5.432c-.347-.231-.578-.578-.578-1.04v-10.864c0-.463.231-.81.578-1.04l9.362-5.432z"
+                ></path>
+                <g transform="translate(134.068 70.501)">
+                  <mask id="c" fill="#fff">
+                    <use href="#a"></use>
+                  </mask>
+                  <use fill="url(#b)" href="#a"></use>
+                  <g mask="url(#c)">
+                    <path d="M51.893 1.85L3.121 29.933C1.27 30.974 0 32.94 0 35.02v56.286c0 1.387.578 2.658 1.502 3.698L56.285 1.156c-1.387-.231-3.005-.116-4.392.693zM56.632 125.053c.462-.116.925-.347 1.387-.578l48.773-28.085c1.85-1.04 3.005-3.005 3.005-5.085V35.019c0-1.502-.694-3.005-1.734-4.045l-51.43 94.079z"></path>
+                    <path
+                      fill="url(#d)"
+                      d="M106.676 29.934L57.788 1.85a8.025 8.025 0 0 0-1.503-.578L1.502 95.12a6.082 6.082 0 0 0 1.619 1.387l48.888 28.085c1.387.809 3.005 1.04 4.507.577l51.432-94.078c-.347-.462-.81-.81-1.272-1.156z"
+                    ></path>
+                  </g>
+                  <g mask="url(#c)">
+                    <path d="M109.797 91.305V35.019c0-2.08-1.271-4.045-3.12-5.085L57.786 1.85a5.106 5.106 0 0 0-1.848-.693l53.511 91.42c.231-.347.347-.809.347-1.271zM3.12 29.934C1.272 30.974 0 32.94 0 35.02v56.286c0 2.08 1.387 4.045 3.12 5.085l48.889 28.085c1.156.693 2.427.925 3.814.693L3.467 29.818l-.346.116z"></path>
+                    <path
+                      fill="url(#e)"
+                      fill-rule="evenodd"
+                      d="M50.391.809l-.693.347h.924l-.231-.347z"
+                      transform="translate(0 -9.246)"
+                    ></path>
+                    <path
+                      fill="url(#f)"
+                      fill-rule="evenodd"
+                      d="M106.792 105.636c1.387-.809 2.427-2.196 2.89-3.698L56.053 10.402c-1.387-.231-2.89-.116-4.16.693L3.351 39.065l52.355 95.465a8.057 8.057 0 0 0 2.196-.693l48.889-28.2z"
+                      transform="translate(0 -9.246)"
+                    ></path>
+                    <path
+                      fill="url(#g)"
+                      fill-rule="evenodd"
+                      d="M111.3 104.712l-.347-.578v.809l.346-.231z"
+                      transform="translate(0 -9.246)"
+                    ></path>
+                    <path
+                      fill="url(#h)"
+                      fill-rule="evenodd"
+                      d="M106.792 105.636l-48.773 28.085a6.973 6.973 0 0 1-2.196.693l.925 1.734 54.089-31.32v-.694l-1.387-2.312c-.231 1.618-1.271 3.005-2.658 3.814z"
+                      transform="translate(0 -9.246)"
+                    ></path>
+                    <path
+                      fill="url(#i)"
+                      fill-rule="evenodd"
+                      d="M106.792 105.636l-48.773 28.085a6.973 6.973 0 0 1-2.196.693l.925 1.734 54.089-31.32v-.694l-1.387-2.312c-.231 1.618-1.271 3.005-2.658 3.814z"
+                      transform="translate(0 -9.246)"
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <h2>Node</h2>
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -286,7 +417,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                80 Hours
+                40 Hours
               </div>
             </div>
           </div>
@@ -316,7 +447,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                19+5
+                20+5
               </div>
             </div>
           </div>
@@ -401,37 +532,6 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
-                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
-                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
-                </svg>
-                <span
-                  style={{ position: "relative", top: "-5px", left: "5px" }}
-                >
-                  Mode
-                </span>
-              </div>
-              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                Offline | Online
-              </div>
-            </div>
-          </div>
-          <div className="courseHR">
-            <hr className="hr"></hr>
-          </div>
-          <div className="courseModule">
-            <div className="Courseduration">
-              <div>
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -450,6 +550,37 @@ function Java() {
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
                 Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Mode
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Offline | Online
               </div>
             </div>
           </div>
@@ -502,19 +633,20 @@ function Java() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Java Course Overview</h2>
+        <h2>Node js Course Overview</h2>
         <div>
           <p>
-            This Java Course equips you with essential Java programming skills,
-            starting with syntax, data types, and control structures. You'll
-            master file operations, exception handling, and object-oriented
-            programming, including classes, inheritance, polymorphism, and
-            encapsulation. The course covers key Java libraries like java.util,
-            java.io . Real-world case studies by industry experts provide
-            practical insights into web development, mobile apps, and data
-            analysis. The course prepares you for Java Certification, enhancing
-            career prospects. By the end, you'll be a proficient Java developer,
-            ready to tackle diverse programming challenges.
+            This Node.js and Express Course provides comprehensive training on
+            building scalable and efficient server-side applications. You'll
+            learn the fundamentals of Node.js, including asynchronous
+            programming, event-driven architecture, and file system operations.
+            The course covers Express, a robust web application framework for
+            Node.js, teaching you how to create RESTful APIs, handle routing,
+            middleware, and database integration. Through hands-on projects and
+            real-world examples, you'll gain practical experience in developing
+            full-stack applications. This course is ideal for JavaScript
+            developers looking to enhance their backend development skills and
+            build modern web applications.
           </p>
         </div>
         <br></br>
@@ -523,17 +655,22 @@ function Java() {
           <ul className="courseul">
             <li>
               BE / BTech / MTech / BCA / MCA graduates aspiring to build a
-              career as a Java Developer.
-            </li>
-            <li>Candidates looking to restart their career after a gap.</li>
-            <li>Complete beginners interested in Java programming.</li>
-            <li>
-              Aspiring web developers seeking expertise in Java and frameworks
-              like Spring , Hibernate and Selenium.
+              career as a Backend or Fullstack Developer.
             </li>
             <li>
-              Professionals seeking to advance their knowledge of modern web
-              technologies and enterprise-level applications.
+              A candidate who would like to restart their career after a gap.
+            </li>
+            <li>
+              Complete beginners interested in server-side development and
+              Node.js.
+            </li>
+            <li>
+              Aspiring web developers seeking expertise in Node.js and Express
+              for building scalable applications.
+            </li>
+            <li>
+              Professionals aiming to advance their knowledge of modern backend
+              technologies and RESTful API development.
             </li>
           </ul>
         </div>
@@ -550,19 +687,19 @@ function Java() {
               <h1>Related Course</h1>
               <div className="relatedcourseList">
                 <span>
-                  <Link to="/courses/seleninum">Selenium</Link>
+                  <Link to="/courses/dataanalytics">Data Analytics</Link>
                 </span>
                 <span>
-                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                  <Link to="/courses/django">Django</Link>
                 </span>
                 <span>
-                  <Link to="/courses/hibernate">Hibernate</Link>
+                  <Link to="/courses/machinelearning">Machine Learning</Link>
                 </span>
                 <span>
-                  <Link to="/courses/flutter">Flutter</Link>
+                  <Link to="/courses/datascience">Data Science</Link>
                 </span>
                 <span>
-                  <Link to="/courses/mysql"></Link>
+                  <Link to="/courses/mysql">MySQL</Link>
                 </span>
               </div>
             </div>
@@ -820,14 +957,14 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Java Developer</li>
-            <li>Web Developer</li>
-            <li>Software Engineer</li>
+            <li>Node.js Developer</li>
+            <li>Full-Stack Developer</li>
+            <li>Backend Developer</li>
           </ul>
           <ul>
-            <li>Software Tester</li>
-            <li>Full Stack Developer</li>
-            <li>Software Developer</li>
+            <li>DevOps Engineer</li>
+            <li>API Developer</li>
+            <li>Software Engineer</li>
           </ul>
         </div>
       </section>
@@ -848,4 +985,4 @@ function Java() {
   );
 }
 
-export default Java;
+export default NodeExpress;

@@ -6,244 +6,128 @@ import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 import { Link, useNavigate } from "react-router-dom";
-
 const accordionItems = [
   {
-    title: "Introduction to Java",
+    title: "Introduction to MongoDB",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Java</li>
-        <li>History Of Java</li>
-        <li>Java Features</li>
-        <li>Areas Of Application Of Java</li>
+        <li>Overview of MongoDB</li>
+        <li>NoSQL vs SQL Databases</li>
+        <li>MongoDB Architecture</li>
+        <li>Installation and Setup</li>
+        <li>Basic MongoDB Commands</li>
       </ul>
     ),
   },
   {
-    title: "Java Programming Environment",
+    title: "CRUD Operations",
     content: (
       <ul className="courseListitem">
-        <li>How to install & Set Path</li>
-        <li>Installing Java on different Platforms(Windows and Linux)</li>
-        <li>Compiling & executing Java Program</li>
-        <li>RunTime Exception </li>
-        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
+        <li>Inserting Documents</li>
+        <li>Querying Documents</li>
+        <li>Updating Documents</li>
+        <li>Deleting Documents</li>
       </ul>
     ),
   },
   {
-    title: "Java Basics",
+    title: "Data Modeling",
     content: (
       <ul className="courseListitem">
-        <li>Data types and variables</li>
-        <li>Comments , Statements</li>
-        <li>Operators</li>
-        <li>Command line argument</li>
-        <li>Primtive Data Types</li>
+        <li>Schema Design in MongoDB</li>
+        <li>Embedding vs Referencing Documents</li>
+        <li>Data Normalization and Denormalization</li>
+        <li>Handling Data Relationships</li>
       </ul>
     ),
   },
   {
-    title: "Command-Line Arguments",
+    title: "Indexes",
     content: (
       <ul className="courseListitem">
-        <li>What is Command-Line Arguments? </li>
-        <li>Java Application Command-Line Arguments</li>
-        <li>Using Methods</li>
+        <li>Introduction to Indexes</li>
+        <li>Creating and Managing Indexes</li>
+        <li>Types of Indexes (Single Field, Compound, Multi-Key, etc.)</li>
+        <li>Indexing Strategies and Performance</li>
       </ul>
     ),
   },
   {
-    title: "Integrated Development Environment",
+    title: "Aggregation Framework",
     content: (
       <ul className="courseListitem">
-        <li>using various Editors </li>
-        <li>Using Eclipse IDE</li>
-        <li>Project Set-Up</li>
-        <li>Application Compilation and run</li>
+        <li>Basics of Aggregation</li>
+        <li>Aggregation Pipelines</li>
+        <li>Aggregation Performance Considerations</li>
       </ul>
     ),
   },
   {
-    title: "Java Conditional Statements",
+    title: "Introduction to Mongoose",
     content: (
       <ul className="courseListitem">
-        <li>If statement</li>
-        <li>If…elif...else statement</li>
-        <li>Nested if</li>
-        <li>Switch Case</li>
+        <li>Overview of Mongoose</li>
+        <li>Advantages of Using Mongoose with MongoDB</li>
+        <li>Setting Up Mongoose in a Node.js Project</li>
+        <li>Basic Mongoose Commands</li>
+        <li>Mongoose vs Native MongoDB Driver</li>
       </ul>
     ),
   },
   {
-    title: "java flow controll",
+    title: "Schema Definition",
     content: (
       <ul className="courseListitem">
-        <li>For</li>
-        <li>While </li>
-        <li>Do while</li>
-        <li>Dictionary</li>
-        <li>For each</li>
-        <li>Continue & Break</li>
+        <li>Creating Schemas with Mongoose</li>
+        <li>Schema Types (String, Number, Date, etc.)</li>
+        <li>Validation Rules and Custom Validators</li>
       </ul>
     ),
   },
   {
-    title: "Functions",
+    title: "Model Creation and Methods",
     content: (
       <ul className="courseListitem">
-        <li>What is a function?</li>
-        <li>Define a function</li>
-        <li>Pass arguments</li>
-        <li>Arguments with default values</li>
-        <li>Return a value from function</li>
+        <li>Defining Models from Schemas</li>
+        <li>Instance Methods and Static Methods</li>
+        <li>Custom Model Methods</li>
+        <li>Query Helpers</li>
       </ul>
     ),
   },
   {
-    title: "Input fundamentals & Non Primitive Data Types",
+    title: "CRUD Operations",
     content: (
       <ul className="courseListitem">
-        <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer </li>
-        <li>Problem solving</li>
-        <li>String vs Char array</li>
+        <li>Creating and Saving Documents</li>
+        <li>Reading Documents (Find and FindOne)</li>
+        <li>Updating Documents (Update, FindOneAndUpdate)</li>
+        <li>Deleting Documents (DeleteOne, DeleteMany)</li>
       </ul>
     ),
   },
   {
-    title: "Using the StringBuilder & StringBuffer Classes",
+    title: "Query Building",
     content: (
       <ul className="courseListitem">
-        <li>A Brief Introduction</li>
-        <li>Creating a StringBuilder object</li>
-        <li>Using StringBuilder Methods</li>
-        <li>A StringBuilder Example</li>
-        <li>Tokenizing Strings</li>
-        <li>Regular Expressions, Class Pattern and Class Matcher</li>
+        <li>Using Query Builders in Mongoose</li>
+        <li>Query Operators and Modifiers</li>
+        <li>Chaining Queries</li>
       </ul>
     ),
   },
   {
-    title: "String Operations and Functions",
+    title: "Validation and Error Handling",
     content: (
       <ul className="courseListitem">
-        <li>String length()</li>
-        <li>String replace()</li>
-        <li>String replaceAll()</li>
-        <li>String split()</li>
-        <li>String substring()</li>
-        <li>String toCharArray()</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Exception Handling",
-    content: (
-      <ul className="courseListitem">
-        <li>What is exception?</li>
-        <li>java built-in exceptions</li>
-        <li>Try - Catch</li>
-        <li>Finally</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Object Oriented Programming (OOPS)",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>OOPS Concept & Principles</li>
-        <li>Access modifiers</li>
-        <li>Constroctor</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Inheritance",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Inheritance</li>
-        <li>Types of inheritance</li>
-        <li>Single inheritance</li>
-        <li>Multilevel inheritance</li>
-        <li>hierarchical inheritance</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Polymorphism & Abstraction",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Polymorphism</li>
-        <li>Derived Types </li>
-        <li>Method overloading</li>
-        <li>Method overriding</li>
-        <li>Abstraction</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Interfaces and Packages in Java",
-    content: (
-      <ul className="courseListitem">
-        <li>Working with Interfaces</li>
-        <li>What is an Interface?</li>
-        <li>Defining an Interface</li>
-        <li>Implementing Interfaces</li>
-        <li>Extending Interfaces</li>
-        <li>Nesting Interfaces</li>
-        <li>Inline Member Declarations</li>
-        <li>Importing a Single Package Member</li>
-        <li>Importing an Entire Package</li>
-      </ul>
-    ),
-  },
-
-  {
-    title: "Array",
-    content: (
-      <ul className="courseListitem">
-        <li>Java Array</li>
-        <li>Dimensional of Array </li>
-        <li>Multi-Dimensional Array </li>
-        <li>Array Problem Solving</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Multithreading",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>Advantages</li>
-        <li>Run() and Start() Method</li>
-        <li>Runnable interface implementation</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Collection Framework",
-    content: (
-      <ul className="courseListitem">
-        <li>Generics(Templates)</li>
-        <li>What is generic</li>
-        <li>Creating User defined Generic classes</li>
-        <li>The java.util package</li>
-        <li>Collection</li>
-        <li>What is Collection Framework</li>
-        <li>List, Set & Map interfaces</li>
-        <li>Linked List, etc</li>
-        <li>Using Collections class for sorting</li>
-        <li>SortedMap, LinkedHashMap etc.</li>
-        <li>Iterator, Enumerator.</li>
-        <li>Using Queue, Deque, SortedQue, etc.</li>
-        <li>Interview related Question and Answer</li>
+        <li>Built-in Validators</li>
+        <li>Custom Validators</li>
+        <li>Handling Validation Errors</li>
       </ul>
     ),
   },
 ];
-function Java() {
+function Mongodb() {
   const navigate = useNavigate();
   return (
     <div className="courseNameMain">
@@ -253,19 +137,37 @@ function Java() {
       >
         <div className="courseName">
           <h5>
-            Home {">"} Courses {">"} Python Course
+            Home {">"} Courses {">"} Mongodb Course
           </h5>
-          <h2>Best Java Training in Erode</h2>
+          <h2>Best MongoDB Training in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
-            <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
-              width="40%"
-              style={{ margin: "10px" }}
-              alt="Python Icon"
-            />
-            <h2 style={{ margin: "10px" }}>Java</h2>
+            <svg
+              viewBox="0 0 2500.1 2500"
+              xmlns="http://www.w3.org/2000/svg"
+              width="150"
+              height="125"
+              style={{ marginTop: "20px" }}
+            >
+              <path
+                d="M2215.6 2500H284.4C127.3 2500 0 2372.7 0 2215.6V284.4C0 127.3 127.3 0 284.4 0h1931.3c157 0 284.4 127.3 284.4 284.4v1931.3c-.1 157-127.4 284.3-284.5 284.3z"
+                fill="#fff"
+              />
+              <path
+                d="M1259.6 190.4l47.6 89.4c10.7 16.5 22.3 31.1 35.9 44.7 40 39.5 77.3 81.7 111.6 126.3 80.6 105.8 135 223.4 173.8 350.6 23.3 77.6 35.9 157.4 36.9 237.9 3.9 240.9-78.7 447.7-245.1 619.6-27 27.2-56.3 52.3-87.5 74.7-16.5 0-24.3-12.6-31.1-24.3-12.4-21.6-20.6-45.3-24.3-69.9-5.9-29.2-9.7-58.3-7.8-88.3v-13.6c-1.3-3.1-15.8-1340.2-10-1347.1z"
+                fill="#599636"
+              />
+              <path
+                d="M1259.6 187.5c-1.9-3.9-3.9-1-5.9 1 1 19.5-5.9 36.9-16.5 53.5-11.7 16.5-27.2 29.2-42.8 42.8-86.3 74.7-154.3 165.1-208.7 266.1C913.2 686.8 875.9 832.5 865.4 986c-4.8 55.3 17.5 250.5 35 306.8 47.6 149.6 133 274.9 243.8 383.6 27.2 26.2 56.3 50.5 86.3 73.9 8.8 0 9.7-7.8 11.7-13.6 3.9-12.4 6.8-25 8.8-37.8l19.5-145.6z"
+                fill="#6cac48"
+              />
+              <path
+                d="M1307.2 1792.6c1.9-22.3 12.6-40.7 24.3-59.2-11.7-4.8-20.4-14.5-27.2-25.2-5.9-10.2-10.7-20.9-14.5-32.1-13.6-40.7-16.5-83.6-20.4-125.2v-25.2c-4.8 3.9-5.9 36.9-5.9 41.8-2.8 44.1-8.7 87.8-17.5 131.1-2.9 17.5-4.8 35-15.6 50.5 0 1.9 0 3.9 1 6.8 17.5 51.5 22.3 103.9 25.2 157.4v19.5c0 23.3-1 18.4 18.4 26.2 7.8 2.9 16.5 3.9 24.3 9.7 5.9 0 6.8-4.8 6.8-8.8l-2.9-32.1v-89.4c-.9-15.6 2-31.1 4-45.8z"
+                fill="#c2bfbf"
+              />
+            </svg>
+            <h2>MongoDB</h2>
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -286,7 +188,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                80 Hours
+                40 Hours
               </div>
             </div>
           </div>
@@ -316,7 +218,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                19+5
+                12+5
               </div>
             </div>
           </div>
@@ -401,37 +303,6 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
-                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
-                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
-                </svg>
-                <span
-                  style={{ position: "relative", top: "-5px", left: "5px" }}
-                >
-                  Mode
-                </span>
-              </div>
-              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                Offline | Online
-              </div>
-            </div>
-          </div>
-          <div className="courseHR">
-            <hr className="hr"></hr>
-          </div>
-          <div className="courseModule">
-            <div className="Courseduration">
-              <div>
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -450,6 +321,37 @@ function Java() {
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
                 Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Mode
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Offline | Online
               </div>
             </div>
           </div>
@@ -502,19 +404,20 @@ function Java() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Java Course Overview</h2>
+        <h2>MongoDB Course Overview</h2>
         <div>
           <p>
-            This Java Course equips you with essential Java programming skills,
-            starting with syntax, data types, and control structures. You'll
-            master file operations, exception handling, and object-oriented
-            programming, including classes, inheritance, polymorphism, and
-            encapsulation. The course covers key Java libraries like java.util,
-            java.io . Real-world case studies by industry experts provide
-            practical insights into web development, mobile apps, and data
-            analysis. The course prepares you for Java Certification, enhancing
-            career prospects. By the end, you'll be a proficient Java developer,
-            ready to tackle diverse programming challenges.
+            This MongoDB Course offers a deep dive into NoSQL database
+            management using MongoDB. You’ll learn key concepts such as
+            document-based storage, schema design, and data modeling with BSON.
+            The course covers CRUD operations, indexing, aggregation, and data
+            replication to ensure high availability and performance. Through
+            hands-on exercises, you’ll gain practical experience in designing
+            scalable databases and integrating MongoDB with applications. Ideal
+            for developers and data professionals, this course equips you with
+            the skills to manage and optimize NoSQL databases effectively,
+            preparing you for roles involving modern data management and big
+            data solutions.
           </p>
         </div>
         <br></br>
@@ -522,18 +425,21 @@ function Java() {
         <div>
           <ul className="courseul">
             <li>
-              BE / BTech / MTech / BCA / MCA graduates aspiring to build a
-              career as a Java Developer.
-            </li>
-            <li>Candidates looking to restart their career after a gap.</li>
-            <li>Complete beginners interested in Java programming.</li>
-            <li>
-              Aspiring web developers seeking expertise in Java and frameworks
-              like Spring , Hibernate and Selenium.
+              BE / BTech / MTech / BCA / MCA graduates aspiring to specialize in
+              NoSQL database management and backend development.
             </li>
             <li>
-              Professionals seeking to advance their knowledge of modern web
-              technologies and enterprise-level applications.
+              Complete beginners interested in learning NoSQL databases and
+              MongoDB.
+            </li>
+            <li>
+              Aspiring developers seeking expertise in MongoDB for scalable data
+              management and integration.
+            </li>
+            <li>Candidates looking to restart their career after a gap</li>
+            <li>
+              Professionals aiming to advance their knowledge in modern database
+              technologies and big data solutions.
             </li>
           </ul>
         </div>
@@ -550,19 +456,17 @@ function Java() {
               <h1>Related Course</h1>
               <div className="relatedcourseList">
                 <span>
-                  <Link to="/courses/seleninum">Selenium</Link>
+                  <Link to="/courses/react">React</Link>
                 </span>
                 <span>
-                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                  <Link to="/courses/angular">Angular</Link>
                 </span>
                 <span>
-                  <Link to="/courses/hibernate">Hibernate</Link>
+                  <Link to="/courses/mern">MERN Stack</Link>
                 </span>
+
                 <span>
-                  <Link to="/courses/flutter">Flutter</Link>
-                </span>
-                <span>
-                  <Link to="/courses/mysql"></Link>
+                  <Link to="/courses/mysql">Node js</Link>
                 </span>
               </div>
             </div>
@@ -820,14 +724,14 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Java Developer</li>
-            <li>Web Developer</li>
-            <li>Software Engineer</li>
+            <li>Full-Stack Developer</li>
+            <li>Database Administrator</li>
+            <li>Backend Developer</li>
           </ul>
           <ul>
-            <li>Software Tester</li>
-            <li>Full Stack Developer</li>
-            <li>Software Developer</li>
+            <li>DevOps Engineer</li>
+            <li>Data Engineer</li>
+            <li>Data Analyst</li>
           </ul>
         </div>
       </section>
@@ -848,4 +752,4 @@ function Java() {
   );
 }
 
-export default Java;
+export default Mongodb;

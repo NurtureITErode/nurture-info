@@ -6,244 +6,594 @@ import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 import { Link, useNavigate } from "react-router-dom";
-
 const accordionItems = [
   {
-    title: "Introduction to Java",
+    title: "Introduction to React",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Java</li>
-        <li>History Of Java</li>
-        <li>Java Features</li>
-        <li>Areas Of Application Of Java</li>
+        <li>What is React?</li>
+        <li>Benefits of using React</li>
+        <li>React vs. other frameworks</li>
+        <li>Setting up a React environment</li>
+        <li>Overview of the React component model</li>
       </ul>
     ),
   },
   {
-    title: "Java Programming Environment",
+    title: "JSX Syntax",
     content: (
       <ul className="courseListitem">
-        <li>How to install & Set Path</li>
-        <li>Installing Java on different Platforms(Windows and Linux)</li>
-        <li>Compiling & executing Java Program</li>
-        <li>RunTime Exception </li>
-        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
+        <li>Introduction to JSX</li>
+        <li>Embedding expressions in JSX</li>
+        <li>JSX attributes</li>
+        <li>Rendering JSX elements</li>
+        <li>Differences between JSX and HTML</li>
       </ul>
     ),
   },
   {
-    title: "Java Basics",
+    title: "Components",
     content: (
       <ul className="courseListitem">
-        <li>Data types and variables</li>
-        <li>Comments , Statements</li>
-        <li>Operators</li>
-        <li>Command line argument</li>
-        <li>Primtive Data Types</li>
+        <li>Functional components</li>
+        <li>Class components</li>
+        <li>Component props</li>
+        <li>Component state</li>
+        <li>Lifecycle methods</li>
       </ul>
     ),
   },
   {
-    title: "Command-Line Arguments",
+    title: "Props",
     content: (
       <ul className="courseListitem">
-        <li>What is Command-Line Arguments? </li>
-        <li>Java Application Command-Line Arguments</li>
-        <li>Using Methods</li>
+        <li>Passing props to components</li>
+        <li>Default props</li>
+        <li>Prop types and validation</li>
+        <li>Destructuring props</li>
+        <li>Functional vs. class components with props</li>
       </ul>
     ),
   },
   {
-    title: "Integrated Development Environment",
+    title: "State Management",
     content: (
       <ul className="courseListitem">
-        <li>using various Editors </li>
-        <li>Using Eclipse IDE</li>
-        <li>Project Set-Up</li>
-        <li>Application Compilation and run</li>
+        <li>Understanding state</li>
+        <li>Setting initial state</li>
+        <li>Updating state</li>
+        <li>State vs. props</li>
+        <li>Managing state in class components</li>
       </ul>
     ),
   },
   {
-    title: "Java Conditional Statements",
+    title: "Event Handling",
     content: (
       <ul className="courseListitem">
-        <li>If statement</li>
-        <li>If…elif...else statement</li>
-        <li>Nested if</li>
-        <li>Switch Case</li>
+        <li>Handling events in React</li>
+        <li>Synthetic events</li>
+        <li>Passing arguments to event handlers</li>
+        <li>Preventing default behavior</li>
+        <li>Event binding in class components</li>
       </ul>
     ),
   },
   {
-    title: "java flow controll",
+    title: "Lifecycle Methods",
     content: (
       <ul className="courseListitem">
-        <li>For</li>
-        <li>While </li>
-        <li>Do while</li>
-        <li>Dictionary</li>
-        <li>For each</li>
-        <li>Continue & Break</li>
+        <li>Mounting phase methods (constructor, componentDidMount)</li>
+        <li>
+          Updating phase methods (shouldComponentUpdate, componentDidUpdate)
+        </li>
+        <li>Unmounting phase method (componentWillUnmount)</li>
+        <li>
+          Error handling methods (componentDidCatch, getDerivedStateFromError)
+        </li>
+        <li>Using lifecycle methods effectively</li>
       </ul>
     ),
   },
   {
-    title: "Functions",
+    title: "Hooks",
     content: (
       <ul className="courseListitem">
-        <li>What is a function?</li>
-        <li>Define a function</li>
-        <li>Pass arguments</li>
-        <li>Arguments with default values</li>
-        <li>Return a value from function</li>
+        <li>Introduction to hooks</li>
+        <li>useState hook</li>
+        <li>useEffect hook</li>
+        <li>useContext hook</li>
+        <li>Custom hooks</li>
       </ul>
     ),
   },
   {
-    title: "Input fundamentals & Non Primitive Data Types",
+    title: "Context API",
     content: (
       <ul className="courseListitem">
-        <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer </li>
-        <li>Problem solving</li>
-        <li>String vs Char array</li>
+        <li>What is the Context API?</li>
+        <li>Creating a context</li>
+        <li>Providing and consuming context</li>
+        <li>Context with functional components</li>
+        <li>Updating context</li>
       </ul>
     ),
   },
   {
-    title: "Using the StringBuilder & StringBuffer Classes",
+    title: "Forms and Input Handling",
     content: (
       <ul className="courseListitem">
-        <li>A Brief Introduction</li>
-        <li>Creating a StringBuilder object</li>
-        <li>Using StringBuilder Methods</li>
-        <li>A StringBuilder Example</li>
-        <li>Tokenizing Strings</li>
-        <li>Regular Expressions, Class Pattern and Class Matcher</li>
+        <li>Controlled components</li>
+        <li>Uncontrolled components</li>
+        <li>Handling form submissions</li>
+        <li>Validating form input</li>
+        <li>Using refs with forms</li>
       </ul>
     ),
   },
   {
-    title: "String Operations and Functions",
+    title: "Refs and the DOM",
     content: (
       <ul className="courseListitem">
-        <li>String length()</li>
-        <li>String replace()</li>
-        <li>String replaceAll()</li>
-        <li>String split()</li>
-        <li>String substring()</li>
-        <li>String toCharArray()</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Exception Handling",
-    content: (
-      <ul className="courseListitem">
-        <li>What is exception?</li>
-        <li>java built-in exceptions</li>
-        <li>Try - Catch</li>
-        <li>Finally</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Object Oriented Programming (OOPS)",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>OOPS Concept & Principles</li>
-        <li>Access modifiers</li>
-        <li>Constroctor</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Inheritance",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Inheritance</li>
-        <li>Types of inheritance</li>
-        <li>Single inheritance</li>
-        <li>Multilevel inheritance</li>
-        <li>hierarchical inheritance</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Polymorphism & Abstraction",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Polymorphism</li>
-        <li>Derived Types </li>
-        <li>Method overloading</li>
-        <li>Method overriding</li>
-        <li>Abstraction</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Interfaces and Packages in Java",
-    content: (
-      <ul className="courseListitem">
-        <li>Working with Interfaces</li>
-        <li>What is an Interface?</li>
-        <li>Defining an Interface</li>
-        <li>Implementing Interfaces</li>
-        <li>Extending Interfaces</li>
-        <li>Nesting Interfaces</li>
-        <li>Inline Member Declarations</li>
-        <li>Importing a Single Package Member</li>
-        <li>Importing an Entire Package</li>
+        <li>Creating refs</li>
+        <li>Accessing DOM elements</li>
+        <li>Using refs with class components</li>
+        <li>Callback refs</li>
       </ul>
     ),
   },
 
   {
-    title: "Array",
+    title: "Routing with React Router",
     content: (
       <ul className="courseListitem">
-        <li>Java Array</li>
-        <li>Dimensional of Array </li>
-        <li>Multi-Dimensional Array </li>
-        <li>Array Problem Solving</li>
+        <li>Setting up React Router</li>
+        <li>Route components</li>
+        <li>Link and NavLink components</li>
+        <li>Route parameters</li>
+        <li>Nested routes</li>
       </ul>
     ),
   },
   {
-    title: "Multithreading",
+    title: "Conditional Rendering",
     content: (
       <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>Advantages</li>
-        <li>Run() and Start() Method</li>
-        <li>Runnable interface implementation</li>
+        <li>if-else statements in JSX</li>
+        <li>Ternary operators in JSX</li>
+        <li>Short-circuit evaluation</li>
+        <li>Inline if-else with logical operators</li>
+        <li>Conditional rendering with components</li>
       </ul>
     ),
   },
   {
-    title: "Collection Framework",
+    title: "Lists and Keys",
     content: (
       <ul className="courseListitem">
-        <li>Generics(Templates)</li>
-        <li>What is generic</li>
-        <li>Creating User defined Generic classes</li>
-        <li>The java.util package</li>
-        <li>Collection</li>
-        <li>What is Collection Framework</li>
-        <li>List, Set & Map interfaces</li>
-        <li>Linked List, etc</li>
-        <li>Using Collections class for sorting</li>
-        <li>SortedMap, LinkedHashMap etc.</li>
-        <li>Iterator, Enumerator.</li>
-        <li>Using Queue, Deque, SortedQue, etc.</li>
-        <li>Interview related Question and Answer</li>
+        <li>Rendering lists in React</li>
+        <li>Using the map function</li>
+        <li>Importance of keys</li>
+        <li>Handling keys correctly</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Styling in React",
+    content: (
+      <ul className="courseListitem">
+        <li>Inline styles</li>
+        <li>CSS stylesheets</li>
+        <li>CSS Modules</li>
+        <li>Styled-components</li>
+        <li>Using Sass with React</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Higher-Order Components (HOCs)",
+    content: (
+      <ul className="courseListitem">
+        <li>What are HOCs?</li>
+        <li>Creating a higher-order component</li>
+        <li>Using HOCs to enhance components</li>
+        <li>Passing props through HOCs</li>
+        <li>Composing multiple HOCs</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Render Props",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to render props</li>
+        <li>Implementing render props</li>
+        <li>Using render props for state management</li>
+        <li>Comparison with HOCs</li>
+        <li>Common use cases</li>
+      </ul>
+    ),
+  },
+  {
+    title: "React Fragments",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to React Fragments</li>
+        <li>Using React.Fragment</li>
+        <li>Short syntax for fragments</li>
+        <li>Keyed fragments</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Testing in React",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to testing</li>
+        <li>Writing tests with Jest</li>
+        <li>Testing components with React Testing Library</li>
+        <li>Snapshot testing</li>
+        <li>Mocking API calls</li>
+      </ul>
+    ),
+  },
+  {
+    title: "State Management with Redux",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to Redux</li>
+        <li>Setting up Redux with React</li>
+        <li>Actions and reducers</li>
+        <li>Connecting Redux to components</li>
+        <li>Middleware </li>
+      </ul>
+    ),
+  },
+  {
+    title: "Material-UI",
+    content: (
+      <ul className="courseListitem">
+        <li>What is Material-UI?</li>
+        <li>Benefits of using Material-UI</li>
+        <li>Overview of Material-UI components</li>
+        <li>Theming and customization basics</li>
+        <li>Typography,Buttons,Icons</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Introduction to Node.js",
+    content: (
+      <ul className="courseListitem">
+        <li>What is Node.js?</li>
+        <li>Features of Node.js</li>
+        <li>Installing Node.js</li>
+        <li>Setting up a Node.js environment</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Node.js Modules",
+    content: (
+      <ul className="courseListitem">
+        <li>Built-in modules</li>
+        <li>Creating custom modules</li>
+        <li>Importing and exporting modules</li>
+        <li>Using npm for managing modules</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Node.js File System",
+    content: (
+      <ul className="courseListitem">
+        <li>Reading and writing files</li>
+        <li>Working with file paths</li>
+        <li>File streaming</li>
+        <li>Asynchronous file operations</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Node.js Event Loop",
+    content: (
+      <ul className="courseListitem">
+        <li>Understanding the event-driven architecture</li>
+        <li>Event emitters</li>
+        <li>Handling events</li>
+        <li>Asynchronous programming with callbacks</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Node.js HTTP Module",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating an HTTP server</li>
+        <li>Handling HTTP requests and responses</li>
+        <li>Working with different HTTP methods (GET, POST, PUT, DELETE)</li>
+        <li>Parsing request bodies</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Node.js Streams and Buffers",
+    content: (
+      <ul className="courseListitem">
+        <li>Working with streams</li>
+        <li>Reading from and writing to streams</li>
+        <li>Piping streams</li>
+        <li>Understanding buffers</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Node.js Error Handling",
+    content: (
+      <ul className="courseListitem">
+        <li>Error types in Node.js</li>
+        <li>Using try-catch blocks</li>
+        <li>Unmounting phase method (componentWillUnmount)</li>
+        <li>Handling asynchronous errors</li>
+        <li>Best practices for error handling</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Introduction to Express.js",
+    content: (
+      <ul className="courseListitem">
+        <li>What is Express.js?</li>
+        <li>Installing Express.js</li>
+        <li>Setting up a basic Express server</li>
+        <li>Middleware in Express.js</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Routing in Express.js",
+    content: (
+      <ul className="courseListitem">
+        <li>Defining routes</li>
+        <li>Route parameters and query strings</li>
+        <li>Handling different HTTP methods</li>
+        <li>Using Router for modular routes</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Middleware in Express.js",
+    content: (
+      <ul className="courseListitem">
+        <li>Understanding middleware functions</li>
+        <li>Built-in middleware</li>
+        <li>Third-party middleware (e.g., body-parser)</li>
+        <li>Creating custom middleware</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Templating in Express.js",
+    content: (
+      <ul className="courseListitem">
+        <li>Using template engines (e.g., EJS, Pug)</li>
+        <li>Rendering dynamic HTML</li>
+        <li>Passing data to views</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Handling Forms and File Uploads",
+    content: (
+      <ul className="courseListitem">
+        <li>Parsing form data</li>
+        <li>Handling file uploads with multer</li>
+        <li>Validating form inputs</li>
+        <li>Managing file storage</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Authentication and Authorization",
+    content: (
+      <ul className="courseListitem">
+        <li>Understanding sessions and cookies</li>
+        <li>Implementing authentication with Passport.js</li>
+        <li>Role-based access control</li>
+        <li>OAuth and third-party authentication</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Error Handling in Express.js",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating error-handling middleware</li>
+        <li>Handling 404 errors</li>
+        <li>Catching and logging errors</li>
+        <li>Best practices for error responses</li>
+      </ul>
+    ),
+  },
+  {
+    title: "RESTful API Development",
+    content: (
+      <ul className="courseListitem">
+        <li>Principles of RESTful APIs</li>
+        <li>Creating RESTful endpoints</li>
+        <li>Versioning APIs</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Express.js Best Practices",
+    content: (
+      <ul className="courseListitem">
+        <li>Structuring Express applications</li>
+        <li>Writing clean and maintainable code</li>
+        <li>Logging and monitoring</li>
+        <li>Refactoring and code reviews</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Introduction to Postman",
+    content: (
+      <ul className="courseListitem">
+        <li>What is Postman?</li>
+        <li>Installing Postman</li>
+        <li>Understanding the Postman interface</li>
+        <li>Creating a Postman account and workspace</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Making API Requests with Postman",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating and sending GET requests</li>
+        <li>Creating and sending POST requests</li>
+        <li>Sending PUT and DELETE requests</li>
+        <li>Understanding request methods and headers</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Working with Request Parameters",
+    content: (
+      <ul className="courseListitem">
+        <li>Using query parameters</li>
+        <li>Sending form-data and x-www-form-urlencoded data</li>
+        <li>Setting request body formats (JSON, XML, text)</li>
+        <li>Handling URL-encoded data</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Introduction to MongoDB",
+    content: (
+      <ul className="courseListitem">
+        <li>Overview of MongoDB</li>
+        <li>NoSQL vs SQL Databases</li>
+        <li>MongoDB Architecture</li>
+        <li>Installation and Setup</li>
+        <li>Basic MongoDB Commands</li>
+      </ul>
+    ),
+  },
+  {
+    title: "CRUD Operations",
+    content: (
+      <ul className="courseListitem">
+        <li>Inserting Documents</li>
+        <li>Querying Documents</li>
+        <li>Updating Documents</li>
+        <li>Deleting Documents</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Data Modeling",
+    content: (
+      <ul className="courseListitem">
+        <li>Schema Design in MongoDB</li>
+        <li>Embedding vs Referencing Documents</li>
+        <li>Data Normalization and Denormalization</li>
+        <li>Handling Data Relationships</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Indexes",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to Indexes</li>
+        <li>Creating and Managing Indexes</li>
+        <li>Types of Indexes (Single Field, Compound, Multi-Key, etc.)</li>
+        <li>Indexing Strategies and Performance</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Aggregation Framework",
+    content: (
+      <ul className="courseListitem">
+        <li>Basics of Aggregation</li>
+        <li>Aggregation Pipelines</li>
+        <li>Aggregation Performance Considerations</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Introduction to Mongoose",
+    content: (
+      <ul className="courseListitem">
+        <li>Overview of Mongoose</li>
+        <li>Advantages of Using Mongoose with MongoDB</li>
+        <li>Setting Up Mongoose in a Node.js Project</li>
+        <li>Basic Mongoose Commands</li>
+        <li>Mongoose vs Native MongoDB Driver</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Schema Definition",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating Schemas with Mongoose</li>
+        <li>Schema Types (String, Number, Date, etc.)</li>
+        <li>Validation Rules and Custom Validators</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Model Creation and Methods",
+    content: (
+      <ul className="courseListitem">
+        <li>Defining Models from Schemas</li>
+        <li>Instance Methods and Static Methods</li>
+        <li>Custom Model Methods</li>
+        <li>Query Helpers</li>
+      </ul>
+    ),
+  },
+  {
+    title: "CRUD Operations",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating and Saving Documents</li>
+        <li>Reading Documents (Find and FindOne)</li>
+        <li>Updating Documents (Update, FindOneAndUpdate)</li>
+        <li>Deleting Documents (DeleteOne, DeleteMany)</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Query Building",
+    content: (
+      <ul className="courseListitem">
+        <li>Using Query Builders in Mongoose</li>
+        <li>Query Operators and Modifiers</li>
+        <li>Chaining Queries</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Validation and Error Handling",
+    content: (
+      <ul className="courseListitem">
+        <li>Built-in Validators</li>
+        <li>Custom Validators</li>
+        <li>Handling Validation Errors</li>
       </ul>
     ),
   },
 ];
-function Java() {
+function MernStack() {
   const navigate = useNavigate();
   return (
     <div className="courseNameMain">
@@ -253,19 +603,18 @@ function Java() {
       >
         <div className="courseName">
           <h5>
-            Home {">"} Courses {">"} Python Course
+            Home {">"} Courses {">"} MERN Stack Course
           </h5>
-          <h2>Best Java Training in Erode</h2>
+          <h2>Best MERN Stack Training in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
             <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
-              width="40%"
-              style={{ margin: "10px" }}
-              alt="Python Icon"
-            />
-            <h2 style={{ margin: "10px" }}>Java</h2>
+              src="/assets/Images/Course Images/Course Items/Course Icons/mern.png"
+              height="140"
+              style={{ position: "relative", top: "25px" }}
+            ></img>
+            <h2>MERN Stack</h2>
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -286,7 +635,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                80 Hours
+                120 Hours
               </div>
             </div>
           </div>
@@ -316,7 +665,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                19+5
+                12+5
               </div>
             </div>
           </div>
@@ -401,37 +750,6 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
-                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
-                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
-                </svg>
-                <span
-                  style={{ position: "relative", top: "-5px", left: "5px" }}
-                >
-                  Mode
-                </span>
-              </div>
-              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                Offline | Online
-              </div>
-            </div>
-          </div>
-          <div className="courseHR">
-            <hr className="hr"></hr>
-          </div>
-          <div className="courseModule">
-            <div className="Courseduration">
-              <div>
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -450,6 +768,37 @@ function Java() {
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
                 Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Mode
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Offline | Online
               </div>
             </div>
           </div>
@@ -502,19 +851,20 @@ function Java() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Java Course Overview</h2>
+        <h2>MERN Stack Course Overview</h2>
         <div>
           <p>
-            This Java Course equips you with essential Java programming skills,
-            starting with syntax, data types, and control structures. You'll
-            master file operations, exception handling, and object-oriented
-            programming, including classes, inheritance, polymorphism, and
-            encapsulation. The course covers key Java libraries like java.util,
-            java.io . Real-world case studies by industry experts provide
-            practical insights into web development, mobile apps, and data
-            analysis. The course prepares you for Java Certification, enhancing
-            career prospects. By the end, you'll be a proficient Java developer,
-            ready to tackle diverse programming challenges.
+            This MERN Course provides a comprehensive guide to developing
+            full-stack applications using MongoDB, Express.js, React, and
+            Node.js. You'll learn to build dynamic and scalable web applications
+            by integrating these technologies. The course covers MongoDB for
+            NoSQL database management, Express.js for server-side development,
+            React for building interactive user interfaces, and Node.js for
+            server-side JavaScript. Through hands-on projects, you'll gain
+            practical experience in creating robust web solutions, handling data
+            operations, and managing application state. Ideal for aspiring
+            full-stack developers, this course equips you with the skills needed
+            to create modern, end-to-end web applications.
           </p>
         </div>
         <br></br>
@@ -522,18 +872,21 @@ function Java() {
         <div>
           <ul className="courseul">
             <li>
-              BE / BTech / MTech / BCA / MCA graduates aspiring to build a
-              career as a Java Developer.
+              BE / BTech / MTech / BCA / MCA graduates aspiring to specialize in
+              full-stack web development using the MERN stack.
             </li>
             <li>Candidates looking to restart their career after a gap.</li>
-            <li>Complete beginners interested in Java programming.</li>
             <li>
-              Aspiring web developers seeking expertise in Java and frameworks
-              like Spring , Hibernate and Selenium.
+              Complete beginners interested in learning how to build end-to-end
+              web applications with MongoDB, Express.js, React, and Node.js.
             </li>
             <li>
-              Professionals seeking to advance their knowledge of modern web
-              technologies and enterprise-level applications.
+              Aspiring developers seeking expertise in integrating and
+              leveraging the MERN stack for modern web solutions.
+            </li>
+            <li>
+              Professionals aiming to advance their knowledge in full-stack
+              development and create scalable, dynamic web applications.
             </li>
           </ul>
         </div>
@@ -550,19 +903,17 @@ function Java() {
               <h1>Related Course</h1>
               <div className="relatedcourseList">
                 <span>
-                  <Link to="/courses/seleninum">Selenium</Link>
+                  <Link to="/courses/react">React</Link>
                 </span>
                 <span>
-                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                  <Link to="/courses/angular">Angular</Link>
                 </span>
                 <span>
-                  <Link to="/courses/hibernate">Hibernate</Link>
+                  <Link to="/courses/mern">MERN Stack</Link>
                 </span>
+
                 <span>
-                  <Link to="/courses/flutter">Flutter</Link>
-                </span>
-                <span>
-                  <Link to="/courses/mysql"></Link>
+                  <Link to="/courses/mysql">Node js</Link>
                 </span>
               </div>
             </div>
@@ -820,14 +1171,14 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Java Developer</li>
-            <li>Web Developer</li>
-            <li>Software Engineer</li>
+            <li>Full-Stack Developer</li>
+            <li>Frontend Developer</li>
+            <li>Backend Developer</li>
           </ul>
           <ul>
-            <li>Software Tester</li>
-            <li>Full Stack Developer</li>
-            <li>Software Developer</li>
+            <li>Tech Lead</li>
+            <li>MERN Stack Developer</li>
+            <li>Software Engineer</li>
           </ul>
         </div>
       </section>
@@ -848,4 +1199,4 @@ function Java() {
   );
 }
 
-export default Java;
+export default MernStack;

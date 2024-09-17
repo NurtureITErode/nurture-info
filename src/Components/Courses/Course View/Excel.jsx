@@ -6,244 +6,127 @@ import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 import { Link, useNavigate } from "react-router-dom";
-
 const accordionItems = [
   {
-    title: "Introduction to Java",
+    title: "Introduction to Excel",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Java</li>
-        <li>History Of Java</li>
-        <li>Java Features</li>
-        <li>Areas Of Application Of Java</li>
+        <li>Overview of Excel Interface</li>
+        <li>Basic Navigation and Shortcuts</li>
+        <li>Creating and Saving Workbooks</li>
       </ul>
     ),
   },
   {
-    title: "Java Programming Environment",
+    title: "Data Entry and Formatting",
     content: (
       <ul className="courseListitem">
-        <li>How to install & Set Path</li>
-        <li>Installing Java on different Platforms(Windows and Linux)</li>
-        <li>Compiling & executing Java Program</li>
-        <li>RunTime Exception </li>
-        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
+        <li>Entering and Editing Data</li>
+        <li>Cell Formatting (Text, Numbers, Dates)</li>
+        <li>Conditional Formatting</li>
       </ul>
     ),
   },
   {
-    title: "Java Basics",
+    title: "Formulas and Functions",
     content: (
       <ul className="courseListitem">
-        <li>Data types and variables</li>
-        <li>Comments , Statements</li>
-        <li>Operators</li>
-        <li>Command line argument</li>
-        <li>Primtive Data Types</li>
+        <li>Basic Formulas (SUM, AVERAGE, etc.)</li>
+        <li>Logical Functions (IF, AND, OR)</li>
+        <li>Lookup Functions </li>
       </ul>
     ),
   },
   {
-    title: "Command-Line Arguments",
+    title: "Data Analysis Tools",
     content: (
       <ul className="courseListitem">
-        <li>What is Command-Line Arguments? </li>
-        <li>Java Application Command-Line Arguments</li>
-        <li>Using Methods</li>
+        <li>Sorting and Filtering Data</li>
+        <li>Data Validation Techniques</li>
+        <li>Using PivotTables for Data Analysis</li>
       </ul>
     ),
   },
   {
-    title: "Integrated Development Environment",
+    title: "Charts and Graphs",
     content: (
       <ul className="courseListitem">
-        <li>using various Editors </li>
-        <li>Using Eclipse IDE</li>
-        <li>Project Set-Up</li>
-        <li>Application Compilation and run</li>
+        <li>Creating Basic Charts (Bar, Line, Pie)</li>
+        <li>Customizing Chart Elements</li>
       </ul>
     ),
   },
   {
-    title: "Java Conditional Statements",
+    title: "Working with Tables",
     content: (
       <ul className="courseListitem">
-        <li>If statement</li>
-        <li>If…elif...else statement</li>
-        <li>Nested if</li>
-        <li>Switch Case</li>
+        <li>Creating and Formatting Tables</li>
+        <li>Using Structured References</li>
+        <li>Table Styles and Total Row Features</li>
       </ul>
     ),
   },
   {
-    title: "java flow controll",
+    title: "Data Import and Export",
     content: (
       <ul className="courseListitem">
-        <li>For</li>
-        <li>While </li>
-        <li>Do while</li>
-        <li>Dictionary</li>
-        <li>For each</li>
-        <li>Continue & Break</li>
+        <li>Importing Data from External Sources</li>
+        <li>Exporting Data to CSV and PDF</li>
+        <li>Data Connections and Queries</li>
       </ul>
     ),
   },
   {
-    title: "Functions",
+    title: "Advanced Formulas",
     content: (
       <ul className="courseListitem">
-        <li>What is a function?</li>
-        <li>Define a function</li>
-        <li>Pass arguments</li>
-        <li>Arguments with default values</li>
-        <li>Return a value from function</li>
+        <li>Array Formulas and Functions</li>
+        <li>Using INDEX and MATCH Together</li>
+        <li>Understanding and Creating Nested Formulas</li>
       </ul>
     ),
   },
   {
-    title: "Input fundamentals & Non Primitive Data Types",
+    title: "Data Visualization",
     content: (
       <ul className="courseListitem">
-        <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer </li>
-        <li>Problem solving</li>
-        <li>String vs Char array</li>
+        <li>Creating Advanced Charts (Combo Charts, Scatter Plots)</li>
+        <li>Using Data Bars, Color Scales</li>
+        <li>Creating Dynamic Dashboards</li>
       </ul>
     ),
   },
   {
-    title: "Using the StringBuilder & StringBuffer Classes",
+    title: "Excel Add-ins",
     content: (
       <ul className="courseListitem">
-        <li>A Brief Introduction</li>
-        <li>Creating a StringBuilder object</li>
-        <li>Using StringBuilder Methods</li>
-        <li>A StringBuilder Example</li>
-        <li>Tokenizing Strings</li>
-        <li>Regular Expressions, Class Pattern and Class Matcher</li>
+        <li>Installing and Using Add-ins</li>
+        <li>Popular Add-ins for Data Analysis</li>
+        <li>Automating Tasks with Add-ins</li>
       </ul>
     ),
   },
   {
-    title: "String Operations and Functions",
+    title: "Collaborating in Excel",
     content: (
       <ul className="courseListitem">
-        <li>String length()</li>
-        <li>String replace()</li>
-        <li>String replaceAll()</li>
-        <li>String split()</li>
-        <li>String substring()</li>
-        <li>String toCharArray()</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Exception Handling",
-    content: (
-      <ul className="courseListitem">
-        <li>What is exception?</li>
-        <li>java built-in exceptions</li>
-        <li>Try - Catch</li>
-        <li>Finally</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Object Oriented Programming (OOPS)",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>OOPS Concept & Principles</li>
-        <li>Access modifiers</li>
-        <li>Constroctor</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Inheritance",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Inheritance</li>
-        <li>Types of inheritance</li>
-        <li>Single inheritance</li>
-        <li>Multilevel inheritance</li>
-        <li>hierarchical inheritance</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Polymorphism & Abstraction",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Polymorphism</li>
-        <li>Derived Types </li>
-        <li>Method overloading</li>
-        <li>Method overriding</li>
-        <li>Abstraction</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Interfaces and Packages in Java",
-    content: (
-      <ul className="courseListitem">
-        <li>Working with Interfaces</li>
-        <li>What is an Interface?</li>
-        <li>Defining an Interface</li>
-        <li>Implementing Interfaces</li>
-        <li>Extending Interfaces</li>
-        <li>Nesting Interfaces</li>
-        <li>Inline Member Declarations</li>
-        <li>Importing a Single Package Member</li>
-        <li>Importing an Entire Package</li>
+        <li>Sharing Workbooks</li>
+        <li>Tracking Changes and Comments</li>
       </ul>
     ),
   },
 
   {
-    title: "Array",
+    title: "Troubleshooting and Debugging",
     content: (
       <ul className="courseListitem">
-        <li>Java Array</li>
-        <li>Dimensional of Array </li>
-        <li>Multi-Dimensional Array </li>
-        <li>Array Problem Solving</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Multithreading",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>Advantages</li>
-        <li>Run() and Start() Method</li>
-        <li>Runnable interface implementation</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Collection Framework",
-    content: (
-      <ul className="courseListitem">
-        <li>Generics(Templates)</li>
-        <li>What is generic</li>
-        <li>Creating User defined Generic classes</li>
-        <li>The java.util package</li>
-        <li>Collection</li>
-        <li>What is Collection Framework</li>
-        <li>List, Set & Map interfaces</li>
-        <li>Linked List, etc</li>
-        <li>Using Collections class for sorting</li>
-        <li>SortedMap, LinkedHashMap etc.</li>
-        <li>Iterator, Enumerator.</li>
-        <li>Using Queue, Deque, SortedQue, etc.</li>
-        <li>Interview related Question and Answer</li>
+        <li>Common Excel Errors and Solutions</li>
+        <li>Using the Formula Auditing Tool</li>
       </ul>
     ),
   },
 ];
-function Java() {
+function Excel() {
   const navigate = useNavigate();
   return (
     <div className="courseNameMain">
@@ -253,19 +136,62 @@ function Java() {
       >
         <div className="courseName">
           <h5>
-            Home {">"} Courses {">"} Python Course
+            Home {">"} Courses {">"} Excel Course
           </h5>
-          <h2>Best Java Training in Erode</h2>
+          <h2>Advance Excel Training in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
-            <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
-              width="40%"
-              style={{ margin: "10px" }}
-              alt="Python Icon"
-            />
-            <h2 style={{ margin: "10px" }}>Java</h2>
+            <svg
+              style={{ position: "relative", top: "25px" }}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="-0.12979372698077785 0 32.12979372698078 32"
+              height="100"
+            >
+              <g data-name="STYLE = COLOR">
+                <path
+                  d="M20 2H9.333A1.333 1.333 0 0 0 8 3.333V9l12 7 6 2.532L32 16V9z"
+                  fill="#21a366"
+                />
+                <path fill="#107c41" d="M8 9h12v7H8z" />
+                <path
+                  d="M30.667 2H20v7h12V3.333A1.333 1.333 0 0 0 30.667 2z"
+                  fill="#33c481"
+                />
+                <path
+                  d="M20 16H8v12.667A1.333 1.333 0 0 0 9.333 30h21.334A1.333 1.333 0 0 0 32 28.667V23z"
+                  fill="#185c37"
+                />
+                <path fill="#107c41" d="M20 16h12v7H20z" />
+                <path
+                  d="M16.667 7H8v19h8.667A1.337 1.337 0 0 0 18 24.667V8.333A1.337 1.337 0 0 0 16.667 7z"
+                  opacity=".1"
+                />
+                <path
+                  d="M15.667 8H8v19h7.667A1.337 1.337 0 0 0 17 25.667V9.333A1.337 1.337 0 0 0 15.667 8z"
+                  opacity=".2"
+                />
+                <path
+                  d="M15.667 8H8v17h7.667A1.337 1.337 0 0 0 17 23.667V9.333A1.337 1.337 0 0 0 15.667 8z"
+                  opacity=".2"
+                />
+                <path
+                  d="M14.667 8H8v17h6.667A1.337 1.337 0 0 0 16 23.667V9.333A1.337 1.337 0 0 0 14.667 8z"
+                  opacity=".2"
+                />
+                <path
+                  data-name="Back Plate"
+                  d="M1.333 8h13.334A1.333 1.333 0 0 1 16 9.333v13.334A1.333 1.333 0 0 1 14.667 24H1.333A1.333 1.333 0 0 1 0 22.667V9.333A1.333 1.333 0 0 1 1.333 8z"
+                  fill="#107c41"
+                />
+                <path
+                  d="M3.533 21l3.236-5.014L3.805 11H6.19l1.618 3.187q.223.453.307.676h.021q.16-.362.335-.704L10.2 11h2.189l-3.04 4.958L12.466 21h-2.33l-1.869-3.5a2.922 2.922 0 0 1-.223-.468h-.028a2.207 2.207 0 0 1-.216.453L5.877 21z"
+                  fill="#fff"
+                />
+                <path fill="none" d="M0 0h32v32H0z" />
+              </g>
+            </svg>
+            <h2>Advance Excel </h2>
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -286,7 +212,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                80 Hours
+                40 Hours
               </div>
             </div>
           </div>
@@ -316,7 +242,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                19+5
+                10+5
               </div>
             </div>
           </div>
@@ -401,37 +327,6 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
-                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
-                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
-                </svg>
-                <span
-                  style={{ position: "relative", top: "-5px", left: "5px" }}
-                >
-                  Mode
-                </span>
-              </div>
-              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                Offline | Online
-              </div>
-            </div>
-          </div>
-          <div className="courseHR">
-            <hr className="hr"></hr>
-          </div>
-          <div className="courseModule">
-            <div className="Courseduration">
-              <div>
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -450,6 +345,37 @@ function Java() {
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
                 Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Mode
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Offline | Online
               </div>
             </div>
           </div>
@@ -502,19 +428,19 @@ function Java() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Java Course Overview</h2>
+        <h2>Advance Excel Course Overview</h2>
         <div>
           <p>
-            This Java Course equips you with essential Java programming skills,
-            starting with syntax, data types, and control structures. You'll
-            master file operations, exception handling, and object-oriented
-            programming, including classes, inheritance, polymorphism, and
-            encapsulation. The course covers key Java libraries like java.util,
-            java.io . Real-world case studies by industry experts provide
-            practical insights into web development, mobile apps, and data
-            analysis. The course prepares you for Java Certification, enhancing
-            career prospects. By the end, you'll be a proficient Java developer,
-            ready to tackle diverse programming challenges.
+            Nurture Infotech Erode offers the best training in Advanced Excel,
+            designed to elevate your data analysis and spreadsheet management
+            skills. This course covers complex functions, data visualization
+            techniques, pivot tables, and advanced formulas, enabling you to
+            efficiently handle large datasets. You'll also learn automation
+            through macros and VBA, making your workflow more productive. The
+            course is ideal for professionals and students looking to master
+            Excel for career advancement. Real-world projects and expert
+            guidance ensure that by the end of the course, you’ll be proficient
+            in leveraging Excel for sophisticated data solutions.
           </p>
         </div>
         <br></br>
@@ -522,18 +448,21 @@ function Java() {
         <div>
           <ul className="courseul">
             <li>
-              BE / BTech / MTech / BCA / MCA graduates aspiring to build a
-              career as a Java Developer.
+              BE / BTech / MTech / BCA / MCA graduates aspiring to specialize in
+              data analysis, reporting, and spreadsheet management.
             </li>
             <li>Candidates looking to restart their career after a gap.</li>
-            <li>Complete beginners interested in Java programming.</li>
             <li>
-              Aspiring web developers seeking expertise in Java and frameworks
-              like Spring , Hibernate and Selenium.
+              Complete beginners interested in mastering Excel for data
+              processing and business intelligence.
             </li>
             <li>
-              Professionals seeking to advance their knowledge of modern web
-              technologies and enterprise-level applications.
+              Aspiring data analysts seeking expertise in advanced Excel
+              functions, pivot tables, and automation tools.
+            </li>
+            <li>
+              Professionals aiming to advance their knowledge in Excel to create
+              efficient, data-driven solutions for decision-making.
             </li>
           </ul>
         </div>
@@ -550,19 +479,17 @@ function Java() {
               <h1>Related Course</h1>
               <div className="relatedcourseList">
                 <span>
-                  <Link to="/courses/seleninum">Selenium</Link>
+                  <Link to="/courses/dataanalytics">Tally</Link>
                 </span>
                 <span>
-                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                  <Link to="/courses/tally">DataAnalytics</Link>
                 </span>
                 <span>
-                  <Link to="/courses/hibernate">Hibernate</Link>
+                  <Link to="/courses/mern">Data Science</Link>
                 </span>
+
                 <span>
-                  <Link to="/courses/flutter">Flutter</Link>
-                </span>
-                <span>
-                  <Link to="/courses/mysql"></Link>
+                  <Link to="/courses/mysql">Python</Link>
                 </span>
               </div>
             </div>
@@ -820,14 +747,14 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Java Developer</li>
-            <li>Web Developer</li>
-            <li>Software Engineer</li>
+            <li>Accountant </li>
+            <li>Data Analyst</li>
+            <li>Financial Analyst</li>
           </ul>
           <ul>
-            <li>Software Tester</li>
-            <li>Full Stack Developer</li>
-            <li>Software Developer</li>
+            <li>Project Manager</li>
+            <li>Market Research Analyst</li>
+            <li>Business Analyst</li>
           </ul>
         </div>
       </section>
@@ -848,4 +775,4 @@ function Java() {
   );
 }
 
-export default Java;
+export default Excel;

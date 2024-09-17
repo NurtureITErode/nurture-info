@@ -6,244 +6,270 @@ import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 import { Link, useNavigate } from "react-router-dom";
-
 const accordionItems = [
   {
-    title: "Introduction to Java",
+    title: "Introduction to Software Testing",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Java</li>
-        <li>History Of Java</li>
-        <li>Java Features</li>
-        <li>Areas Of Application Of Java</li>
+        <li>Definition and importance</li>
+        <li>
+          Features of Node.jsSoftware Development Life Cycle (SDLC) vs. Software
+          Testing Life Cycle (STLC)
+        </li>
+        <li>Types of Testing (Manual, Automated, Performance, etc.)</li>
       </ul>
     ),
   },
   {
-    title: "Java Programming Environment",
+    title: "Testing Levels",
     content: (
       <ul className="courseListitem">
-        <li>How to install & Set Path</li>
-        <li>Installing Java on different Platforms(Windows and Linux)</li>
-        <li>Compiling & executing Java Program</li>
-        <li>RunTime Exception </li>
-        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
+        <li>Unit Testing</li>
+        <li>Integration Testing</li>
+        <li>System Testing</li>
       </ul>
     ),
   },
   {
-    title: "Java Basics",
+    title: "Testing Types",
     content: (
       <ul className="courseListitem">
-        <li>Data types and variables</li>
-        <li>Comments , Statements</li>
-        <li>Operators</li>
-        <li>Command line argument</li>
-        <li>Primtive Data Types</li>
+        <li>Functional Testing</li>
+        <li>Non-Functional Testing </li>
+        <li>Regression Testing</li>
+        <li>Smoke and Sanity Testing</li>
       </ul>
     ),
   },
   {
-    title: "Command-Line Arguments",
+    title: "Test Design Techniques",
     content: (
       <ul className="courseListitem">
-        <li>What is Command-Line Arguments? </li>
-        <li>Java Application Command-Line Arguments</li>
-        <li>Using Methods</li>
+        <li>Black Box Testing</li>
+        <li>White Box Testing</li>
+        <li>Gray Box Testing</li>
       </ul>
     ),
   },
   {
-    title: "Integrated Development Environment",
+    title: "Test Management",
     content: (
       <ul className="courseListitem">
-        <li>using various Editors </li>
-        <li>Using Eclipse IDE</li>
-        <li>Project Set-Up</li>
-        <li>Application Compilation and run</li>
+        <li>Test Planning</li>
+        <li>Test Estimation</li>
+        <li>Test Strategy</li>
       </ul>
     ),
   },
   {
-    title: "Java Conditional Statements",
+    title: "Defect Life Cycle",
     content: (
       <ul className="courseListitem">
-        <li>If statement</li>
-        <li>If…elif...else statement</li>
-        <li>Nested if</li>
-        <li>Switch Case</li>
+        <li>Defect Reporting</li>
+        <li>Defect Tracking Tools (JIRA)</li>
+        <li>Severity and Priority</li>
       </ul>
     ),
   },
   {
-    title: "java flow controll",
+    title: "Agile Testing",
     content: (
       <ul className="courseListitem">
-        <li>For</li>
-        <li>While </li>
-        <li>Do while</li>
-        <li>Dictionary</li>
-        <li>For each</li>
-        <li>Continue & Break</li>
+        <li>Agile Methodologies (Scrum)</li>
+        <li>Role of Tester in Agile</li>
+        <li>Continuous Integration and Continuous Testing</li>
       </ul>
     ),
   },
   {
-    title: "Functions",
+    title: "Test Automation Basics",
     content: (
       <ul className="courseListitem">
-        <li>What is a function?</li>
-        <li>Define a function</li>
-        <li>Pass arguments</li>
-        <li>Arguments with default values</li>
-        <li>Return a value from function</li>
+        <li>Benefits of Test Automation</li>
+        <li>Tools for Test Automation (Selenium, QTP, etc.)</li>
+        <li>Automation Frameworks</li>
       </ul>
     ),
   },
   {
-    title: "Input fundamentals & Non Primitive Data Types",
+    title: "Introduction to Manual Testing",
     content: (
       <ul className="courseListitem">
-        <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer </li>
-        <li>Problem solving</li>
-        <li>String vs Char array</li>
+        <li>Definition and importance</li>
+        <li>Differences between Manual and Automated Testing</li>
       </ul>
     ),
   },
   {
-    title: "Using the StringBuilder & StringBuffer Classes",
+    title: "Requirement Analysis",
     content: (
       <ul className="courseListitem">
-        <li>A Brief Introduction</li>
-        <li>Creating a StringBuilder object</li>
-        <li>Using StringBuilder Methods</li>
-        <li>A StringBuilder Example</li>
-        <li>Tokenizing Strings</li>
-        <li>Regular Expressions, Class Pattern and Class Matcher</li>
+        <li>Understanding Requirements</li>
+        <li>Requirement Traceability Matrix (RTM)</li>
       </ul>
     ),
   },
   {
-    title: "String Operations and Functions",
+    title: "Test Case Design",
     content: (
       <ul className="courseListitem">
-        <li>String length()</li>
-        <li>String replace()</li>
-        <li>String replaceAll()</li>
-        <li>String split()</li>
-        <li>String substring()</li>
-        <li>String toCharArray()</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Exception Handling",
-    content: (
-      <ul className="courseListitem">
-        <li>What is exception?</li>
-        <li>java built-in exceptions</li>
-        <li>Try - Catch</li>
-        <li>Finally</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Object Oriented Programming (OOPS)",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>OOPS Concept & Principles</li>
-        <li>Access modifiers</li>
-        <li>Constroctor</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Inheritance",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Inheritance</li>
-        <li>Types of inheritance</li>
-        <li>Single inheritance</li>
-        <li>Multilevel inheritance</li>
-        <li>hierarchical inheritance</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Polymorphism & Abstraction",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Polymorphism</li>
-        <li>Derived Types </li>
-        <li>Method overloading</li>
-        <li>Method overriding</li>
-        <li>Abstraction</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Interfaces and Packages in Java",
-    content: (
-      <ul className="courseListitem">
-        <li>Working with Interfaces</li>
-        <li>What is an Interface?</li>
-        <li>Defining an Interface</li>
-        <li>Implementing Interfaces</li>
-        <li>Extending Interfaces</li>
-        <li>Nesting Interfaces</li>
-        <li>Inline Member Declarations</li>
-        <li>Importing a Single Package Member</li>
-        <li>Importing an Entire Package</li>
+        <li>Writing Effective Test Cases</li>
+        <li>Test Case Review</li>
+        <li>Test Data Preparation</li>
       </ul>
     ),
   },
 
   {
-    title: "Array",
+    title: "Test Execution",
     content: (
       <ul className="courseListitem">
-        <li>Java Array</li>
-        <li>Dimensional of Array </li>
-        <li>Multi-Dimensional Array </li>
-        <li>Array Problem Solving</li>
+        <li>Test Environment Setup</li>
+        <li>Test Execution Process</li>
+        <li>Logging and Tracking Defects</li>
       </ul>
     ),
   },
   {
-    title: "Multithreading",
+    title: "Java Fundamentals",
     content: (
       <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>Advantages</li>
-        <li>Run() and Start() Method</li>
-        <li>Runnable interface implementation</li>
+        <li>Java Syntax and Structure</li>
+        <li>Variables and Data Types</li>
+        <li>Operators and Expressions</li>
       </ul>
     ),
   },
   {
-    title: "Collection Framework",
+    title: "Object-Oriented Programming (OOP) Concepts",
     content: (
       <ul className="courseListitem">
-        <li>Generics(Templates)</li>
-        <li>What is generic</li>
-        <li>Creating User defined Generic classes</li>
-        <li>The java.util package</li>
-        <li>Collection</li>
-        <li>What is Collection Framework</li>
-        <li>List, Set & Map interfaces</li>
-        <li>Linked List, etc</li>
-        <li>Using Collections class for sorting</li>
-        <li>SortedMap, LinkedHashMap etc.</li>
-        <li>Iterator, Enumerator.</li>
-        <li>Using Queue, Deque, SortedQue, etc.</li>
-        <li>Interview related Question and Answer</li>
+        <li>Classes and Objects</li>
+        <li>Inheritance, Polymorphism, Encapsulation, and Abstraction</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Java Collections Framework",
+    content: (
+      <ul className="courseListitem">
+        <li>List, Set, Map Interfaces</li>
+        <li>Common Implementations (ArrayList, HashSet, HashMap)</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Introduction to Selenium",
+    content: (
+      <ul className="courseListitem">
+        <li>Overview and Components</li>
+        <li>Selenium WebDriver Basics</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Selenium IDE",
+    content: (
+      <ul className="courseListitem">
+        <li>Installation and Setup</li>
+        <li>Recording and Playing Back Tests</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Selenium WebDriver",
+    content: (
+      <ul className="courseListitem">
+        <li>Setting Up WebDriver</li>
+        <li>Locating Web Elements (By ID, Name, XPath, CSS Selector)</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Handling Web Elements",
+    content: (
+      <ul className="courseListitem">
+        <li>Interacting with Text Boxes, Buttons, Links, and Drop-downs</li>
+        <li>Handling Alerts, Pop-ups, and Frames</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Waits in Selenium",
+    content: (
+      <ul className="courseListitem">
+        <li>Implicit Waits</li>
+        <li>Explicit Waits</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Advanced User Interactions",
+    content: (
+      <ul className="courseListitem">
+        <li>Mouse Hover, Drag and Drop, Right Click</li>
+        <li>Handling Keyboard Events</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Data-Driven Testing",
+    content: (
+      <ul className="courseListitem">
+        <li>Parameterization using Excel</li>
+        <li>Reading and Writing Data from Files</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "TestNG with Selenium",
+    content: (
+      <ul className="courseListitem">
+        <li>TestNG Annotations</li>
+        <li>Parallel Test Execution</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Capturing Screenshots",
+    content: (
+      <ul className="courseListitem">
+        <li>Taking Screenshots on Failure</li>
+        <li>Custom Screenshot Utility</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Introduction to TestNG",
+    content: (
+      <ul className="courseListitem">
+        <li>Overview and Benefits</li>
+        <li>Installation and Setup</li>
+      </ul>
+    ),
+  },
+  {
+    title: "TestNG Annotations",
+    content: (
+      <ul className="courseListitem">
+        <li>@Test, @BeforeMethod, @AfterMethod</li>
+        <li>@BeforeClass, @AfterClass</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Integration with Selenium",
+    content: (
+      <ul className="courseListitem">
+        <li>Running Selenium Tests with TestNG</li>
+        <li>Generating Selenium Test Reports</li>
       </ul>
     ),
   },
 ];
-function Java() {
+function Automation() {
   const navigate = useNavigate();
   return (
     <div className="courseNameMain">
@@ -253,19 +279,25 @@ function Java() {
       >
         <div className="courseName">
           <h5>
-            Home {">"} Courses {">"} Python Course
+            Home {">"} Courses {">"} Node & Express Course
           </h5>
-          <h2>Best Java Training in Erode</h2>
+          <h2>Software Testing Automation in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
-            <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
-              width="40%"
-              style={{ margin: "10px" }}
-              alt="Python Icon"
-            />
-            <h2 style={{ margin: "10px" }}>Java</h2>
+            <svg
+              viewBox="0 -2.7755575615628914e-17 139.42009434021008 34"
+              xmlns="http://www.w3.org/2000/svg"
+              width="170"
+              height="120"
+              style={{ position: "relative", top: "0px" }}
+            >
+              <g fill="#01a71c">
+                <path d="M46.2 26.37a18.85 18.85 0 0 1-2.57-.2 25 25 0 0 1-2.74-.53v-1.39a25.31 25.31 0 0 0 2.71.53 18 18 0 0 0 2.5.2 5.51 5.51 0 0 0 3.29-.84 2.79 2.79 0 0 0 1.14-2.39 2.85 2.85 0 0 0-1.24-2.49 6 6 0 0 0-1.29-.71q-.78-.29-1.67-.55a15.93 15.93 0 0 1-2.33-.87 5.92 5.92 0 0 1-1.58-1.05 3.6 3.6 0 0 1-.9-1.34 5 5 0 0 1-.29-1.74 4.46 4.46 0 0 1 .41-1.93 4.31 4.31 0 0 1 1.17-1.5 5.26 5.26 0 0 1 1.82-1A8 8 0 0 1 47 8.28a20.51 20.51 0 0 1 4.41.57v1.42a20 20 0 0 0-2.23-.44 15.2 15.2 0 0 0-2-.15 4.86 4.86 0 0 0-3.08.9A2.9 2.9 0 0 0 42.88 13a3.25 3.25 0 0 0 .21 1.21 2.61 2.61 0 0 0 .7 1 4.83 4.83 0 0 0 1.27.79 14.31 14.31 0 0 0 2 .68q1.11.33 2.06.71a6.21 6.21 0 0 1 1.65.94 4.09 4.09 0 0 1 1.1 1.38 4.54 4.54 0 0 1 .4 2 4.15 4.15 0 0 1-1.56 3.48 7.16 7.16 0 0 1-4.51 1.18zM60.62 26.32a5.46 5.46 0 0 1-4.28-1.62 6.9 6.9 0 0 1-1.46-4.7 7.8 7.8 0 0 1 1.43-5 5 5 0 0 1 4.14-1.75 4.24 4.24 0 0 1 3.47 1.43 6.48 6.48 0 0 1 1.18 4.12v.92a3.22 3.22 0 0 1-.09.64h-8.57a5.39 5.39 0 0 0 1.17 3.5A4.18 4.18 0 0 0 60.8 25a10.52 10.52 0 0 0 1.82-.17 11.77 11.77 0 0 0 1.93-.52l.12 1.27a10.68 10.68 0 0 1-2 .55 11.47 11.47 0 0 1-2.05.19zm-.22-11.89q-3.68 0-3.94 4.74h7.15a6.49 6.49 0 0 0-.78-3.63 2.76 2.76 0 0 0-2.43-1.11zM68.64 7h1.58v19.11h-1.58zM79.56 26.32a5.46 5.46 0 0 1-4.28-1.62 6.9 6.9 0 0 1-1.45-4.7 7.8 7.8 0 0 1 1.43-5 5 5 0 0 1 4.14-1.75 4.24 4.24 0 0 1 3.47 1.43A6.48 6.48 0 0 1 84 18.8v.92a3.22 3.22 0 0 1-.09.64h-8.53a5.4 5.4 0 0 0 1.17 3.5 4.18 4.18 0 0 0 3.2 1.14 10.52 10.52 0 0 0 1.82-.17 11.8 11.8 0 0 0 1.93-.52l.12 1.27a10.68 10.68 0 0 1-2 .55 11.47 11.47 0 0 1-2.06.19zm-.21-11.89q-3.68 0-3.94 4.74h7.15a6.49 6.49 0 0 0-.78-3.63 2.76 2.76 0 0 0-2.43-1.11zM87.51 13.37h1.32l.12 1.49h.12q.94-.45 1.72-.78t1.43-.54a8.42 8.42 0 0 1 1.2-.31 6.54 6.54 0 0 1 1.1-.09A3.3 3.3 0 0 1 97 14a3.63 3.63 0 0 1 .83 2.63v9.51h-1.59v-9a3 3 0 0 0-.55-2 2.18 2.18 0 0 0-1.69-.6 7.25 7.25 0 0 0-2.24.41 20.1 20.1 0 0 0-2.67 1.12v10h-1.58zM102.75 10.52a.93.93 0 0 1-1.06-1 1.06 1.06 0 0 1 2.12 0 .93.93 0 0 1-1.06 1zm-.8 2.85h1.58v12.74h-1.58zM110.81 26.34q-3.14 0-3.14-3.47v-9.5h1.58v9a3.16 3.16 0 0 0 .48 2 1.92 1.92 0 0 0 1.59.6 6.83 6.83 0 0 0 2.48-.48q1.25-.48 2.59-1.14v-9.98H118v12.74h-1.32l-.12-1.58h-.09l-1.73.81q-.74.34-1.38.57a7.9 7.9 0 0 1-1.23.33 7.34 7.34 0 0 1-1.32.1zM122.18 13.37h1.3l.14 1.49h.09a19.53 19.53 0 0 1 2.58-1.31 5.51 5.51 0 0 1 2-.41 2.83 2.83 0 0 1 3 1.77h.12q.8-.5 1.45-.83a12.61 12.61 0 0 1 1.2-.54 6.17 6.17 0 0 1 1-.31 5.18 5.18 0 0 1 1-.09 3.3 3.3 0 0 1 2.45.84 3.63 3.63 0 0 1 .83 2.63v9.51h-1.56v-9a2.9 2.9 0 0 0-.55-2 2.21 2.21 0 0 0-1.69-.59 5.14 5.14 0 0 0-1.78.38A14.45 14.45 0 0 0 131.6 16v10.1H130v-9a2.9 2.9 0 0 0-.55-2 2.21 2.21 0 0 0-1.69-.59 5.24 5.24 0 0 0-1.86.4 14 14 0 0 0-2.14 1.09v10.11h-1.58zM21.45 21.51a2.49 2.49 0 0 0-2.55 2.21.08.08 0 0 0 .08.1h4.95a.08.08 0 0 0 .08-.09 2.41 2.41 0 0 0-2.56-2.22z" />
+                <path d="M32.06 4.91L21.56 16.7a.32.32 0 0 1-.47 0l-5.36-5.53a.32.32 0 0 1 0-.4L17.5 8.5a.32.32 0 0 1 .52 0l3 3.32a.32.32 0 0 0 .49 0L29.87.36a.23.23 0 0 0-.18-.36H.25A.25.25 0 0 0 0 .25v33.5a.25.25 0 0 0 .25.25h32a.25.25 0 0 0 .25-.25V5.06a.23.23 0 0 0-.44-.15zm-23 25.36a8.08 8.08 0 0 1-5.74-2 .31.31 0 0 1 0-.41l1.25-1.75A.31.31 0 0 1 5 26a6.15 6.15 0 0 0 4.2 1.64c1.64 0 2.44-.76 2.44-1.56 0-2.48-8.08-.78-8.08-6.06 0-2.33 2-4.27 5.32-4.27a7.88 7.88 0 0 1 5.25 1.76.31.31 0 0 1 0 .43l-1.23 1.71a.31.31 0 0 1-.45.05 6.08 6.08 0 0 0-3.84-1.32c-1.28 0-2 .57-2 1.41 0 2.23 8.06.74 8.06 6 0 2.54-1.83 4.48-5.62 4.48zm17.62-4.87a.27.27 0 0 1-.28.28H19a.09.09 0 0 0-.08.1 2.81 2.81 0 0 0 3 2.32 4.62 4.62 0 0 0 2.56-.84.27.27 0 0 1 .4.06l.9 1.31a.28.28 0 0 1-.06.37 6.67 6.67 0 0 1-4.1 1.28 5.28 5.28 0 0 1-5.57-5.48 5.31 5.31 0 0 1 5.4-5.46c3.11 0 5.22 2.33 5.22 5.74z" />
+              </g>
+            </svg>
+            {/* <h2>Selenium</h2> */}
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -316,7 +348,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                19+5
+                20+5
               </div>
             </div>
           </div>
@@ -401,37 +433,6 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
-                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
-                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
-                </svg>
-                <span
-                  style={{ position: "relative", top: "-5px", left: "5px" }}
-                >
-                  Mode
-                </span>
-              </div>
-              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                Offline | Online
-              </div>
-            </div>
-          </div>
-          <div className="courseHR">
-            <hr className="hr"></hr>
-          </div>
-          <div className="courseModule">
-            <div className="Courseduration">
-              <div>
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -450,6 +451,37 @@ function Java() {
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
                 Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Mode
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Offline | Online
               </div>
             </div>
           </div>
@@ -502,19 +534,20 @@ function Java() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Java Course Overview</h2>
+        <h2>Software Testing Course Overview</h2>
         <div>
           <p>
-            This Java Course equips you with essential Java programming skills,
-            starting with syntax, data types, and control structures. You'll
-            master file operations, exception handling, and object-oriented
-            programming, including classes, inheritance, polymorphism, and
-            encapsulation. The course covers key Java libraries like java.util,
-            java.io . Real-world case studies by industry experts provide
-            practical insights into web development, mobile apps, and data
-            analysis. The course prepares you for Java Certification, enhancing
-            career prospects. By the end, you'll be a proficient Java developer,
-            ready to tackle diverse programming challenges.
+            The Software Testing with Selenium Course in Erode Nurture Infotech
+            offers comprehensive training in automation testing using Selenium.
+            You’ll learn to write effective test scripts for web applications,
+            covering Selenium WebDriver, TestNG, and Selenium Grid. The software
+            testing training includes practical exercises on creating and
+            executing test cases, managing test data, and integrating with CI/CD
+            tools. Designed for beginners and professionals, this course equips
+            you with the skills to ensure software quality and reliability. By
+            the end, you'll be proficient in using Selenium for robust
+            automation testing, ready to advance your career in software
+            testing.
           </p>
         </div>
         <br></br>
@@ -523,17 +556,19 @@ function Java() {
           <ul className="courseul">
             <li>
               BE / BTech / MTech / BCA / MCA graduates aspiring to build a
-              career as a Java Developer.
+              career in software testing and quality assurance.
             </li>
             <li>Candidates looking to restart their career after a gap.</li>
-            <li>Complete beginners interested in Java programming.</li>
             <li>
-              Aspiring web developers seeking expertise in Java and frameworks
-              like Spring , Hibernate and Selenium.
+              Complete beginners interested in automated testing and Selenium.
             </li>
             <li>
-              Professionals seeking to advance their knowledge of modern web
-              technologies and enterprise-level applications.
+              Aspiring testers seeking expertise in Selenium for building robust
+              test automation frameworks.
+            </li>
+            <li>
+              Professionals aiming to advance their knowledge of modern testing
+              tools and techniques in automated software testing.
             </li>
           </ul>
         </div>
@@ -550,19 +585,19 @@ function Java() {
               <h1>Related Course</h1>
               <div className="relatedcourseList">
                 <span>
-                  <Link to="/courses/seleninum">Selenium</Link>
+                  <Link to="/courses/dataanalytics">Data Analytics</Link>
                 </span>
                 <span>
-                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                  <Link to="/courses/django">Django</Link>
                 </span>
                 <span>
-                  <Link to="/courses/hibernate">Hibernate</Link>
+                  <Link to="/courses/machinelearning">Machine Learning</Link>
                 </span>
                 <span>
-                  <Link to="/courses/flutter">Flutter</Link>
+                  <Link to="/courses/datascience">Data Science</Link>
                 </span>
                 <span>
-                  <Link to="/courses/mysql"></Link>
+                  <Link to="/courses/mysql">MySQL</Link>
                 </span>
               </div>
             </div>
@@ -820,14 +855,14 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Java Developer</li>
-            <li>Web Developer</li>
-            <li>Software Engineer</li>
+            <li>Automation Test Engineer</li>
+            <li>Quality Assurance Engineer</li>
+            <li>Test Automation Architect</li>
           </ul>
           <ul>
-            <li>Software Tester</li>
-            <li>Full Stack Developer</li>
-            <li>Software Developer</li>
+            <li>Software Development Engineer in Test (SDET)</li>
+            <li>QA Lead / Manager</li>
+            <li>Performance Tester</li>
           </ul>
         </div>
       </section>
@@ -848,4 +883,4 @@ function Java() {
   );
 }
 
-export default Java;
+export default Automation;

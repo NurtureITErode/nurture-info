@@ -14,6 +14,21 @@ import Gallery from "./Components/Gallery/Gallery";
 import Courses from "./Components/Courses/Courses";
 import Python from "./Components/Courses/Course View/Python";
 import Java from "./Components/Courses/Course View/Java";
+import WebDesign from "./Components/Courses/Course View/WebDesign";
+import Typescript from "./Components/Courses/Course View/Typescript";
+import ReactBook from "./Components/Courses/Course View/ReactBook";
+import NodeExpress from "./Components/Courses/Course View/NodeExpress";
+import Mongodb from "./Components/Courses/Course View/Mongodb";
+import MernStack from "./Components/Courses/Course View/MernStack";
+import Automation from "./Components/Courses/Course View/Automation";
+import Php from "./Components/Courses/Course View/MyPhp";
+import Laravel from "./Components/Courses/Course View/Laravel";
+import Django from "./Components/Courses/Course View/Django";
+import Angular from "./Components/Courses/Course View/Angular";
+import MeanStack from "./Components/Courses/Course View/MeanStack";
+import Excel from "./Components/Courses/Course View/Excel";
+import PowerBi from "./Components/Courses/Course View/PowerBi";
+import DataAnalytics from "./Components/Courses/Course View/DataAnalytics";
 
 function App() {
   return (
@@ -33,6 +48,39 @@ function App() {
 
           <Route path="/courses/python" element={<Python></Python>}></Route>
           <Route path="/courses/java" element={<Java></Java>}></Route>
+          <Route
+            path="/courses/webdesign"
+            element={<WebDesign></WebDesign>}
+          ></Route>
+          <Route
+            path="/courses/typescript"
+            element={<Typescript></Typescript>}
+          ></Route>
+          <Route
+            path="/courses/react"
+            element={<ReactBook></ReactBook>}
+          ></Route>
+          <Route
+            path="/courses/node"
+            element={<NodeExpress></NodeExpress>}
+          ></Route>
+          <Route path="/courses/mongodb" element={<Mongodb></Mongodb>}></Route>
+          <Route path="/courses/mern" element={<MernStack></MernStack>}></Route>
+          <Route path="/courses/mean" element={<MeanStack></MeanStack>}></Route>
+          <Route
+            path="/courses/automation"
+            element={<Automation></Automation>}
+          ></Route>
+          <Route path="/courses/php" element={<Php></Php>}></Route>
+          <Route path="/courses/laravel" element={<Laravel></Laravel>}></Route>
+          <Route path="/courses/django" element={<Django></Django>}></Route>
+          <Route path="/courses/angular" element={<Angular></Angular>}></Route>
+          <Route path="/courses/excel" element={<Excel></Excel>}></Route>
+          <Route path="/courses/powerbi" element={<PowerBi></PowerBi>}></Route>
+          <Route
+            path="/course/dataanalytics"
+            element={<DataAnalytics></DataAnalytics>}
+          ></Route>
         </Routes>
 
         <Footer></Footer>

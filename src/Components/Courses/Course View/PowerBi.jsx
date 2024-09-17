@@ -6,244 +6,225 @@ import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 import { Link, useNavigate } from "react-router-dom";
-
 const accordionItems = [
   {
-    title: "Introduction to Java",
+    title: "Introduction to Power BI",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Java</li>
-        <li>History Of Java</li>
-        <li>Java Features</li>
-        <li>Areas Of Application Of Java</li>
+        <li>Overview of Power BI</li>
+        <li>Power BI Desktop vs. Power BI Service</li>
+        <li>Installation and Setup</li>
       </ul>
     ),
   },
   {
-    title: "Java Programming Environment",
+    title: "Getting Data in Power BI",
     content: (
       <ul className="courseListitem">
-        <li>How to install & Set Path</li>
-        <li>Installing Java on different Platforms(Windows and Linux)</li>
-        <li>Compiling & executing Java Program</li>
-        <li>RunTime Exception </li>
-        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
+        <li>Connecting to Different Data Sources</li>
+        <li>Importing Data from Excel, SQL Server, and Web</li>
+        <li>Data Refresh and Scheduled Refresh</li>
       </ul>
     ),
   },
   {
-    title: "Java Basics",
+    title: "Data Transformation",
     content: (
       <ul className="courseListitem">
-        <li>Data types and variables</li>
-        <li>Comments , Statements</li>
-        <li>Operators</li>
-        <li>Command line argument</li>
-        <li>Primtive Data Types</li>
+        <li>Introduction to Power Query Editor</li>
+        <li>Data Cleaning and Shaping</li>
+        <li>Merging and Appending Queries </li>
       </ul>
     ),
   },
   {
-    title: "Command-Line Arguments",
+    title: "Introduction to Charts",
     content: (
       <ul className="courseListitem">
-        <li>What is Command-Line Arguments? </li>
-        <li>Java Application Command-Line Arguments</li>
-        <li>Using Methods</li>
+        <li>Overview of Different Chart Types</li>
+        <li>When to Use Each Chart Type</li>
+        <li>Basic Chart Terminology</li>
       </ul>
     ),
   },
   {
-    title: "Integrated Development Environment",
+    title: "Bar and Column Charts",
     content: (
       <ul className="courseListitem">
-        <li>using various Editors </li>
-        <li>Using Eclipse IDE</li>
-        <li>Project Set-Up</li>
-        <li>Application Compilation and run</li>
+        <li>Creating Simple Bar and Column Charts</li>
+        <li>Customizing Bars and Columns</li>
+        <li>Stacked vs. Clustered Bar Charts</li>
       </ul>
     ),
   },
   {
-    title: "Java Conditional Statements",
+    title: "Line Charts",
     content: (
       <ul className="courseListitem">
-        <li>If statement</li>
-        <li>If…elif...else statement</li>
-        <li>Nested if</li>
-        <li>Switch Case</li>
+        <li>Plotting Data Over Time with Line Charts</li>
+        <li>Adding Multiple Lines for Comparison</li>
+        <li>Formatting Line Styles and Markers</li>
       </ul>
     ),
   },
   {
-    title: "java flow controll",
+    title: "Pie and Donut Charts",
     content: (
       <ul className="courseListitem">
-        <li>For</li>
-        <li>While </li>
-        <li>Do while</li>
-        <li>Dictionary</li>
-        <li>For each</li>
-        <li>Continue & Break</li>
+        <li>Visualizing Proportions with Pie Charts</li>
+        <li>Creating Donut Charts for Multi-Level Data</li>
+        <li>Best Practices for Pie and Donut Charts</li>
       </ul>
     ),
   },
   {
-    title: "Functions",
+    title: "Area Charts",
     content: (
       <ul className="courseListitem">
-        <li>What is a function?</li>
-        <li>Define a function</li>
-        <li>Pass arguments</li>
-        <li>Arguments with default values</li>
-        <li>Return a value from function</li>
+        <li>Creating Area Charts for Cumulative Data</li>
+        <li>Stacked vs. 100% Stacked Area Charts</li>
+        <li>Formatting and Customizing Area Charts</li>
       </ul>
     ),
   },
   {
-    title: "Input fundamentals & Non Primitive Data Types",
+    title: "Scatter and Bubble Charts",
     content: (
       <ul className="courseListitem">
-        <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer </li>
-        <li>Problem solving</li>
-        <li>String vs Char array</li>
+        <li>Visualizing Relationships with Scatter Charts</li>
+        <li>Creating Bubble Charts for Multidimensional Data</li>
       </ul>
     ),
   },
   {
-    title: "Using the StringBuilder & StringBuffer Classes",
+    title: "Waterfall Charts",
     content: (
       <ul className="courseListitem">
-        <li>A Brief Introduction</li>
-        <li>Creating a StringBuilder object</li>
-        <li>Using StringBuilder Methods</li>
-        <li>A StringBuilder Example</li>
-        <li>Tokenizing Strings</li>
-        <li>Regular Expressions, Class Pattern and Class Matcher</li>
+        <li>Visualizing Sequential Data with Waterfall Charts</li>
+        <li>Creating Financial Models with Waterfall Charts</li>
       </ul>
     ),
   },
   {
-    title: "String Operations and Functions",
+    title: "Treemap  Charts",
     content: (
       <ul className="courseListitem">
-        <li>String length()</li>
-        <li>String replace()</li>
-        <li>String replaceAll()</li>
-        <li>String split()</li>
-        <li>String substring()</li>
-        <li>String toCharArray()</li>
+        <li>Visualizing Hierarchical Data with Treemaps</li>
+        <li>Creating Sunburst Charts for Nested Data</li>
       </ul>
     ),
   },
   {
-    title: "Exception Handling",
+    title: "Funnel and Pyramid Charts",
     content: (
       <ul className="courseListitem">
-        <li>What is exception?</li>
-        <li>java built-in exceptions</li>
-        <li>Try - Catch</li>
-        <li>Finally</li>
+        <li>Visualizing Sales and Conversion Funnels</li>
+        <li>Creating Pyramid Charts for Data Distribution</li>
       </ul>
     ),
   },
   {
-    title: "Object Oriented Programming (OOPS)",
+    title: "Data Modeling",
     content: (
       <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>OOPS Concept & Principles</li>
-        <li>Access modifiers</li>
-        <li>Constroctor</li>
+        <li>Creating Relationships between Tables</li>
+        <li>Understanding Cardinality and Cross-Filtering</li>
+        <li>Creating and Managing Hierarchies</li>
       </ul>
     ),
   },
   {
-    title: "Inheritance",
+    title: "DAX (Data Analysis Expressions)",
     content: (
       <ul className="courseListitem">
-        <li>Introduction Inheritance</li>
-        <li>Types of inheritance</li>
-        <li>Single inheritance</li>
-        <li>Multilevel inheritance</li>
-        <li>hierarchical inheritance</li>
+        <li>Introduction to DAX</li>
+        <li>Basic DAX Functions (SUM, COUNT, AVERAGE)</li>
+        <li>Time Intelligence Functions (YTD, QTD, MTD)</li>
       </ul>
     ),
   },
   {
-    title: "Polymorphism & Abstraction",
+    title: "Creating Visualizations",
     content: (
       <ul className="courseListitem">
-        <li>Introduction Polymorphism</li>
-        <li>Derived Types </li>
-        <li>Method overloading</li>
-        <li>Method overriding</li>
-        <li>Abstraction</li>
+        <li>Overview of Available Visuals</li>
+        <li>Creating and Customizing Bar, Line, and Pie Charts</li>
+        <li>Using Slicers and Filters</li>
       </ul>
     ),
   },
   {
-    title: "Interfaces and Packages in Java",
+    title: "Advanced Visualizations",
     content: (
       <ul className="courseListitem">
-        <li>Working with Interfaces</li>
-        <li>What is an Interface?</li>
-        <li>Defining an Interface</li>
-        <li>Implementing Interfaces</li>
-        <li>Extending Interfaces</li>
-        <li>Nesting Interfaces</li>
-        <li>Inline Member Declarations</li>
-        <li>Importing a Single Package Member</li>
-        <li>Importing an Entire Package</li>
+        <li>Using Maps and Geographic Visuals</li>
+        <li>Creating Treemaps and Waterfall Charts</li>
+        <li>Custom Visuals and Marketplace Integration</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Dashboards in Power BI",
+    content: (
+      <ul className="courseListitem">
+        <li>Building Interactive Dashboards</li>
+        <li>Adding Visuals and Tiles to Dashboards</li>
+        <li>Customizing Dashboard Layout and Themes</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Power BI Reports",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating Reports from Scratch</li>
+        <li>Formatting Reports with Themes and Layouts</li>
+        <li>Using Report-Level Filters</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Working with Measures and Calculated Columns",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating Measures in Power BI</li>
+        <li>Calculated Columns vs. Measures</li>
+        <li>Using Quick Measures</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Using Power BI Service",
+    content: (
+      <ul className="courseListitem">
+        <li>Publishing Reports to Power BI Service</li>
+        <li>Sharing Reports and Dashboards</li>
+        <li>Power BI Apps and App Workspaces</li>
       </ul>
     ),
   },
 
   {
-    title: "Array",
+    title: "Power BI with Excel",
     content: (
       <ul className="courseListitem">
-        <li>Java Array</li>
-        <li>Dimensional of Array </li>
-        <li>Multi-Dimensional Array </li>
-        <li>Array Problem Solving</li>
+        <li>Integrating Power BI with Excel</li>
+        <li>Publishing Excel Data Models to Power BI</li>
+        <li>Analyzing Power BI Data in Excel</li>
       </ul>
     ),
   },
   {
-    title: "Multithreading",
+    title: "Advanced DAX Functions",
     content: (
       <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>Advantages</li>
-        <li>Run() and Start() Method</li>
-        <li>Runnable interface implementation</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Collection Framework",
-    content: (
-      <ul className="courseListitem">
-        <li>Generics(Templates)</li>
-        <li>What is generic</li>
-        <li>Creating User defined Generic classes</li>
-        <li>The java.util package</li>
-        <li>Collection</li>
-        <li>What is Collection Framework</li>
-        <li>List, Set & Map interfaces</li>
-        <li>Linked List, etc</li>
-        <li>Using Collections class for sorting</li>
-        <li>SortedMap, LinkedHashMap etc.</li>
-        <li>Iterator, Enumerator.</li>
-        <li>Using Queue, Deque, SortedQue, etc.</li>
-        <li>Interview related Question and Answer</li>
+        <li>Understanding CALCULATE and FILTER</li>
+        <li>Working with ALL and REMOVEFILTERS</li>
       </ul>
     ),
   },
 ];
-function Java() {
+function PowerBi() {
   const navigate = useNavigate();
   return (
     <div className="courseNameMain">
@@ -253,19 +234,23 @@ function Java() {
       >
         <div className="courseName">
           <h5>
-            Home {">"} Courses {">"} Python Course
+            Home {">"} Courses {">"} PowerBI Course
           </h5>
-          <h2>Best Java Training in Erode</h2>
+          <h2>PowerBI Training in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
-            <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
-              width="40%"
-              style={{ margin: "10px" }}
-              alt="Python Icon"
-            />
-            <h2 style={{ margin: "10px" }}>Java</h2>
+            <svg
+              height="100"
+              width={100}
+              viewBox="66 107.3 269.1 204.4"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ position: "relative", top: "15px" }}
+            >
+              <path d="m89.7 108.1c-8.9 2.1-17.8 9.5-21.6 17.9-2 4.4-2.1 6.3-2.1 68.5 0 61.1.1 64.2 2 68.2 5.1 11.3 15.1 18.1 28 19.1l7 .5v-11.3h-4.8c-7.1 0-14.7-4.1-18.3-9.8l-2.9-4.6v-61.8c0-67.9-.3-64.3 6.2-70.5 6.9-6.6.9-6.3 118.7-6.1 118.2.3 108.9-.2 115.9 6.9 6.4 6.6 6.3 5.2 6 71l-.3 59.6-3 4.9c-3.7 6-11.4 10.4-18.2 10.4h-4.3v4.5c0 2.5-.1 4.8-.2 5.2-.5 1.4 6.6 1.5 12.2.3 7.4-1.7 14.9-6.7 18.9-12.6 6.2-9.5 6.2-8.8 5.9-76l-.3-60.9-2.3-5c-3-6.5-10.2-13.8-16.6-16.7l-5.1-2.3-108.5-.2c-61.1 0-110.1.3-112.3.8z" />
+              <path d="m260.7 158.1c-5.9 4.5-5.7 1.8-5.7 74.1 0 64.8.1 66.4 2 69.6 2.6 4.2 9.9 7.6 14.4 6.8 4.6-.9 9.3-4.1 11.3-7.8 1.7-3.1 1.8-7.7 1.8-69.3v-66l-2.3-3.3c-3.2-4.4-7.1-6.2-13.4-6.2-3.8.1-6.1.7-8.1 2.1zm-90.9 36c-2.3 1.2-4.6 3.5-5.8 5.9-1.9 3.8-2 5.8-2 50.7 0 43.7.1 47.1 1.9 50.3 5.6 10.7 20.5 10.7 25.9 0l2.3-4.5-.3-47c-.3-44.8-.4-47.2-2.3-50.3-2.2-3.7-8.7-7.2-13.1-7.2-1.6.1-4.6 1-6.6 2.1zm50.5 21c-5.1 1-8.3 3.7-10.4 8.5-1.9 4.1-2 6.5-1.7 39.7.3 33.4.4 35.4 2.3 38.7 4 6.8 14.1 9.1 20.6 4.7 6.8-4.5 6.9-5.1 6.9-44.9 0-19.6-.4-36.7-.9-38-2.3-6.1-10.2-10.1-16.8-8.7zm-98.6 33c-5.5 4.2-5.9 6.2-5.8 29.2.2 23.6.5 25 7.2 29.5 4.6 3.2 12.6 2.7 16.5-.9 5.1-4.8 5.4-6.2 5.4-28.9 0-23.4-.4-25.5-6.3-29-4.5-2.8-13.2-2.7-17 .1z" />
+            </svg>
+            <h2>PowerBI </h2>
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -286,7 +271,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                80 Hours
+                60 Hours
               </div>
             </div>
           </div>
@@ -316,7 +301,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                19+5
+                15+5
               </div>
             </div>
           </div>
@@ -401,37 +386,6 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
-                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
-                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
-                </svg>
-                <span
-                  style={{ position: "relative", top: "-5px", left: "5px" }}
-                >
-                  Mode
-                </span>
-              </div>
-              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                Offline | Online
-              </div>
-            </div>
-          </div>
-          <div className="courseHR">
-            <hr className="hr"></hr>
-          </div>
-          <div className="courseModule">
-            <div className="Courseduration">
-              <div>
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -450,6 +404,37 @@ function Java() {
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
                 Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Mode
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Offline | Online
               </div>
             </div>
           </div>
@@ -502,19 +487,19 @@ function Java() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Java Course Overview</h2>
+        <h2>Advance Excel Course Overview</h2>
         <div>
           <p>
-            This Java Course equips you with essential Java programming skills,
-            starting with syntax, data types, and control structures. You'll
-            master file operations, exception handling, and object-oriented
-            programming, including classes, inheritance, polymorphism, and
-            encapsulation. The course covers key Java libraries like java.util,
-            java.io . Real-world case studies by industry experts provide
-            practical insights into web development, mobile apps, and data
-            analysis. The course prepares you for Java Certification, enhancing
-            career prospects. By the end, you'll be a proficient Java developer,
-            ready to tackle diverse programming challenges.
+            Nurture Infotech Erode offers the best training in Power BI,
+            empowering you to transform raw data into meaningful insights. This
+            course covers data modeling, visualization techniques, and advanced
+            reporting using Power BI’s powerful tools. You'll learn to create
+            interactive dashboards, perform data analysis, and share insights
+            across your organization. Whether you're a beginner or an
+            experienced professional, this course provides the skills needed to
+            leverage Power BI for data-driven decision-making. With hands-on
+            projects and expert instruction, you'll be well-equipped to excel in
+            the field of business intelligence and data analytics.
           </p>
         </div>
         <br></br>
@@ -522,18 +507,21 @@ function Java() {
         <div>
           <ul className="courseul">
             <li>
-              BE / BTech / MTech / BCA / MCA graduates aspiring to build a
-              career as a Java Developer.
+              BE / BTech / MTech / BCA / MCA graduates aspiring to specialize in
+              data analysis, visualization, and business intelligence.
             </li>
             <li>Candidates looking to restart their career after a gap.</li>
-            <li>Complete beginners interested in Java programming.</li>
             <li>
-              Aspiring web developers seeking expertise in Java and frameworks
-              like Spring , Hibernate and Selenium.
+              Complete beginners interested in mastering data analytics
+              techniques for extracting meaningful insights from data.
             </li>
             <li>
-              Professionals seeking to advance their knowledge of modern web
-              technologies and enterprise-level applications.
+              Aspiring data analysts seeking expertise in data visualization,
+              statistical analysis, and predictive modeling.
+            </li>
+            <li>
+              Professionals aiming to advance their knowledge in data analytics
+              to drive informed, data-driven decision-making.
             </li>
           </ul>
         </div>
@@ -550,19 +538,20 @@ function Java() {
               <h1>Related Course</h1>
               <div className="relatedcourseList">
                 <span>
-                  <Link to="/courses/seleninum">Selenium</Link>
+                  <Link to="/courses/dataanalytics">DataAnalytics</Link>
                 </span>
                 <span>
-                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                  <Link to="/courses/datascience">Data Science</Link>
                 </span>
                 <span>
-                  <Link to="/courses/hibernate">Hibernate</Link>
+                  <Link to="/courses/machinelearning">Machine Learning</Link>
+                </span>
+
+                <span>
+                  <Link to="/courses/python">Python</Link>
                 </span>
                 <span>
-                  <Link to="/courses/flutter">Flutter</Link>
-                </span>
-                <span>
-                  <Link to="/courses/mysql"></Link>
+                  <Link to="/courses/mysql">MySql</Link>
                 </span>
               </div>
             </div>
@@ -820,14 +809,14 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Java Developer</li>
-            <li>Web Developer</li>
-            <li>Software Engineer</li>
+            <li>Data Analyst</li>
+            <li>Financial Analyst</li>
+            <li>Dashboard Designer </li>
           </ul>
           <ul>
-            <li>Software Tester</li>
-            <li>Full Stack Developer</li>
-            <li>Software Developer</li>
+            <li>AI/ML Developer</li>
+            <li>Market Research Analyst</li>
+            <li>Business Analyst</li>
           </ul>
         </div>
       </section>
@@ -848,4 +837,4 @@ function Java() {
   );
 }
 
-export default Java;
+export default PowerBi;

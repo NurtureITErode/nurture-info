@@ -6,244 +6,197 @@ import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 import { Link, useNavigate } from "react-router-dom";
-
 const accordionItems = [
   {
-    title: "Introduction to Java",
+    title: "Introduction to HTML5",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Java</li>
-        <li>History Of Java</li>
-        <li>Java Features</li>
-        <li>Areas Of Application Of Java</li>
+        <li>HTML5 vs. Previous Versions</li>
+        <li>Basic Structure of an HTML5 Document</li>
+        <li>New Features and Elements</li>
       </ul>
     ),
   },
   {
-    title: "Java Programming Environment",
+    title: "Semantic Elements",
     content: (
       <ul className="courseListitem">
-        <li>How to install & Set Path</li>
-        <li>Installing Java on different Platforms(Windows and Linux)</li>
-        <li>Compiling & executing Java Program</li>
-        <li>RunTime Exception </li>
-        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
+        <li>header, nav, section, article, footer</li>
+        <li>Importance of Semantic Markup</li>
       </ul>
     ),
   },
   {
-    title: "Java Basics",
+    title: "Multimedia Elements",
     content: (
       <ul className="courseListitem">
-        <li>Data types and variables</li>
-        <li>Comments , Statements</li>
-        <li>Operators</li>
-        <li>Command line argument</li>
-        <li>Primtive Data Types</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Command-Line Arguments",
-    content: (
-      <ul className="courseListitem">
-        <li>What is Command-Line Arguments? </li>
-        <li>Java Application Command-Line Arguments</li>
-        <li>Using Methods</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Integrated Development Environment",
-    content: (
-      <ul className="courseListitem">
-        <li>using various Editors </li>
-        <li>Using Eclipse IDE</li>
-        <li>Project Set-Up</li>
-        <li>Application Compilation and run</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Java Conditional Statements",
-    content: (
-      <ul className="courseListitem">
-        <li>If statement</li>
-        <li>If…elif...else statement</li>
-        <li>Nested if</li>
-        <li>Switch Case</li>
-      </ul>
-    ),
-  },
-  {
-    title: "java flow controll",
-    content: (
-      <ul className="courseListitem">
-        <li>For</li>
-        <li>While </li>
-        <li>Do while</li>
-        <li>Dictionary</li>
-        <li>For each</li>
-        <li>Continue & Break</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Functions",
-    content: (
-      <ul className="courseListitem">
-        <li>What is a function?</li>
-        <li>Define a function</li>
-        <li>Pass arguments</li>
-        <li>Arguments with default values</li>
-        <li>Return a value from function</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Input fundamentals & Non Primitive Data Types",
-    content: (
-      <ul className="courseListitem">
-        <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer </li>
-        <li>Problem solving</li>
-        <li>String vs Char array</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Using the StringBuilder & StringBuffer Classes",
-    content: (
-      <ul className="courseListitem">
-        <li>A Brief Introduction</li>
-        <li>Creating a StringBuilder object</li>
-        <li>Using StringBuilder Methods</li>
-        <li>A StringBuilder Example</li>
-        <li>Tokenizing Strings</li>
-        <li>Regular Expressions, Class Pattern and Class Matcher</li>
-      </ul>
-    ),
-  },
-  {
-    title: "String Operations and Functions",
-    content: (
-      <ul className="courseListitem">
-        <li>String length()</li>
-        <li>String replace()</li>
-        <li>String replaceAll()</li>
-        <li>String split()</li>
-        <li>String substring()</li>
-        <li>String toCharArray()</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Exception Handling",
-    content: (
-      <ul className="courseListitem">
-        <li>What is exception?</li>
-        <li>java built-in exceptions</li>
-        <li>Try - Catch</li>
-        <li>Finally</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Object Oriented Programming (OOPS)",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>OOPS Concept & Principles</li>
-        <li>Access modifiers</li>
-        <li>Constroctor</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Inheritance",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Inheritance</li>
-        <li>Types of inheritance</li>
-        <li>Single inheritance</li>
-        <li>Multilevel inheritance</li>
-        <li>hierarchical inheritance</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Polymorphism & Abstraction",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Polymorphism</li>
-        <li>Derived Types </li>
-        <li>Method overloading</li>
-        <li>Method overriding</li>
-        <li>Abstraction</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Interfaces and Packages in Java",
-    content: (
-      <ul className="courseListitem">
-        <li>Working with Interfaces</li>
-        <li>What is an Interface?</li>
-        <li>Defining an Interface</li>
-        <li>Implementing Interfaces</li>
-        <li>Extending Interfaces</li>
-        <li>Nesting Interfaces</li>
-        <li>Inline Member Declarations</li>
-        <li>Importing a Single Package Member</li>
-        <li>Importing an Entire Package</li>
+        <li>audio Element</li>
+        <li>video Element </li>
+        <li>Importance of Semantic Markup</li>
       </ul>
     ),
   },
 
   {
-    title: "Array",
+    title: "Introduction to Laravel",
     content: (
       <ul className="courseListitem">
-        <li>Java Array</li>
-        <li>Dimensional of Array </li>
-        <li>Multi-Dimensional Array </li>
-        <li>Array Problem Solving</li>
+        <li>What is Laravel?</li>
+        <li>Setting Up a Laravel Development Environment</li>
+        <li>Laravel Architecture</li>
       </ul>
     ),
   },
   {
-    title: "Multithreading",
+    title: "Routing",
     content: (
       <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>Advantages</li>
-        <li>Run() and Start() Method</li>
-        <li>Runnable interface implementation</li>
+        <li>Basic Routing</li>
+        <li>Route Parameters</li>
+        <li>Named Routes</li>
+        <li>Route Groups</li>
       </ul>
     ),
   },
   {
-    title: "Collection Framework",
+    title: "Controllers",
     content: (
       <ul className="courseListitem">
-        <li>Generics(Templates)</li>
-        <li>What is generic</li>
-        <li>Creating User defined Generic classes</li>
-        <li>The java.util package</li>
-        <li>Collection</li>
-        <li>What is Collection Framework</li>
-        <li>List, Set & Map interfaces</li>
-        <li>Linked List, etc</li>
-        <li>Using Collections class for sorting</li>
-        <li>SortedMap, LinkedHashMap etc.</li>
-        <li>Iterator, Enumerator.</li>
-        <li>Using Queue, Deque, SortedQue, etc.</li>
-        <li>Interview related Question and Answer</li>
+        <li>Creating Controllers</li>
+        <li>Resource Controllers</li>
+        <li>Middleware in Controllers</li>
+        <li>Dependency Injection</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Views and Blade Templating",
+    content: (
+      <ul className="courseListitem">
+        <li>Blade Syntax</li>
+        <li>Layouts and Sections</li>
+        <li>Blade Components</li>
+        <li>Conditional Statements and Loops in Blade</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Eloquent ORM",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to Eloquent</li>
+        <li>Defining Models</li>
+        <li>Querying with Eloquent</li>
+        <li>Relationships (One-to-One, One-to-Many, Many-to-Many)</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Database Migrations and Seeding",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating Migrations</li>
+        <li>Running Migrations</li>
+        <li>Rolling Back Migrations</li>
+        <li>Database Seeding</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Form Handling and Validation",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating Forms</li>
+        <li>Form Requests</li>
+        <li>Custom Validation Rules</li>
+        <li>Displaying Validation Errors</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Authentication and Authorization",
+    content: (
+      <ul className="courseListitem">
+        <li>Built-in Authentication</li>
+        <li>Custom Authentication Logic</li>
+        <li>Role-Based Authorization</li>
+      </ul>
+    ),
+  },
+  {
+    title: "RESTful APIs",
+    content: (
+      <ul className="courseListitem">
+        <li>Building RESTful Routes</li>
+        <li>Resource Controllers</li>
+        <li>API Versioning</li>
+      </ul>
+    ),
+  },
+  {
+    title: "File Storage",
+    content: (
+      <ul className="courseListitem">
+        <li>File Uploads</li>
+        <li>Working with Storage Disks</li>
+        <li>File Manipulation</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Mail and Notifications",
+    content: (
+      <ul className="courseListitem">
+        <li>Sending Emails with Laravel</li>
+        <li>Configuring Mail Drivers</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Introduction to Bootstrap",
+    content: (
+      <ul className="courseListitem">
+        <li>What is Bootstrap?</li>
+        <li>Setting Up Bootstrap</li>
+        <li>Bootstrap CDN vs. Local Installation</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Grid System",
+    content: (
+      <ul className="courseListitem">
+        <li>Understanding the Grid System</li>
+        <li>Creating Responsive Layouts</li>
+        <li>Grid Classes and Breakpoints</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Typography",
+    content: (
+      <ul className="courseListitem">
+        <li>Typography Classes</li>
+        <li>Text Alignment and Display</li>
+        <li>Customizing Typography</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Components",
+    content: (
+      <ul className="courseListitem">
+        <li>Buttons and Button Groups</li>
+        <li>Navbars and Navigation</li>
+        <li>Modals and Alerts</li>
+        <li>Cards and Carousels</li>
       </ul>
     ),
   },
 ];
-function Java() {
+function Laravel() {
   const navigate = useNavigate();
   return (
     <div className="courseNameMain">
@@ -253,19 +206,24 @@ function Java() {
       >
         <div className="courseName">
           <h5>
-            Home {">"} Courses {">"} Python Course
+            Home {">"} Courses {">"} Laravel Course
           </h5>
-          <h2>Best Java Training in Erode</h2>
+          <h2>Laravel course in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
-            <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
-              width="40%"
-              style={{ margin: "10px" }}
-              alt="Python Icon"
-            />
-            <h2 style={{ margin: "10px" }}>Java</h2>
+            <svg
+              height="100"
+              viewBox="0 -.11376601 49.74245785 51.31690859"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ position: "relative", top: "25px" }}
+            >
+              <path
+                d="m49.626 11.564a.809.809 0 0 1 .028.209v10.972a.8.8 0 0 1 -.402.694l-9.209 5.302v10.509c0 .286-.152.55-.4.694l-19.223 11.066c-.044.025-.092.041-.14.058-.018.006-.035.017-.054.022a.805.805 0 0 1 -.41 0c-.022-.006-.042-.018-.063-.026-.044-.016-.09-.03-.132-.054l-19.219-11.066a.801.801 0 0 1 -.402-.694v-32.916c0-.072.01-.142.028-.21.006-.023.02-.044.028-.067.015-.042.029-.085.051-.124.015-.026.037-.047.055-.071.023-.032.044-.065.071-.093.023-.023.053-.04.079-.06.029-.024.055-.05.088-.069h.001l9.61-5.533a.802.802 0 0 1 .8 0l9.61 5.533h.002c.032.02.059.045.088.068.026.02.055.038.078.06.028.029.048.062.072.094.017.024.04.045.054.071.023.04.036.082.052.124.008.023.022.044.028.068a.809.809 0 0 1 .028.209v20.559l8.008-4.611v-10.51c0-.07.01-.141.028-.208.007-.024.02-.045.028-.068.016-.042.03-.085.052-.124.015-.026.037-.047.054-.071.024-.032.044-.065.072-.093.023-.023.052-.04.078-.06.03-.024.056-.05.088-.069h.001l9.611-5.533a.801.801 0 0 1 .8 0l9.61 5.533c.034.02.06.045.09.068.025.02.054.038.077.06.028.029.048.062.072.094.018.024.04.045.054.071.023.039.036.082.052.124.009.023.022.044.028.068zm-1.574 10.718v-9.124l-3.363 1.936-4.646 2.675v9.124l8.01-4.611zm-9.61 16.505v-9.13l-4.57 2.61-13.05 7.448v9.216zm-36.84-31.068v31.068l17.618 10.143v-9.214l-9.204-5.209-.003-.002-.004-.002c-.031-.018-.057-.044-.086-.066-.025-.02-.054-.036-.076-.058l-.002-.003c-.026-.025-.044-.056-.066-.084-.02-.027-.044-.05-.06-.078l-.001-.003c-.018-.03-.029-.066-.042-.1-.013-.03-.03-.058-.038-.09v-.001c-.01-.038-.012-.078-.016-.117-.004-.03-.012-.06-.012-.09v-21.483l-4.645-2.676-3.363-1.934zm8.81-5.994-8.007 4.609 8.005 4.609 8.006-4.61-8.006-4.608zm4.164 28.764 4.645-2.674v-20.096l-3.363 1.936-4.646 2.675v20.096zm24.667-23.325-8.006 4.609 8.006 4.609 8.005-4.61zm-.801 10.605-4.646-2.675-3.363-1.936v9.124l4.645 2.674 3.364 1.937zm-18.422 20.561 11.743-6.704 5.87-3.35-8-4.606-9.211 5.303-8.395 4.833z"
+                fill="#ff2d20"
+              />
+            </svg>
+            <h2>Laravel</h2>
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -316,7 +274,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                19+5
+                20+5
               </div>
             </div>
           </div>
@@ -401,37 +359,6 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
-                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
-                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
-                </svg>
-                <span
-                  style={{ position: "relative", top: "-5px", left: "5px" }}
-                >
-                  Mode
-                </span>
-              </div>
-              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                Offline | Online
-              </div>
-            </div>
-          </div>
-          <div className="courseHR">
-            <hr className="hr"></hr>
-          </div>
-          <div className="courseModule">
-            <div className="Courseduration">
-              <div>
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -450,6 +377,37 @@ function Java() {
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
                 Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Mode
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Offline | Online
               </div>
             </div>
           </div>
@@ -502,19 +460,19 @@ function Java() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Java Course Overview</h2>
+        <h2>Laravel Course Overview</h2>
         <div>
           <p>
-            This Java Course equips you with essential Java programming skills,
-            starting with syntax, data types, and control structures. You'll
-            master file operations, exception handling, and object-oriented
-            programming, including classes, inheritance, polymorphism, and
-            encapsulation. The course covers key Java libraries like java.util,
-            java.io . Real-world case studies by industry experts provide
-            practical insights into web development, mobile apps, and data
-            analysis. The course prepares you for Java Certification, enhancing
-            career prospects. By the end, you'll be a proficient Java developer,
-            ready to tackle diverse programming challenges.
+            Nurture Infotech Erode offers the best training in Laravel, a
+            powerful PHP framework for web development. This course covers
+            Laravel’s fundamentals, including routing, middleware, controllers,
+            and views, along with advanced features like Eloquent ORM,
+            authentication, and RESTful API development. You'll learn to build
+            scalable, maintainable web applications through real-world projects
+            and hands-on exercises. Designed for both beginners and experienced
+            developers, this course equips you with the skills to efficiently
+            create robust web solutions, preparing you for a successful career
+            in modern web development.
           </p>
         </div>
         <br></br>
@@ -523,17 +481,20 @@ function Java() {
           <ul className="courseul">
             <li>
               BE / BTech / MTech / BCA / MCA graduates aspiring to build a
-              career as a Java Developer.
+              career in web development and backend programming.
             </li>
             <li>Candidates looking to restart their career after a gap.</li>
-            <li>Complete beginners interested in Java programming.</li>
             <li>
-              Aspiring web developers seeking expertise in Java and frameworks
-              like Spring , Hibernate and Selenium.
+              Complete beginners interested in server-side development and
+              Laravel.
             </li>
             <li>
-              Professionals seeking to advance their knowledge of modern web
-              technologies and enterprise-level applications.
+              Aspiring developers seeking expertise in Laravel for building
+              scalable and maintainable web applications.
+            </li>
+            <li>
+              Professionals aiming to advance their knowledge of modern web
+              development tools and techniques using the Laravel framework.
             </li>
           </ul>
         </div>
@@ -550,19 +511,17 @@ function Java() {
               <h1>Related Course</h1>
               <div className="relatedcourseList">
                 <span>
-                  <Link to="/courses/seleninum">Selenium</Link>
+                  <Link to="/courses/webdesign">Web design</Link>
                 </span>
                 <span>
-                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                  <Link to="/courses/php">Php</Link>
                 </span>
                 <span>
-                  <Link to="/courses/hibernate">Hibernate</Link>
+                  <Link to="/courses/codeigniter">CodeIgniter</Link>
                 </span>
+
                 <span>
-                  <Link to="/courses/flutter">Flutter</Link>
-                </span>
-                <span>
-                  <Link to="/courses/mysql"></Link>
+                  <Link to="/courses/mysql">MySQL</Link>
                 </span>
               </div>
             </div>
@@ -820,14 +779,14 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Java Developer</li>
-            <li>Web Developer</li>
-            <li>Software Engineer</li>
+            <li>Laravel Developer</li>
+            <li>Full-Stack Developer</li>
+            <li>Backend Developer</li>
           </ul>
           <ul>
-            <li>Software Tester</li>
-            <li>Full Stack Developer</li>
-            <li>Software Developer</li>
+            <li>Web Developer</li>
+            <li>API Developer</li>
+            <li>CMS Developer</li>
           </ul>
         </div>
       </section>
@@ -848,4 +807,4 @@ function Java() {
   );
 }
 
-export default Java;
+export default Laravel;

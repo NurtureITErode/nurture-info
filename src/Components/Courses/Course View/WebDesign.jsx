@@ -6,244 +6,307 @@ import ParticlesComponent from "./Particles";
 import ParticlesBackground from "./Particles";
 import Companylogos from "./Companylogos.json";
 import { Link, useNavigate } from "react-router-dom";
-
 const accordionItems = [
   {
-    title: "Introduction to Java",
+    title: "Basics in Web Design",
     content: (
       <ul className="courseListitem">
-        <li>Introduction to Java</li>
-        <li>History Of Java</li>
-        <li>Java Features</li>
-        <li>Areas Of Application Of Java</li>
+        <li>Brief History of Internet</li>
+        <li>What is World Wide Web, URL, Domain</li>
+        <li>What is Web Page and a Website</li>
+        <li>HTML, CSS Editors</li>
       </ul>
     ),
   },
   {
-    title: "Java Programming Environment",
+    title: "Introduction to HTML",
     content: (
       <ul className="courseListitem">
-        <li>How to install & Set Path</li>
-        <li>Installing Java on different Platforms(Windows and Linux)</li>
-        <li>Compiling & executing Java Program</li>
-        <li>RunTime Exception </li>
-        <li>Java Technology(JDK,JRE,JVM,JIT)</li>
+        <li>Brief Introduction of HTML</li>
+        <li>HTML Tags</li>
+        <li>Basic structure of an HTML document</li>
       </ul>
     ),
   },
   {
-    title: "Java Basics",
+    title: "Text Formatting and Links",
     content: (
       <ul className="courseListitem">
-        <li>Data types and variables</li>
-        <li>Comments , Statements</li>
-        <li>Operators</li>
-        <li>Command line argument</li>
-        <li>Primtive Data Types</li>
+        <li>
+          Headings, paragraphs, and text formatting tags (bold, italics,
+          underline)
+        </li>
+        <li>Creating and formatting lists (ordered, unordered, description)</li>
+        <li>Hyperlinks and navigation</li>
       </ul>
     ),
   },
   {
-    title: "Command-Line Arguments",
+    title: "Images, Audio, and Video",
     content: (
       <ul className="courseListitem">
-        <li>What is Command-Line Arguments? </li>
-        <li>Java Application Command-Line Arguments</li>
-        <li>Using Methods</li>
+        <li>Embedding images using img tag</li>
+        <li>Embedding audio using audio tag</li>
+        <li>Embedding video using video tag</li>
       </ul>
     ),
   },
   {
-    title: "Integrated Development Environment",
+    title: "CSS Syntax and Selectors",
     content: (
       <ul className="courseListitem">
-        <li>using various Editors </li>
-        <li>Using Eclipse IDE</li>
-        <li>Project Set-Up</li>
-        <li>Application Compilation and run</li>
+        <li>Basic syntax</li>
+        <li>Different types of selectors (element, class, ID, attribute)</li>
+        <li>Grouping and nesting selectors</li>
       </ul>
     ),
   },
   {
-    title: "Java Conditional Statements",
+    title: "Box Model and Layout",
     content: (
       <ul className="courseListitem">
-        <li>If statement</li>
-        <li>If…elif...else statement</li>
-        <li>Nested if</li>
-        <li>Switch Case</li>
+        <li>Margins, padding, borders</li>
+        <li>Display properties (block, inline, inline-block, none)</li>
+        <li>Box-sizing property</li>
       </ul>
     ),
   },
   {
-    title: "java flow controll",
+    title: "Positioning Elements",
     content: (
       <ul className="courseListitem">
-        <li>For</li>
-        <li>While </li>
-        <li>Do while</li>
-        <li>Dictionary</li>
-        <li>For each</li>
-        <li>Continue & Break</li>
+        <li>Static, relative, absolute, fixed, and sticky positioning</li>
+        <li>Z-index and stacking order</li>
+        <li>Float and clear</li>
       </ul>
     ),
   },
   {
-    title: "Functions",
+    title: "Flexbox Layout",
     content: (
       <ul className="courseListitem">
-        <li>What is a function?</li>
-        <li>Define a function</li>
-        <li>Pass arguments</li>
-        <li>Arguments with default values</li>
-        <li>Return a value from function</li>
+        <li>Flex container and flex items</li>
+        <li>Flex properties (flex-direction, justify-content, align-items)</li>
+        <li>Creating responsive layouts with Flexbox</li>
       </ul>
     ),
   },
   {
-    title: "Input fundamentals & Non Primitive Data Types",
+    title: "Grid Layout",
     content: (
       <ul className="courseListitem">
-        <li>Java Program inputs form the user</li>
-        <li>Scanner , String Buffer </li>
-        <li>Problem solving</li>
-        <li>String vs Char array</li>
+        <li>Defining a grid container</li>
+        <li>Grid tracks, lines, and areas</li>
+        <li>
+          Grid properties (grid-template-rows, grid-template-columns, gap)
+        </li>
       </ul>
     ),
   },
   {
-    title: "Using the StringBuilder & StringBuffer Classes",
+    title: "Colors and Backgrounds",
     content: (
       <ul className="courseListitem">
-        <li>A Brief Introduction</li>
-        <li>Creating a StringBuilder object</li>
-        <li>Using StringBuilder Methods</li>
-        <li>A StringBuilder Example</li>
-        <li>Tokenizing Strings</li>
-        <li>Regular Expressions, Class Pattern and Class Matcher</li>
+        <li>Color values (hex, RGB, HSL)</li>
+        <li>Background properties (color, image, position, repeat)</li>
+        <li>Gradients (linear, radial)</li>
       </ul>
     ),
   },
   {
-    title: "String Operations and Functions",
+    title: "Typography and Fonts",
     content: (
       <ul className="courseListitem">
-        <li>String length()</li>
-        <li>String replace()</li>
-        <li>String replaceAll()</li>
-        <li>String split()</li>
-        <li>String substring()</li>
-        <li>String toCharArray()</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Exception Handling",
-    content: (
-      <ul className="courseListitem">
-        <li>What is exception?</li>
-        <li>java built-in exceptions</li>
-        <li>Try - Catch</li>
-        <li>Finally</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Object Oriented Programming (OOPS)",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>OOPS Concept & Principles</li>
-        <li>Access modifiers</li>
-        <li>Constroctor</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Inheritance",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Inheritance</li>
-        <li>Types of inheritance</li>
-        <li>Single inheritance</li>
-        <li>Multilevel inheritance</li>
-        <li>hierarchical inheritance</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Polymorphism & Abstraction",
-    content: (
-      <ul className="courseListitem">
-        <li>Introduction Polymorphism</li>
-        <li>Derived Types </li>
-        <li>Method overloading</li>
-        <li>Method overriding</li>
-        <li>Abstraction</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Interfaces and Packages in Java",
-    content: (
-      <ul className="courseListitem">
-        <li>Working with Interfaces</li>
-        <li>What is an Interface?</li>
-        <li>Defining an Interface</li>
-        <li>Implementing Interfaces</li>
-        <li>Extending Interfaces</li>
-        <li>Nesting Interfaces</li>
-        <li>Inline Member Declarations</li>
-        <li>Importing a Single Package Member</li>
-        <li>Importing an Entire Package</li>
+        <li>Font properties (font-family, font-size, font-weight)</li>
+        <li>Text properties (color, alignment, decoration, transformation)</li>
+        <li>Using web fonts</li>
       </ul>
     ),
   },
 
   {
-    title: "Array",
+    title: "Responsive Design with Media Queries",
     content: (
       <ul className="courseListitem">
-        <li>Java Array</li>
-        <li>Dimensional of Array </li>
-        <li>Multi-Dimensional Array </li>
-        <li>Array Problem Solving</li>
+        <li>Basic syntax and usage</li>
+        <li>Breakpoints for different devices</li>
+        <li>Creating responsive typography and layouts</li>
       </ul>
     ),
   },
   {
-    title: "Multithreading",
+    title: "CSS Transitions and Animations",
     content: (
       <ul className="courseListitem">
-        <li>Introduction</li>
-        <li>Advantages</li>
-        <li>Run() and Start() Method</li>
-        <li>Runnable interface implementation</li>
+        <li>Transition properties (duration, timing-function, delay)</li>
+        <li>Keyframes and animation properties</li>
+        <li>Creating smooth transitions and animations</li>
       </ul>
     ),
   },
   {
-    title: "Collection Framework",
+    title: "CSS Variables (Custom Properties)",
     content: (
       <ul className="courseListitem">
-        <li>Generics(Templates)</li>
-        <li>What is generic</li>
-        <li>Creating User defined Generic classes</li>
-        <li>The java.util package</li>
-        <li>Collection</li>
-        <li>What is Collection Framework</li>
-        <li>List, Set & Map interfaces</li>
-        <li>Linked List, etc</li>
-        <li>Using Collections class for sorting</li>
-        <li>SortedMap, LinkedHashMap etc.</li>
-        <li>Iterator, Enumerator.</li>
-        <li>Using Queue, Deque, SortedQue, etc.</li>
-        <li>Interview related Question and Answer</li>
+        <li>Defining and using CSS variables</li>
+        <li>Scope and inheritance of variables</li>
+        <li>Practical use cases</li>
+      </ul>
+    ),
+  },
+  {
+    title: "JavaScript Basics",
+    content: (
+      <ul className="courseListitem">
+        <li>Syntax and data types</li>
+        <li>Variables and constants (var, let, const)</li>
+        <li>Operators (arithmetic, assignment, comparison, logical)</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Functions and Scope",
+    content: (
+      <ul className="courseListitem">
+        <li>Function declarations and expressions</li>
+        <li>Arrow functions</li>
+        <li>Understanding scope (global, local) and hoisting</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Objects and Arrays",
+    content: (
+      <ul className="courseListitem">
+        <li>Creating and manipulating objects</li>
+        <li>Creating and manipulating arrays</li>
+        <li>Iterating over objects and arrays (for-in, for-of)</li>
+      </ul>
+    ),
+  },
+  {
+    title: "DOM Manipulation",
+    content: (
+      <ul className="courseListitem">
+        <li>Selecting elements (getElementById, querySelector, etc.)</li>
+        <li>Creating, appending, and removing elements</li>
+        <li>Modifying element attributes and styles</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Events and Event Handling",
+    content: (
+      <ul className="courseListitem">
+        <li>Event types (click, load, input, etc.)</li>
+        <li>Adding and removing event listeners</li>
+        <li>Event delegation and propagation</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Local Storage and Session Storage",
+    content: (
+      <ul className="courseListitem">
+        <li>Storing and retrieving data</li>
+        <li>JSON serialization and deserialization</li>
+        <li>Use cases for localStorage and sessionStorage</li>
+      </ul>
+    ),
+  },
+  {
+    title: "JavaScript Libraries and Frameworks",
+    content: (
+      <ul className="courseListitem">
+        <li>Introduction to popular libraries (React, Angular, Vue)</li>
+        <li>Using jQuery for DOM manipulation</li>
+        <li>Overview of JavaScript build tools (Webpack, Babel)</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Introduction to jQuery",
+    content: (
+      <ul className="courseListitem">
+        <li>What is jQuery?</li>
+        <li>Setting up jQuery in a project</li>
+        <li>Basic jQuery syntax and selectors</li>
+      </ul>
+    ),
+  },
+  {
+    title: "jQuery Events and Effects",
+    content: (
+      <ul className="courseListitem">
+        <li>Handling events with jQuery</li>
+        <li>Animations and effects (show, hide, fade, slide)</li>
+        <li>Chaining methods</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Bootstrap Grid System",
+    content: (
+      <ul className="courseListitem">
+        <li>Understanding the grid layout</li>
+        <li>Creating responsive layouts with rows and columns</li>
+        <li>Nesting columns and offsets</li>
+      </ul>
+    ),
+  },
+
+  {
+    title: "Bootstrap Components",
+    content: (
+      <ul className="courseListitem">
+        <li>Common components (navbar, buttons, cards, modals)</li>
+        <li>Customizing component styles</li>
+        <li>Using component utilities</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Bootstrap Utilities",
+    content: (
+      <ul className="courseListitem">
+        <li>Using utility classes for spacing, text, and background</li>
+        <li>Responsive utilities for visibility and alignment</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Introduction to TypeScript",
+    content: (
+      <ul className="courseListitem">
+        <li>What is TypeScript?</li>
+        <li>Setting up a TypeScript environment</li>
+        <li>TypeScript vs JavaScript</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Basic Types and Interfaces",
+    content: (
+      <ul className="courseListitem">
+        <li>Declaring variables with types</li>
+        <li>Basic and advanced types (union, intersection)</li>
+        <li>Creating and using interfaces</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Creating and using interfaces",
+    content: (
+      <ul className="courseListitem">
+        <li>Defining classes and constructors</li>
+        <li>Inheritance and access modifiers</li>
+        <li>Abstract classes and interfaces</li>
       </ul>
     ),
   },
 ];
-function Java() {
+function WebDesign() {
   const navigate = useNavigate();
   return (
     <div className="courseNameMain">
@@ -253,19 +316,18 @@ function Java() {
       >
         <div className="courseName">
           <h5>
-            Home {">"} Courses {">"} Python Course
+            Home {">"} Courses {">"} Webdesign Course
           </h5>
-          <h2>Best Java Training in Erode</h2>
+          <h2>Best Webdesign Training in Erode</h2>
         </div>
         <div className="courseDetails">
           <div className="course_Details_img">
             <img
-              src="../assets/Images/Course Images/Course Items/Course Icons/java.svg"
-              width="40%"
-              style={{ margin: "10px" }}
+              src="../assets/Images/Course Images/Course Items/Course Icons/webdesign.jpeg"
+              width="50%"
               alt="Python Icon"
             />
-            <h2 style={{ margin: "10px" }}>Java</h2>
+            <h2>WebDesign</h2>
           </div>
           <div className="courseModule">
             <div className="Courseduration">
@@ -286,7 +348,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                80 Hours
+                120 Hours
               </div>
             </div>
           </div>
@@ -316,7 +378,7 @@ function Java() {
                 </span>
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                19+5
+                30+5
               </div>
             </div>
           </div>
@@ -401,37 +463,6 @@ function Java() {
                   height="20"
                   fill="none"
                   stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
-                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
-                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
-                </svg>
-                <span
-                  style={{ position: "relative", top: "-5px", left: "5px" }}
-                >
-                  Mode
-                </span>
-              </div>
-              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
-                Offline | Online
-              </div>
-            </div>
-          </div>
-          <div className="courseHR">
-            <hr className="hr"></hr>
-          </div>
-          <div className="courseModule">
-            <div className="Courseduration">
-              <div>
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -450,6 +481,37 @@ function Java() {
               </div>
               <div style={{ position: "relative", top: "-5px", left: "5px" }}>
                 Yes
+              </div>
+            </div>
+          </div>
+          <div className="courseHR">
+            <hr className="hr"></hr>
+          </div>
+          <div className="courseModule">
+            <div className="Courseduration">
+              <div>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20.315 15.444a9 9 0 1 0-16.63-6.888 9 9 0 0 0 16.63 6.888Z"></path>
+                  <path d="M5.121 17.804A13.936 13.936 0 0 1 12.001 16c2.5 0 4.846.655 6.878 1.804"></path>
+                  <path d="M14.121 12.121A3 3 0 1 0 9.88 7.88a3 3 0 0 0 4.242 4.242Z"></path>
+                </svg>
+                <span
+                  style={{ position: "relative", top: "-5px", left: "5px" }}
+                >
+                  Mode
+                </span>
+              </div>
+              <div style={{ position: "relative", top: "-5px", left: "5px" }}>
+                Offline | Online
               </div>
             </div>
           </div>
@@ -502,19 +564,19 @@ function Java() {
       </section>
 
       <section className="CourseSyllabus">
-        <h2>Java Course Overview</h2>
+        <h2>Webdesign Course Overview</h2>
         <div>
           <p>
-            This Java Course equips you with essential Java programming skills,
-            starting with syntax, data types, and control structures. You'll
-            master file operations, exception handling, and object-oriented
-            programming, including classes, inheritance, polymorphism, and
-            encapsulation. The course covers key Java libraries like java.util,
-            java.io . Real-world case studies by industry experts provide
-            practical insights into web development, mobile apps, and data
-            analysis. The course prepares you for Java Certification, enhancing
-            career prospects. By the end, you'll be a proficient Java developer,
-            ready to tackle diverse programming challenges.
+            This Web Design Course will help you master essential web
+            development concepts such as HTML for structuring content, CSS for
+            styling, JavaScript for interactivity, and Bootstrap for responsive
+            design. You will also learn TypeScript, which enhances JavaScript by
+            adding static types. The course is curated by industry experts and
+            includes real-time case studies to ensure hands-on learning. Web
+            design involves creating and maintaining websites, ensuring they are
+            visually appealing, user-friendly, and functional. This course will
+            equip you with the knowledge and skills needed to build modern,
+            dynamic websites and applications.
           </p>
         </div>
         <br></br>
@@ -522,18 +584,20 @@ function Java() {
         <div>
           <ul className="courseul">
             <li>
-              BE / BTech / MTech / BCA / MCA graduates aspiring to build a
-              career as a Java Developer.
-            </li>
-            <li>Candidates looking to restart their career after a gap.</li>
-            <li>Complete beginners interested in Java programming.</li>
-            <li>
-              Aspiring web developers seeking expertise in Java and frameworks
-              like Spring , Hibernate and Selenium.
+              BE / BTech / M Tech / BCA / MCA passed aspirants to make their
+              career as Web Developer
             </li>
             <li>
-              Professionals seeking to advance their knowledge of modern web
-              technologies and enterprise-level applications.
+              A candidate who would like to restart their career after a gap.
+            </li>
+            <li>Complete beginners interested in Web Developer.</li>
+            <li>
+              Aspiring web developers seeking MERN Stack and MEAN Stack
+              expertise.
+            </li>
+            <li>
+              Those seeking to advance their knowledge about modern web
+              technology.
             </li>
           </ul>
         </div>
@@ -550,19 +614,19 @@ function Java() {
               <h1>Related Course</h1>
               <div className="relatedcourseList">
                 <span>
-                  <Link to="/courses/seleninum">Selenium</Link>
+                  <Link to="/courses/react">React</Link>
                 </span>
                 <span>
-                  <Link to="/courses/spring">Spring & Spring Boot</Link>
+                  <Link to="/courses/angular">Angular</Link>
                 </span>
                 <span>
-                  <Link to="/courses/hibernate">Hibernate</Link>
+                  <Link to="/courses/mern">MERN Stack</Link>
                 </span>
                 <span>
-                  <Link to="/courses/flutter">Flutter</Link>
+                  <Link to="/courses/datascience">Django</Link>
                 </span>
                 <span>
-                  <Link to="/courses/mysql"></Link>
+                  <Link to="/courses/mysql">Node js</Link>
                 </span>
               </div>
             </div>
@@ -820,14 +884,14 @@ function Java() {
         <h2>Career Options</h2>
         <div className="CareerPath">
           <ul>
-            <li>Java Developer</li>
             <li>Web Developer</li>
-            <li>Software Engineer</li>
+            <li>UI/UX Developer</li>
+            <li>Frontend Developer</li>
           </ul>
           <ul>
-            <li>Software Tester</li>
             <li>Full Stack Developer</li>
-            <li>Software Developer</li>
+            <li>MERN Stack Developer</li>
+            <li>Software Engineer</li>
           </ul>
         </div>
       </section>
@@ -848,4 +912,4 @@ function Java() {
   );
 }
 
-export default Java;
+export default WebDesign;
